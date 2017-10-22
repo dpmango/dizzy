@@ -1,0 +1,217 @@
+// HEADER
+.header
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  z-index: 10
+  &__wrapper
+    display: flex
+    align-items: center
+    padding: 5px 0
+    color: white
+  &__logo
+    font-size: 71px
+
+  &__phone
+    margin-left: auto
+    font-size: 18px
+    letter-spacing: 0.68px
+
+  &__profile
+    font-size: 18px
+    letter-spacing: 0.68px
+
+  &__like
+    font-size: 25px
+
+  &__cart
+    font-size: 31px
+
+
+  // line
+  &__phone, &__profile, &__like
+    position: relative
+    padding-right: 50px
+    &::after
+      display: inline-block
+      content: ' '
+      position: absolute
+      right: 25px
+      top: 50%
+      transform: translateY(-50%)
+      width: 2px
+      background: rgba(white, .4)
+      height: 18px
+
+  &--transformed
+    position: fixed
+    background: white
+    transform: translate3d(0,-100%,0)
+    box-shadow: 0px 3px 8px rgba($fontColor, .11)
+
+    .header
+      &__wrapper
+        padding: 7px 0
+        color: $fontColor
+      &__logo
+        font-size: 45px
+
+      &__phone, &__profile
+        color: rgba($fontColor, .7)
+
+      &__phone, &__profile, &__like
+        &::after
+          background: rgba($fontColor, .2)
+
+      &__like
+        color: rgba($fontColor, .6)
+
+      &__cart
+        color: rgba($fontColor, .6)
+
+
+  &--fixed
+    // position: fixed
+    opacity: 1
+    transform: translate3d(0,0,0)
+    transition: transform .3s $ease, opacity .3s $ease
+
+
+// NAVI
+.navi
+  position: absolute
+  top: 80px
+  left: 0
+  right: 0
+  z-index: 10
+  background: rgba(#FFEBD7, .2)
+  color: white
+  &__wrapper
+    display: flex
+    align-items: center
+    height: 40px
+    font-size: 18px
+    letter-spacing: 0.68px
+
+  &__menu
+    flex: 1 1 auto
+    display: flex
+    align-items: center
+    list-style: none
+    margin: 0 100px 0 0
+    padding: 0
+    li
+      flex: 1 0 auto
+
+  &__search
+    flex: 0 0 auto
+    margin-left: auto
+    &-visible
+      display: flex
+      align-items: center
+      .icon
+        font-size: 16px
+        margin-right: 5px
+
+
+.navi-drop
+  position: absolute
+  left: 0
+  right: 0
+  top: 120px
+  z-index: 11
+  padding: 20px 0
+  background: #FFFFFF
+  box-shadow: 0 3px 8px 0 rgba(0,0,0,0.20)
+  opacity: 0
+  pointer-events: none
+  transform: translate3d(0,30px,0)
+  transition: all $transitionSpeed $ease
+  &.is-active
+    opacity: 1
+    pointer-events: all
+    transform: translate3d(0,0,0)
+
+  &__menu
+    max-width: 600px
+    
+  &__icon
+    font-size: 40px
+    color: rgba($fontColor, .2)
+
+  &__name
+    margin-top: 15px
+    margin-bottom: 10px
+    font-size: 20px
+    font-weight: 700
+    letter-spacing: 0.6px
+
+  &__links
+    a
+      display: block
+      font-size: 13px
+      line-height: 1.4
+      color: rgba($fontColor, .6)
+      transition: all $transitionSpeed $ease
+
+      &:hover
+        color: $fontColor
+
+  &__socials
+    margin-top: 45px
+    color: rgba($fontColor, .6)
+    &-title
+      font-size: 13px
+      line-height: 1.4
+
+    &-list
+      margin-top: 15px
+      display: flex
+      align-items: center
+      a
+        display: inline-block
+        margin-right: 20px
+        transition: all $transitionSpeed $ease
+
+        .ico
+          &-social-vk
+            font-size: 12px
+          &-social-fb
+            font-size: 20px
+          &-social-ok
+            font-size: 20px
+
+        &:hover
+          .ico
+            &-social-vk
+              color: $vk
+            &-social-fb
+              color: $facebook
+            &-social-ok
+              color: #ED812B
+
+  &-card
+    flex: 1 1 auto
+    position: relative
+    overflow: hidden
+    display: flex
+    flex-direction: column
+    padding: 20px
+    &__image
+      position: absolute
+      z-index: 1
+      top: 50%
+      left: 50%
+      transform: translate3d(-50%,-50%,0)
+      min-width: 100%
+      min-height: 100%
+      width: auto
+      height: auto
+
+    &__name
+      position: relative
+      z-index: 2
+      margin-top: auto
+      color: white
+      font-size: 16px

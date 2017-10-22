@@ -1,0 +1,77 @@
+
+.discount
+  margin: 95px 0 75px 0
+  padding: 5px 0
+  background: $colorOrange
+  color: white
+  &__wrapper
+    position: relative
+    display: flex
+
+  &__percent
+    font-size: 146px
+    font-weight: 900
+
+  &__words
+    font-size: 32px
+    letter-spacing: 0.96px
+
+  &__socials
+    display: flex
+    justify-content: space-between
+    align-items: center
+    position: absolute
+    top: 50%
+    left: 0
+    right: 0
+    z-index: 3
+    transform: translateY(-50%)
+
+  &__social
+    position: relative
+    background: white
+    size: 90px
+    border-radius: 50%
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: background $transitionSpeed $ease
+    &::before
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      left: -30px
+      display: inline-block
+      content: ' '
+      +arr(16,13,white,r)
+    .ico
+      &-social-vk
+        color: $vk
+        font-size: 29px
+      &-social-fb
+        color: $facebook
+        font-size: 50px
+      &-social-ok
+        color: #ED812B
+        font-size: 49px
+    &:hover
+      .ico
+        color: white
+
+    &--vk
+      &:hover
+        background-color: $vk
+    &--fb
+      &:hover
+        background-color: $facebook
+    &--ok
+      &:hover
+        background-color: #ED812B
+
+  &__image
+    font-size: 0
+    position: absolute
+    left: 50%
+    bottom: -5px
+    z-index: 2
+    transform: translateX(-50%)

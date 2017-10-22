@@ -1,0 +1,23 @@
+
+.h-link
+  position: relative
+  &::after
+    display: inline-block
+    content: ' '
+    position: absolute
+    bottom: -2px
+    left: 0
+    right: 0
+    background: currentColor
+    height: 1px
+    transition: all $transitionSpeed $ease
+
+  &:hover
+    &::after
+      transform: translate3d(0,-2px,0)
+      opacity: 0
+
+.title
+  text-align: center
+  font-size: 32px
+  letter-spacing: 0.96px

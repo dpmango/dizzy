@@ -1,0 +1,439 @@
+---
+title: Homepage title
+bodyClass: homepage
+---
+extends shared/_layout
+block content
+
+  // HERO :: START
+  .hero
+    .hero__slider.slick-dots(js-hero-slider)
+      .hero__slide
+        img.hero__slide-bg(src='img/heroBg.jpg' srcset='img/heroBg@2x.jpg 2x')
+        .hero__content
+          .container.container--grow
+            .hero__name Коллекция
+            .hero__big Осень-Зима’17
+      .hero__slide
+        img.hero__slide-bg(src='img/heroBg.jpg' srcset='img/heroBg@2x.jpg 2x')
+        .hero__content
+          .container.container--grow
+            .hero__name Коллекция
+            .hero__big Осень-Зима’17  
+      
+      .hero__slide
+        img.hero__slide-bg(src='img/heroBg.jpg' srcset='img/heroBg@2x.jpg 2x')
+        .hero__content
+          .container.container--grow
+            .hero__name Коллекция
+            .hero__big Осень-Зима’17
+                  
+      
+  // iteration example
+  //- .socials
+  //-   - var socials = ['email']
+  //-     each social in socials
+  //-       a(class="social-share" href="#" role="button")
+  //-         +icon('ico-'+social)
+  
+  // CATEGORIES :: START
+  .home-catalog
+    .container
+      .title Ассортимент
+      
+      .home-catalog__wrapper
+        .row
+          .col-md-4
+            a(href="#").catalog-card.catalog-card--bg-peach
+              .catalog-card__image(style="bottom: 0; left: 20px")
+                img(src='img/catalogCard-1.png' srcset='img/catalogCard-1@2x.png 2x')
+              .catalog-card__content.catalog-card__content--right
+                .catalog-card__name Пальто
+                .catalog-card__short С натуральным мехом
+          // card
+          .col-md-4
+            a(href="#").catalog-card
+              .catalog-card__image(style="bottom: 0; right: 10px; z-index: 3")
+                img(src='img/catalogCard-2.png' srcset='img/catalogCard-2@2x.png 2x')
+              .catalog-card__content
+                .catalog-card__name Куртки / Парки
+                .catalog-card__short Демисезонные
+          //card
+          .col-md-4
+            a(href="#").catalog-card
+              .catalog-card__image(style="bottom: 0; right: 25px")
+                img(src='img/catalogCard-3.png' srcset='img/catalogCard-3@2x.png 2x')
+              .catalog-card__content
+                .catalog-card__name Плащи
+                .catalog-card__short Утпеленные
+        
+        // row
+        .row
+          .col-md-3
+            a(href="#").catalog-card.catalog-card--smaller
+              .catalog-card__image.catalog-card__image--tr-bottom(style="top: 0; right: -20px; z-index: 3")
+                img(src='img/catalogCard-4.png' srcset='img/catalogCard-4@2x.png 2x')
+              .catalog-card__content
+                .catalog-card__name Юбки / брюки
+                .catalog-card__short С натуральным мехом
+          // card
+          .col-md-3
+            a(href="#").catalog-card.catalog-card--smaller
+              .catalog-card__image(style="bottom: 0; right: 30px")
+                img(src='img/catalogCard-5.png' srcset='img/catalogCard-5@2x.png 2x')
+              .catalog-card__content
+                .catalog-card__name Платья / Комбинезоны
+                .catalog-card__short Утепленные
+          // card
+          .col-md-3
+            a(href="#").catalog-card.catalog-card--smaller.catalog-card--bg-peach
+              .catalog-card__image.catalog-card__image--tr-bottom(style="top: -22px; left: 10px; z-index: 3")
+                img(src='img/catalogCard-6.png' srcset='img/catalogCard-6@2x.png 2x')
+              .catalog-card__content.catalog-card__content--right
+                .catalog-card__name Аксессуары
+                .catalog-card__short Зимние
+          
+          // card
+          .col-md-3
+            a(href="#").catalog-card.catalog-card--smaller.catalog-card--bg-peach
+              .catalog-card__image.catalog-card__image--tr-bottom(style="top: 0; left: 5px; z-index: 3")
+                img(src='img/catalogCard-7.png' srcset='img/catalogCard-7@2x.png 2x')
+              .catalog-card__content.catalog-card__content--right
+                .catalog-card__name Юбки/брюки
+                .catalog-card__short с натуральным мехом
+                
+
+  // BENEFITS :: START
+  .benefits
+    .container
+      .benefits__wrapper
+        .benefits__card
+          .benefits__card-icon
+            +icon('ico-sewing-machine')
+          .benefits__card-name Качественное Российское производство
+        
+        .benefits__card
+          .benefits__card-icon
+            +icon('ico-wallet')
+          .benefits__card-name Лучшее сочетание  цена-качество 
+          
+        .benefits__card
+          .benefits__card-icon
+            +icon('ico-handshake')
+          .benefits__card-name Выгодные условия сотрудничества
+
+        .benefits__card
+          .benefits__card-icon
+            +icon('ico-coat')
+          .benefits__card-name Широкий размерный  ряд от 42 до 64
+          
+        .benefits__card
+          .benefits__card-icon
+            +icon('ico-delivery-truck')
+          .benefits__card-name Бесплатная доставка  по Москве
+  
+  // PROMO :: START
+  .home-promo
+    .container
+      .title Акции
+      
+      .home-promo__wrapper
+        .row
+          .col-md-6
+            a(href="#").promo-card
+              .promo-card__image.promo-card__image--tr-bottom(style="top: 0; right: 0px; z-index: 3")
+                img(src='img/promoCard-1.png' srcset='img/promoCard-1@2x.png 2x')
+              .promo-card__content.promo-card-discount
+                .promo-card-discount__name Распродажа коллекции 
+                .promo-card-discount__short Зима’15
+            
+            .row
+              .col-md-6
+                a(href="#").promo-card.promo-card--bg-peach
+                  .promo-card__image(style="top:-19px; left: 5px; z-index: 3")
+                    img(src='img/promoCard-2.png' srcset='img/promoCard-2@2x.png 2x')
+                  .promo-card__content.promo-card-regular
+                    .promo-card-regular__name Пальто
+                    .promo-card-regular__short Осень—Зима’13
+                    .promo-card-regular__cta Последняя <br> цена!
+              .col-md-6
+                a(href="#").promo-card.promo-card--bg-peach
+                  .promo-card__content
+                    .promo-card-center
+                      .promo-card-center__front -35%
+                      .promo-card-center__subject Платья
+                      .promo-card-center__short Осень—Зима’13
+                            
+          .col-md-6
+            a(href="#").promo-card.promo-card--huge
+              .promo-card__image(style="bottom: 0px; left: 15px; z-index: 3")
+                img(src='img/promoCard-3.png' srcset='img/promoCard-3@2x.png 2x')
+              .promo-card__content.promo-card-huge
+                .promo-card-huge__name Весна/Лето’16
+                .promo-card-huge__percent %
+
+                
+  // HOME GOODS :: START
+  .goods-slider
+    .container
+      .title Новинки
+      
+      .goods-slider__wrapper
+        .goods-slider__slider.slick-arrows(js-slider data-slick-slides='6' data-slick-arrows="true" data-slick-infinite="true")
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-4.jpg' srcset='img/card-4@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-5.jpg' srcset='img/card-5@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-6.jpg' srcset='img/card-6@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+            
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+
+  // HOME GOODS :: START
+  .goods-slider
+    .container
+      .title Популярное
+      
+      .goods-slider__wrapper
+        .goods-slider__slider(js-slider data-slick-slides='6' data-slick-arrows="true" data-slick-infinite="true")
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-4.jpg' srcset='img/card-4@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-5.jpg' srcset='img/card-5@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-4.jpg' srcset='img/card-4@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-6.jpg' srcset='img/card-6@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+                  
+
+  // HOME GOODS :: START
+  .goods-slider
+    .container
+      .title Распродажа
+      
+      .goods-slider__wrapper
+        .goods-slider__slider(js-slider data-slick-slides='6' data-slick-arrows="true" data-slick-infinite="true")
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-6.jpg' srcset='img/card-6@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-4.jpg' srcset='img/card-4@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-4.jpg' srcset='img/card-4@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-5.jpg' srcset='img/card-5@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-6.jpg' srcset='img/card-6@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+                  
+  
+  // DISCOUNT
+  .discount
+    .container
+      .row.align-items-center
+        .col-md-4
+          .discount__percent -20%
+        .col-md-4
+          .discount__words Для всех зарегистрированных  в социальных сетях
+        .col-md-4.align-self-stretch
+          .discount__socials
+            a(href='#').discount__social.discount__social--vk
+              +icon('ico-social-vk')
+            a(href='#').discount__social.discount__social--fb
+              +icon('ico-social-fb')
+            a(href='#').discount__social.discount__social--ok
+              +icon('ico-social-ok')
+          .discount__image
+            img(src='img/discountBg.png' srcset='img/discountBg@2x.png 2x')
+  
+  // HOME GOODS :: START
+  .home-news
+    .container
+      .title Новости
+      
+      .home-news__wrapper
+        .row
+          .col-md-4
+            a(href='#').news-card
+              .news-card__image.news-card__image--filter
+                img(src='img/newsCard-1.jpg' srcset='img/newsCard-1@2x.jpg 2x')
+              .news-card__content
+                .news-card__date 11.07.2017
+                .news-card__name Открыт предзаказ на коллекцию одежды  «Осень 2017»
+          //card
+          .col-md-4
+            a(href='#').news-card
+              .news-card__content
+                .news-card__date 11.07.2017
+                .news-card__name Коллекция  «Весна 2017» Скидка до 35%!
+          //card
+          .col-md-4
+            a(href='#').news-card.news-card--bg-peach
+              .news-card__content
+                .news-card__date 11.07.2017
+                .news-card__name «Весна 2016» и «Осень/Зима 2015» — последняя цена!
+          //card
+          .col-md-4
+            a(href='#').news-card
+              .news-card__content
+                .news-card__date 11.07.2017
+                .news-card__name «Все по 1900» — коллекции «Весна 2016» и «Осень/Зима 2015»
+          //card
+          .col-md-4
+            a(href='#').news-card.news-card--bg-peach
+              .news-card__content
+                .news-card__date 11.07.2017
+                .news-card__name Коллекция одежды «Лето 2017» уже  в продаже
+          //card
+          .col-md-4
+            a(href='#').news-card
+              .news-card__image.news-card__image--filter
+                img(src='img/newsCard-2.jpg' srcset='img/newsCard-2@2x.jpg 2x')
+              .news-card__content
+                .news-card__date 11.07.2017
+                .news-card__name Открыт предзаказ на коллекцию одежды  «Осень 2017»  
+                
+  // TEXT :: START
+  .text
+    .container
+      p Основной идеей, объединяющей все модели «DizzyWay», является создание элегантного и модного стиля. Талантливые дизайнеры компании создают коллекции, продуманные до мелочей, сочетая неожиданные цвета и необычные идеи.
+      p Женская одежда для холодного времени года должна быть теплой, элегантной и функциональной. На фабрике DizzyWay модели для женщин шьются из тканей, созданных из натуральных и высококачественных синтетических материалов. Мы предлагаем зимние, весенние и летние коллекции, идеально адаптированные для отечественного климата. Такая одежда прослужит Вам долгие годы.
+
+      h3 СДЕЛАНО В РОССИИ - ГАРАНТИЯ ВЫСОКОГО КАЧЕСТВА!
+      p Наше швейное производство — это высокотехнологичное импортное оборудование, на котором работают квалифицированные мастера с большим опытом работы. Процесс выпуска продукции находится под строгим наблюдением обученных сотрудников. Вот почему мы полностью исключаем возможность выпуска бракованной продукции. 
+      p Контроль качества проводитсяна в постоянном режиме и на всех этапах производства. Дефектная одежда никогда не доходит до конечного потребителя!
+
+      h3 ФАБРИКА СТИЛЬНОЙ ОДЕЖДЫ
+      p Модельный ряд производства «DizzyWay» отличается оригинальным авторским дизайном и разнообразием фасонов. Женская верхняя одежда ТМ «DizzyWay» - это ткани высокого качества, гарантированная защита от любой непогоды, долгий срок службы и прочность, полностью оригинальный дизайн и комфорт при носке. 
+      p Продукция нашей фабрики не оставит равнодушными ни одну женщину. Верхняя одежда оптом ТМ «DizzyWay» - это образец элегантности, красоты и высокого мастерства исполнения! Всегда в наличии новинки сезона и модели предыдущих сезонов!
+
+      h3 ОДЕЖДА БОЛЬШИХ РАЗМЕРОВ
+
+      p Каждая дама любит комфорт и уют. Поэтому мастера кроя советуют женщинам с большими размерами выбирать модели более объёмные. К ним можно отнести пончо, балахоны, пальто-халаты, даффлкоты, пальто-кокон с необычными сочетаниями фактур, оттенков и тканей. Красота и высокое качество кроя позволят Вам сделать выбор, о котором не придется жалеть.
+      p Компания DizzyWay работает в Москве и регионах России. Офис расположен по адресу: 111024, г. Москва, ул.Авиамоторная, д.44, стр.1. Ознакомиться подробнее об условиях работы оптом можно на этой странице.
+      

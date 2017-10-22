@@ -1,0 +1,26 @@
+{
+  "name": "gulp-tpl",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Sergey Khmelevskoy <sergey@khmelevskoy.co>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/dpmango/discount",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-validation": "^1.17.0",
+    "slick-carousel": "^1.7.1",
+    "jquery-mask-plugin": "^1.14.11",
+    "magnific-popup": "^1.1.0",
+    "svg4everybody": "^2.1.9",
+    "popper.js": "^1.12.5",
+    "jquery": "^3.2.1"
+  }
+}

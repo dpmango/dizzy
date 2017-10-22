@@ -1,0 +1,106 @@
+// HEADER :: START
+header.header
+  .container
+    .header__wrapper
+      .header__logo
+        a.logo(href="/homepage.html")
+          +icon('ico-logo')
+      .header__phone
+        a(href='tel:+74956451010').h-link +7 (495) 645 10 10
+      .header__profile
+        span Личный кабинет
+        .header__profile-dropdown
+          a(href='#') Вход
+          a(href='#') Регистрация
+          a(href='#') Восстановление пароля
+          
+      .header__like
+        +icon('ico-like')
+      .header__cart
+        +icon('ico-cart')
+    
+// NAVI :: START    
+.navi
+  .container
+    .navi__wrapper
+      ul.navi__menu
+        li
+          a(href="#") Каталог
+        li
+          a(href="#" js-navi-drop data-for="colletions") Коллекции
+        li
+          a(href="#") Условия работы
+        li
+          a(href="#") Доставка и оплата
+        li
+          a(href="#") О компании
+        li
+          a(href="#") Контакты
+      
+      .navi__search
+        .navi__search-visible
+          i.icon.icon-search
+          span Поиск
+
+// DROPDOWN :: START
+.navi-drop(data-drop="colletions")
+  .container
+    .row
+      .col
+        .row.navi-drop__menu
+          .col
+            .navi-drop__icon
+              +icon('ico-snow')
+            .navi-drop__name Зима
+              
+            .navi-drop__links
+              a(href='#') Пальто 
+              a(href='#') Куртки / Парки
+              a(href='#') Юбки / Брюки
+              a(href='#') Аксессуары
+          // col
+          .col
+            .navi-drop__icon
+              +icon('ico-rain')
+            .navi-drop__name Осень/Весна
+              
+            .navi-drop__links
+              a(href='#') Плащи утепленные
+              a(href='#') Куртки / Парки
+              a(href='#') Пальто демисезонные
+              a(href='#') Плащи / Ветровки
+              a(href='#') Аксессуары
+          //col
+          .col
+            .navi-drop__icon
+              +icon('ico-sun')
+            .navi-drop__name Лето
+              
+            .navi-drop__links
+              a(href='#') Платья / Комбинезоны
+              a(href='#') Блузы / Жакеты
+              a(href='#') Юбки
+              a(href='#') Брюки
+        
+        .row
+          .col
+            .navi-drop__socials
+              .navi-drop__socials-title Мы в социальных сетях
+              .navi-drop__socials-list
+                a(href='#' target="_blank")
+                  +icon('ico-social-vk')
+                a(href='#' target="_blank")
+                  +icon('ico-social-fb')
+                a(href='#' target="_blank")
+                  +icon('ico-social-ok')
+            
+      // col last
+      .col-md-4.col-grow-child
+        .navi-drop-card
+          img.navi-drop-card__image(src='img/dropdownImg.jpg' srcset='img/dropdownImg@2x.jpg 2x')
+          .navi-drop-card__name Куртка «Жасмин»
+          
+        
+        
+          
+// HEADER :: END
