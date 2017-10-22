@@ -19,8 +19,49 @@
     letter-spacing: 0.68px
 
   &__profile
+    position: relative
     font-size: 18px
     letter-spacing: 0.68px
+    &-dropdown
+      position: absolute
+      top: 0px
+      left: 50%
+      margin-left: -25px
+      z-index: 20
+      opacity: 0
+      pointer-events: none
+      transform: translate3d(-50%,20px,0)
+      transition: all $transitionSpeed $ease
+      &-menu
+        position: relative
+        margin-top: 35px
+        width: 200px
+        background: white
+        padding: 20px
+        box-shadow: 0px 3px 8px rgba($fontColor, .4)
+        &::after
+          display: inline-block
+          content: ' '
+          position: absolute
+          left: 50%
+          top: -10px
+          transform: translateX(-50%)
+          +arr(12,10,white,t)
+      a
+        display: block
+        font-size: 16px
+        letter-spacing: .48px
+        margin-bottom: 10px
+        color: $fontColor60
+        transition: color $transitionSpeed $ease
+        &:hover
+          color: $fontColor
+      &.is-active
+        opacity: 1
+        pointer-events: all
+        transform: translate3d(-50%,0,0)
+
+
 
   &__like
     font-size: 25px
@@ -65,10 +106,10 @@
           background: rgba($fontColor, .2)
 
       &__like
-        color: rgba($fontColor, .6)
+        color: $fontColor60
 
       &__cart
-        color: rgba($fontColor, .6)
+        color: $fontColor60
 
 
   &--fixed
@@ -84,7 +125,7 @@
   top: 80px
   left: 0
   right: 0
-  z-index: 10
+  z-index: 9
   background: rgba(#FFEBD7, .2)
   color: white
   &__wrapper
@@ -135,7 +176,7 @@
 
   &__menu
     max-width: 600px
-    
+
   &__icon
     font-size: 40px
     color: rgba($fontColor, .2)
@@ -152,7 +193,7 @@
       display: block
       font-size: 13px
       line-height: 1.4
-      color: rgba($fontColor, .6)
+      color: $fontColor60
       transition: all $transitionSpeed $ease
 
       &:hover
@@ -160,7 +201,7 @@
 
   &__socials
     margin-top: 45px
-    color: rgba($fontColor, .6)
+    color: $fontColor60
     &-title
       font-size: 13px
       line-height: 1.4

@@ -158,20 +158,33 @@ $(document).ready(function(){
 
   })
 
+  // HEADER PROFILE DROP
+  $('.header__profile').hover(function(){
+    $('.header__profile-dropdown').addClass('is-active')
+  }, function(){
+    $('.header__profile-dropdown').removeClass('is-active')
+  });
+
   //////////
   // SLIDERS
   //////////
-
-  $('[js-hero-slider]').slick({
-    autoplay: false,
-    dots: true,
-    arrows: false,
-    infinite: true,
-    speed: 300,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    accesability: false
-  });
+  function initHeroSlider(){
+    $('[js-hero-slider]').slick({
+      autoplay: true,
+      autoplaySpeed: 5000,
+      pauseOnHover: false,
+      fade: true,
+      dots: true,
+      arrows: false,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      accesability: false,
+      variableHeight: false
+    });
+  }
+  initHeroSlider();
 
 
   $('[js-slider]').each(function(i, val) {
