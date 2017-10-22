@@ -21,6 +21,7 @@
     "magnific-popup": "^1.1.0",
     "svg4everybody": "^2.1.9",
     "popper.js": "^1.12.5",
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "viewport-units-buggyfill": "^0.6.2"
   }
 }

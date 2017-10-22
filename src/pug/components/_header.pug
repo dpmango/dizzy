@@ -19,6 +19,8 @@ header.header
         +icon('ico-like')
       .header__cart
         +icon('ico-cart')
+        .header__cart-counter
+          span 3
       
       .header__hamburger
         .hamburger.hamburger--squeeze(js-hamburger-menu)
@@ -30,7 +32,7 @@ header.header
 .navi
   .container
     .navi__wrapper
-      ul.navi__menu
+      ul.navi__menu(js-teleport data-teleport-to="mobile-menu" data-teleport-condition="<768")
         li
           a(href="#") Каталог
         li
@@ -45,9 +47,10 @@ header.header
           a(href="#") Контакты
       
       .navi__search
-        .navi__search-visible
-          i.icon.icon-search
-          span Поиск
+        form.navi__search-form(action="#" js-header-search)
+          button(type="submit")
+            i.icon.icon-search
+          input(type="text" placeholder="Поиск")
 
 // DROPDOWN :: START
 .navi-drop(data-drop="colletions")
@@ -93,7 +96,7 @@ header.header
           .col
             .navi-drop__socials
               .navi-drop__socials-title Мы в социальных сетях
-              .navi-drop__socials-list
+              .navi-drop__socials-list(js-teleport data-teleport-to="mobile-socials" data-teleport-condition="<768")
                 a(href='#' target="_blank")
                   +icon('ico-social-vk')
                 a(href='#' target="_blank")
@@ -108,6 +111,19 @@ header.header
           .navi-drop-card__name Куртка «Жасмин»
           
         
-        
+.mobile-navi
+  .mobile-navi__wrapper
+    ul.mobile-navi__menu(data-teleport-target="mobile-menu")
+      // teleported content
+    
+    .mobile-navi__phone
+      a(href='tel:+74956451010').h-link +7 (495) 645 10 10
+    
+    .mobile-navi__socials
+      .navi-drop__socials-list(data-teleport-target="mobile-socials")
+      
+    
+      
+    
           
 // HEADER :: END

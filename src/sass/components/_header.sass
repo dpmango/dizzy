@@ -63,10 +63,33 @@
 
   &__like
     font-size: 25px
+    cursor: pointer
+    transition: all $transitionSpeed $ease
+    &:hover
+      color: $colorOrange
 
   &__cart
     position: relative
     font-size: 31px
+    cursor: pointer
+    transition: all $transitionSpeed $ease
+    &-counter
+      display: flex
+      justify-content: center
+      align-items: center
+      text-align: center
+      position: absolute
+      bottom: -3px
+      right: -8px
+      min-size: 22px
+      background: $colorOrange
+      border-radius: 50%
+      color: white
+      font-size: 12px
+      font-weight: 700
+      line-height: 1
+    &:hover
+      color: $colorOrange
 
   &__hamburger
     display: none
@@ -87,18 +110,18 @@
       background: rgba(white, .4)
       height: 18px
 
-  &--transformed
-    position: fixed
-    background: white
-    transform: translate3d(0,-100%,0)
-    box-shadow: 0px 3px 8px rgba($fontColor, .11)
+  &--dark
+    .header
+      &__logo
+        color: white
+        margin-right: auto
+      &__phone
+        display: none
 
+  &--dark, &--transformed
     .header
       &__wrapper
-        padding: 7px 0
         color: $fontColor
-      &__logo
-        font-size: 45px
 
       &__phone, &__profile
         color: rgba($fontColor, .7)
@@ -119,6 +142,18 @@
           &::before, &::after
             background-color: $fontColor60
 
+  &--transformed
+    position: fixed
+    background: white
+    transform: translate3d(0,-100%,0)
+    box-shadow: 0px 3px 8px rgba($fontColor, .11)
+
+    .header
+      &__wrapper
+        padding: 7px 0
+      &__logo
+        font-size: 45px
+        color: $fontColor
 
 
   &--fixed
@@ -140,6 +175,9 @@
       display: none
     &__cart
       font-size: 25px
+      &-counter
+        min-size: 18px
+        right: -6px
 
 +r($tablet)
   .header
@@ -158,11 +196,15 @@
         width: 2px
         background: rgba(white, .4)
         height: 18px
+      &-counter
+        right: 43px
+        bottom: -2px
+
 
     &__hamburger
       display: inline-block
 
-    &--transformed
+    &--transformed, &--dark
       .header
         &__cart
           &::after
@@ -209,16 +251,46 @@
     padding: 0
     li
       flex: 1 0 auto
+      transition: all $transitionSpeed $ease
+      &:hover
+        color: $colorOrange
 
   &__search
-    flex: 0 0 auto
+    flex: 0 0 80px
     margin-left: auto
-    &-visible
+    &-form
+      position: relative
       display: flex
       align-items: center
       .icon
         font-size: 16px
-        margin-right: 5px
+      button, input
+        -webkit-apperance: none
+        background: transparent
+        border: 1px solid transparent
+        box-shadow: none
+
+      button
+        display: flex
+        align-items: center
+        justify-content: center
+        cursor: pointer
+        transition: all $transitionSpeed $ease
+        &:hover
+          opacity: .8
+
+      input
+        width: 60px
+        color: white
+        font-size: 18px
+        transition: all $transitionSpeed $ease
+        &::placeholder
+          color: white
+
+      &.is-active
+        input
+          width: 220px
+
 
 
 +r($desktop)
@@ -332,3 +404,64 @@
       margin-top: auto
       color: white
       font-size: 16px
+
+
++rmin($tablet)
+  .mobile-navi
+    display: none !important
+
+// MOBILE NAVI
+.mobile-navi
+  position: fixed
+  z-index: 9
+  background: white
+  top: 0
+  bottom: 0
+  right: 0
+  min-width: 280px
+  display: flex
+  flex-direction: column
+  box-shadow: 0px 5px 20px rgba($fontColor, .3)
+  opacity: 0
+  pointer-events: none
+  transform: translate3d(100%,0,0)
+  transition: all $transitionSpeed $ease
+  &.is-active
+    opacity: 1
+    pointer-events: all
+    transform: translate3d(0,0,0)
+
+
+  &__wrapper
+    flex: 1 1 auto
+    display: flex
+    flex-direction: column
+    padding: 0 40px
+    overflow-y: auto
+
+  &__menu
+    list-style: none
+    margin: 0 0 auto 0
+    padding: 120px 0 40px 0
+    li
+      display: block
+      font-size: 18px
+      font-weight: 700
+      margin-bottom: 20px
+      color: $fontColor60
+      transition: all $transitionSpeed $ease
+      &:hover
+        color: $colorOrange
+
+  &__phone
+    text-align: center
+    font-size: 18px
+    font-weight: 700
+
+  &__socials
+    margin-top: 20px
+    padding-bottom: 40px
+    color: $fontColor60
+    text-align: center
+    .navi-drop__socials-list
+      justify-content: center

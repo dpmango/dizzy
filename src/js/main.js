@@ -52,6 +52,13 @@ $(document).ready(function(){
   // svg support for laggy browsers
   svg4everybody();
 
+  // viewport buggyfill
+  viewportUnitsBuggyfill.init({
+    force: true,
+    refreshDebounceWait: 250
+  });
+
+
  	// Prevent # behavior
 	$('[href="#"]').click(function(e) {
 		e.preventDefault();
@@ -119,9 +126,27 @@ $(document).ready(function(){
 
   // HAMBURGER TOGGLER
   $('[js-hamburger-menu]').on('click', function(){
+
     $(this).toggleClass('is-active');
     $('.mobile-navi').toggleClass('is-active');
+    $('.header').toggleClass('header--dark')
   });
+
+  // MOBILE MENU
+  function closeHamburger(){
+    $('[js-hamburger-menu]').removeClass('is-active')
+    $('.mobile-navi').removeClass('is-active');
+    $('.header').removeClass('header--dark')
+  }
+  $('.page__content').click(function(event) {
+    closeHamburger();
+  });
+
+  _window.resized(100, function(){
+    if (_window.width() > media.tablet){
+      closeHamburger();
+    }
+  })
 
   // SET ACTIVE CLASS IN HEADER
   // * could be removed in production and server side rendering
@@ -164,6 +189,23 @@ $(document).ready(function(){
   }, function(){
     $('.header__profile-dropdown').removeClass('is-active')
   });
+
+  // HEADER SEARCH
+  $('[js-header-search]').on('click', function(e){
+    if ( $(this).is('is-active') ){
+
+    } else {
+      $(this).addClass('is-active')
+      e.preventDefault();
+    }
+  })
+
+  $(document).click(function(event) {
+    if ( !$(event.target).closest('[js-header-search]').length ) {
+      $('[js-header-search]').removeClass('is-active');
+    }
+  });
+
 
   //////////
   // SLIDERS
