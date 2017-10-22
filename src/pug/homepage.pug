@@ -181,7 +181,7 @@ block content
       .home-promo__wrapper
         .row
           .col-md-6
-            a(href="#").promo-card
+            a(href="#").promo-card.promo-card--1
               .promo-card__image.promo-card__image--tr-bottom(style="top: 0; right: 0px; z-index: 3")
                 img(src='img/promoCard-1.png' srcset='img/promoCard-1@2x.png 2x')
               .promo-card__content.promo-card-discount
@@ -190,7 +190,7 @@ block content
             
             .row
               .col-md-6
-                a(href="#").promo-card.promo-card--bg-peach
+                a(href="#").promo-card.promo-card--2.promo-card--bg-peach
                   .promo-card__image(style="top:-19px; left: 5px; z-index: 3")
                     img(src='img/promoCard-2.png' srcset='img/promoCard-2@2x.png 2x')
                   .promo-card__content.promo-card-regular
@@ -198,7 +198,7 @@ block content
                     .promo-card-regular__short Осень—Зима’13
                     .promo-card-regular__cta Последняя <br> цена!
               .col-md-6
-                a(href="#").promo-card.promo-card--bg-peach
+                a(href="#").promo-card.promo-card--3.promo-card--bg-peach
                   .promo-card__content
                     .promo-card-center
                       .promo-card-center__front -35%
@@ -206,11 +206,11 @@ block content
                       .promo-card-center__short Осень—Зима’13
                             
           .col-md-6
-            a(href="#").promo-card.promo-card--huge
+            a(href="#").promo-card.promo-card--4.promo-card--huge
               .promo-card__image(style="bottom: 0px; left: 15px; z-index: 3")
                 img(src='img/promoCard-3.png' srcset='img/promoCard-3@2x.png 2x')
               .promo-card__content.promo-card-huge
-                .promo-card-huge__name Весна/Лето’16
+                .promo-card-huge__name Весна/<br>Лето’16
                 .promo-card-huge__percent %
 
                 
@@ -397,9 +397,9 @@ block content
   .discount
     .container
       .row.align-items-center
-        .col-md-4
+        .col-sm-6.col-md-4
           .discount__percent -20%
-        .col-md-4
+        .col-sm-6.col-md-4
           .discount__words Для всех зарегистрированных  в социальных сетях
         .col-md-4.align-self-stretch
           .discount__socials

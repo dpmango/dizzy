@@ -110,7 +110,7 @@
       background: rgba(white, .4)
       height: 18px
 
-  &--dark
+  &--showing-menu
     .header
       &__logo
         color: white
@@ -118,7 +118,7 @@
       &__phone
         display: none
 
-  &--dark, &--transformed
+  &--showing-menu, &--transformed
     .header
       &__wrapper
         color: $fontColor
@@ -154,6 +154,11 @@
       &__logo
         font-size: 45px
         color: $fontColor
+
+  &--showing-menu
+    position: fixed
+    opacity: 1
+    transform: translate3d(0,0,0)
 
 
   &--fixed
@@ -204,7 +209,7 @@
     &__hamburger
       display: inline-block
 
-    &--transformed, &--dark
+    &--transformed, &--showing-menu
       .header
         &__cart
           &::after

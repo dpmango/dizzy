@@ -46,12 +46,33 @@
     color: $colorOrange
 
 
++r($wide)
+  .goods-slider
+    &__slider
+      margin-left: 15px
+      margin-right: 15px
+
+
++r($desktop)
+  .goods-slider
+    margin: 60px 0
+    &__wrapper
+      margin-top: 40px
+
+
++r($tablet)
+  .goods-slider
+    margin: 50px 0
+    &__wrapper
+      margin-top: 30px
+
+
 
 .slick-arrows
 
   .slick-arrow
     position: absolute
-    top: 50%
+    top: 40%
     transform: translateY(-50%)
     background: transparent
     border: 0
@@ -70,3 +91,13 @@
   .slick-next
     right: -30px
     transform: translateY(-50%) rotate(180deg)
+
++r($wide)
+  .slick-arrows
+    .slick-prev
+      left: -20px
+      transform: translateY(-50%) scale(.8)
+
+    .slick-next
+      right: -20px
+      transform: translateY(-50%) rotate(180deg) scale(.8)

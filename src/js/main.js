@@ -128,14 +128,14 @@ $(document).ready(function(){
   $('[js-hamburger-menu]').on('click', function(){
     $(this).toggleClass('is-active');
     $('.mobile-navi').toggleClass('is-active');
-    $('.header').toggleClass('header--dark')
+    $('.header').toggleClass('header--showing-menu')
   });
 
   // MOBILE MENU
   function closeHamburger(){
     $('[js-hamburger-menu]').removeClass('is-active')
     $('.mobile-navi').removeClass('is-active');
-    $('.header').removeClass('header--dark')
+    $('.header').removeClass('header--showing-menu')
   }
 
   $('.page__content').click(function(event) {

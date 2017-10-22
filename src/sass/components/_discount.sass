@@ -75,3 +75,55 @@
     bottom: -5px
     z-index: 2
     transform: translateX(-50%)
+
++r($wide)
+  .discount
+    margin-top: 130px
+    &__percent
+      font-size: 120px
+    &__words
+      font-size: 28px
+      padding-right: 20px
+    &__social
+      size: 80px
+      &:first-child
+        &::before
+          display: none
+
+      .ico
+        transform: scale(.85)
+
++r($desktop)
+  .discount
+    &__percent
+      font-size: 105px
+    &__words
+      font-size: 24px
+    &__social
+      size: 70px
+      &::before
+        display: none
+      .ico
+        transform: scale(.75)
+
++r($tablet)
+  .discount
+    margin: 50px 0
+    &__socials
+      max-width: 300px
+      margin-left: auto
+      margin-right: auto
+      position: static
+      transform: none
+      padding: 20px 0
+
+    &__image
+      left: auto
+      right: 0
+      z-index: -1
+      // bottom: 0px
+      transform: none
+
++r($mobile)
+  .discount
+    text-align: center
