@@ -118,7 +118,7 @@
       &__phone
         display: none
 
-  &--showing-menu, &--transformed
+  &--showing-menu, &--transformed, &--inner
     .header
       &__wrapper
         color: $fontColor
@@ -159,6 +159,14 @@
     position: fixed
     opacity: 1
     transform: translate3d(0,0,0)
+
+  &--inner
+    position: static
+    .header
+      &__logo
+        color: $fontColor
+      &__phone
+        display: inline-block
 
 
   &--fixed
@@ -209,7 +217,7 @@
     &__hamburger
       display: inline-block
 
-    &--transformed, &--showing-menu
+    &--transformed, &--showing-menu, &--inner
       .header
         &__cart
           &::after
@@ -240,6 +248,21 @@
   z-index: 9
   background: rgba(#FFEBD7, .2)
   color: white
+  &--inner
+    position: static
+    background: #F3F5F7
+    color: $fontColor
+    box-shadow: 0px 3px 8px rgba($fontColor, .11)
+
+    .navi
+      &__search
+        button
+          .icon
+            filter: invert(1)
+        input
+          color: $fontColor
+          &::placeholder
+            color: $fontColor60
   &__wrapper
     display: flex
     align-items: center

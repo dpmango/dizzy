@@ -1,6 +1,7 @@
 ---
-title: Homepage title
+title: Главная
 bodyClass: homepage
+outClass: home
 ---
 extends shared/_layout
 block content
@@ -393,25 +394,9 @@ block content
             .slider-card__price 1 300 ₽
                   
   
-  // DISCOUNT
-  .discount
-    .container
-      .row.align-items-center
-        .col-sm-6.col-md-4
-          .discount__percent -20%
-        .col-sm-6.col-md-4
-          .discount__words Для всех зарегистрированных  в социальных сетях
-        .col-md-4.align-self-stretch
-          .discount__socials
-            a(href='#').discount__social.discount__social--vk
-              +icon('ico-social-vk')
-            a(href='#').discount__social.discount__social--fb
-              +icon('ico-social-fb')
-            a(href='#').discount__social.discount__social--ok
-              +icon('ico-social-ok')
-          .discount__image
-            img(src='img/discountBg.png' srcset='img/discountBg@2x.png 2x')
-  
+  include components/_discount
+  +discount
+
   // HOME GOODS :: START
   .home-news
     .container

@@ -29,12 +29,19 @@ body, html
 .page
   display: flex
   flex-direction: column
+  opacity: 0
+  // transform: translate3d(0,60px,0)
+  transition: all $transitionSpeed $ease
   &__content
     flex: 1 1 auto
 
+  &.is-ready
+    opacity: 1
+    // transform: translate3d(0,0px,0)
+
 .container
   width: 100%
-  max-width: 1200px
+  max-width: 1220px
   margin-left: auto
   margin-right: auto
   padding-left: 20px

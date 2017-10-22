@@ -124,6 +124,15 @@ $(document).ready(function(){
     });
   }
 
+  // PRELOADER
+  $('.page').addClass('is-ready')
+
+  // HEADER COLOR CLASS
+  if ( $('.inner').length ){
+    $('.header').addClass('header--inner');
+    $('.navi').addClass('navi--inner');
+  }
+
   // HAMBURGER TOGGLER
   $('[js-hamburger-menu]').on('click', function(){
     $(this).toggleClass('is-active');
@@ -329,20 +338,30 @@ $(document).ready(function(){
     }
   });
 
-  // $('.popup-gallery').magnificPopup({
-	// 	delegate: 'a',
-	// 	type: 'image',
-	// 	tLoading: 'Loading image #%curr%...',
-	// 	mainClass: 'mfp-img-mobile',
-	// 	gallery: {
-	// 		enabled: true,
-	// 		navigateByImgClick: true,
-	// 		preload: [0,1]
-	// 	},
-	// 	image: {
-	// 		tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
-	// 	}
-	// });
+  $('[js-popup-gallery]').magnificPopup({
+		delegate: 'img',
+		type: 'image',
+    closeOnContentClick: false,
+		closeBtnInside: false,
+		tLoading: 'Loading image #%curr%...',
+		mainClass: 'mfp-with-zoom',
+		gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+			preload: [0,1]
+		},
+		image: {
+      verticalFit: true,
+			tError: '<a href="%url%">Изображение #%curr%</a> не может быть загружено.'
+		},
+    zoom: {
+			enabled: true,
+			duration: 300, // don't foget to change the duration also in CSS
+			// opener: function(element) {
+			// 	return element.find('img');
+			// }
+		}
+	});
 
 
   // TELEPORT PLUGIN
@@ -444,8 +463,7 @@ $(document).ready(function(){
 
 // YANDEX MAPS
 ymaps.ready(initMap);
-var myMap,
-    myPlacemark;
+var myMap, myPlacemark, myMap2, myPlacemark2
 
 function initMap(){
   myMap = new ymaps.Map("footerMap", {
@@ -474,4 +492,34 @@ function initMap(){
   });
 
   myMap.geoObjects.add(myPlacemark);
+
+  // CONTACT MAP ::
+
+  myMap2 = new ymaps.Map("contactMap", {
+    center: [55.739483, 37.719603],
+    zoom: 14
+  });
+
+  // myMap.controls.remove('zoomControl');
+  myMap2.controls.remove('trafficControl');
+  myMap2.controls.remove('searchControl');
+  myMap2.controls.remove('fullscreenControl');
+  myMap2.controls.remove('rulerControl');
+  myMap2.controls.remove('geolocationControl');
+  myMap2.controls.remove('routeEditor');
+
+  myMap2.behaviors.disable('scrollZoom');
+
+  myPlacemark2 = new ymaps.Placemark([55.739483, 37.719603], {
+    hintContent: 'Наш офис'
+  },
+  {
+    iconLayout: 'default#image',
+    iconImageHref: 'img/el/marker.png',
+    iconImageSize: [50, 70],
+    iconImageOffset: [-10, -50]
+  });
+
+  myMap2.geoObjects.add(myPlacemark2);
+
 }

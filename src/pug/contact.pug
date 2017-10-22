@@ -1,0 +1,65 @@
+---
+title: Контакты
+outClass: inner
+---
+extends shared/_layout
+block content
+
+  // BREADCRUMBS :: START
+  .breadcrumbs
+    .container
+      a(href='homepage.html') Главная
+      a(href='#') Текущий пункт
+      
+  
+  // TEXT PAGE :: START
+  .text-page
+    .container
+      .row
+        .col-md-6
+          .text-page__title Контакты
+          
+          .contact-section
+            .contact-row
+              .contact-row__head Адрес:
+              .contact-row__el 111024, г. Москва, ул.Авиамоторная, д.44, стр.1 (м.Авиамоторная) (территория бывшего  таксомоторного парка).
+            
+            .contact-row
+              .contact-row__head Телефоны:
+              .contact-row__el +7 (495) 647-89-01 (многоканальный), <br>+7 (495) 796-06-05
+              
+            .contact-row
+              .contact-row__head Факс:
+              .contact-row__el 8(495) 647-8901 (доб.104)
+              
+            .contact-row
+              .contact-row__head E-mail:
+              .contact-row__el sales@diway.ru
+              
+            .contact-row
+              .contact-row__head Режим работы:
+              .contact-row__el пн-пт с 10:00-18:00 <br> сб с 10:00-17:00 <br> вс выходной
+            
+        .col-md-6
+          .text-page__title Обратная связь
+          
+          .contact-section
+            
+            form(action="").contact-form
+            .ui-group
+              label Имя
+              input(type='text').ui-input
+            .ui-group
+              label E-mail
+              input(type='email').ui-input
+            .ui-group
+              label Заголовок
+              input(type='text').ui-input
+            .ui-group
+              label Сообщение
+              textarea(type='text').ui-input
+    
+    .container
+      .contact-map
+        #contactMap
+        

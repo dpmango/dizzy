@@ -2,6 +2,36 @@ ProjectTitle: Dizzy-way
 
 PageList:
 - file: homepage.html
-  ready: 100
-- file: page.html
+  ready: 90
+- file: catalog.html
+  ready: 10
+- file: card.html
+  ready: 10
+- file: collections.html
+  ready: 80
+- file: about.html
+  ready: 75
+- file: certificate.html
+  ready: 75
+- file: bank-info.html
+  ready: 75
+- file: charity.html
+  ready: 75
+- file: team.html
+  ready: 75
+- file: contact.html
+  ready: 50
+- file: delivery.html
+  ready: 25
+
+
+- file: orders.html
+  ready: 0
+- file: favourite.html
+  ready: 0
+- file: cart-registred.html
+  ready: 0
+- file: cart-new.html
+  ready: 0
+- file: registration.html
   ready: 0

@@ -1,0 +1,68 @@
+---
+title: Каталог
+outClass: inner
+---
+extends shared/_layout
+block content
+
+  
+  include components/_discount
+  +discount
+
+  // HOME GOODS :: START
+  .goods-slider
+    .container
+      .title Вы смотрели
+      
+      .goods-slider__wrapper
+        .goods-slider__slider.slick-arrows(js-slider data-slick-slides='6' data-slick-arrows="true" data-slick-infinite="true")
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-6.jpg' srcset='img/card-6@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-4.jpg' srcset='img/card-4@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-4.jpg' srcset='img/card-4@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-5.jpg' srcset='img/card-5@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-6.jpg' srcset='img/card-6@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+                  
+                  

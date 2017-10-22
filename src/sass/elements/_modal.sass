@@ -54,6 +54,22 @@ html.mfp-helper
   &.mfp-removing.mfp-bg
     opacity: 0
 
+.mfp-with-zoom
+  .mfp-container, &.mfp-bg
+    opacity: 0
+    -webkit-backface-visibility: hidden
+    transition: all 0.3s ease-out
+  &.mfp-bg
+    background: rgba($fontColor, .6)
+  &.mfp-ready
+    .mfp-container
+      opacity: 1
+    &.mfp-bg
+      opacity: 0.8
+  &.mfp-removing
+    .mfp-container, &.mfp-bg
+      opacity: 0
+
 
 .popup-dialog
   position: relative
