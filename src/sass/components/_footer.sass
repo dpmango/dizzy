@@ -54,10 +54,16 @@
       font-weight: 500
       letter-spacing: 0.39px
 
+    a
+      transition: all $transitionSpeed $ease
+      &:hover
+        color: $colorOrange
+
   &__social
     display: flex
     margin-bottom: 15px
     align-items: center
+    transition: all $transitionSpeed $ease
     .ico
       &-social-vk
         color: $vk
@@ -71,6 +77,8 @@
     .icon
       flex: 0 0 32px
       &-social-insta
+    &:hover
+      opacity: .8
 
     span
       font-size: 13px
@@ -92,3 +100,20 @@
     display: flex
     flex-direction: column
     margin-bottom: 20px
+
++r($desktop)
+  .footer
+    &__links
+      padding-top: 15px
+      padding-bottom: 20px
+    &__bottom
+      margin-top: 0
+      .footer__head
+        margin-top: 10px
+    &__map
+      display: none
+
++r($mobile)
+  .footer
+    &__top
+      display: none

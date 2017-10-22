@@ -441,8 +441,8 @@
 
   &__menu
     list-style: none
-    margin: 0 0 auto 0
-    padding: 120px 0 40px 0
+    margin: 0 0 0 0
+    padding: 120px 0 10px 0
     li
       display: block
       font-size: 18px
@@ -453,7 +453,22 @@
       &:hover
         color: $colorOrange
 
+  &__search
+    color: $fontColor60
+    width: 100%
+    margin-bottom: auto
+    margin-left: -5px
+    .navi__search-form
+      button
+        filter: invert(1)
+      input
+        width: 100%
+        color: $fontColor
+        &::placeholder
+          color: $fontColor60
+
   &__phone
+    margin-top: 30px
     text-align: center
     font-size: 18px
     font-weight: 700

@@ -131,26 +131,47 @@ block content
           .benefits__card-icon
             +icon('ico-sewing-machine')
           .benefits__card-name Качественное Российское производство
-        
+          .benefits__card-plus(js-popup data-mfp-src="#mfpBenefits")
+            +icon('ico-plus')
+
         .benefits__card
           .benefits__card-icon
             +icon('ico-wallet')
           .benefits__card-name Лучшее сочетание  цена-качество 
-          
+          .benefits__card-plus(js-popup data-mfp-src="#mfpBenefits")
+            +icon('ico-plus')
+            
         .benefits__card
           .benefits__card-icon
             +icon('ico-handshake')
           .benefits__card-name Выгодные условия сотрудничества
-
+          .benefits__card-plus(js-popup data-mfp-src="#mfpBenefits")
+            +icon('ico-plus')
+            
         .benefits__card
           .benefits__card-icon
             +icon('ico-coat')
           .benefits__card-name Широкий размерный  ряд от 42 до 64
-          
+          .benefits__card-plus(js-popup data-mfp-src="#mfpBenefits")
+            +icon('ico-plus')
+            
         .benefits__card
           .benefits__card-icon
             +icon('ico-delivery-truck')
           .benefits__card-name Бесплатная доставка  по Москве
+          .benefits__card-plus(js-popup data-mfp-src="#mfpBenefits")
+            +icon('ico-plus')
+  
+  // POPUP DIALOG
+  .popup-dialog.popup-benefits.mfp-hide#mfpBenefits
+    .popup-benefits__content
+      .popup-benefits__title Качественное российское производство
+      .popup-benefits__text
+        p Торговая марка (Компания) Dizzy way (Diway) – один из ведущих российских производителей  женской верхней одежды, действующий на рынке с 2006 года.  Компания занимается комплексной  разработкой  сезонных коллекций с учетом модных направлений и рассчитанных на самую широкую женскую аудиторию. Мы гордимся тем, что наши изделия – это полностью отечественный продукт.
+    .popup-benefits__ico-bg
+      +icon('ico-sewing-machine')
+    
+    
   
   // PROMO :: START
   .home-promo

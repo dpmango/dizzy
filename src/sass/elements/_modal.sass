@@ -10,15 +10,6 @@ html.mfp-helper
     height: 100%
     -webkit-transform: translateZ(0)
 
-#small-dialog
-  background: white
-  padding: 20px 30px
-  text-align: left
-  max-width: 600px
-  margin: 40px auto
-  position: relative
-
-
 // Fade-zoom animation for first dialog
 
 .popup-buble
@@ -33,7 +24,7 @@ html.mfp-helper
     transform: scale(0.8)
     opacity: 0
   &.mfp-bg
-    background: $colorGreen
+    background: rgba($fontColor, .4)
     opacity: 0
     transition: opacity 0.3s $ease
   &.mfp-ready.mfp-bg
@@ -62,3 +53,9 @@ html.mfp-helper
     opacity: 0.8
   &.mfp-removing.mfp-bg
     opacity: 0
+
+
+.popup-dialog
+  position: relative
+  text-align: left
+  margin: 30px auto

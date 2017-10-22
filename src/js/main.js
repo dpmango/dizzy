@@ -66,10 +66,10 @@ $(document).ready(function(){
 
 	// Smoth scroll
 	$('a[href^="#section"]').click( function() {
-        var el = $(this).attr('href');
-        $('body, html').animate({
-            scrollTop: $(el).offset().top}, 1000);
-        return false;
+      var el = $(this).attr('href');
+      $('body, html').animate({
+          scrollTop: $(el).offset().top}, 1000);
+      return false;
 	});
 
   // FOOTER REVEAL
@@ -126,7 +126,6 @@ $(document).ready(function(){
 
   // HAMBURGER TOGGLER
   $('[js-hamburger-menu]').on('click', function(){
-
     $(this).toggleClass('is-active');
     $('.mobile-navi').toggleClass('is-active');
     $('.header').toggleClass('header--dark')
@@ -138,6 +137,7 @@ $(document).ready(function(){
     $('.mobile-navi').removeClass('is-active');
     $('.header').removeClass('header--dark')
   }
+
   $('.page__content').click(function(event) {
     closeHamburger();
   });
@@ -151,11 +151,11 @@ $(document).ready(function(){
   // SET ACTIVE CLASS IN HEADER
   // * could be removed in production and server side rendering
   // user .active for li instead
-  $('.header__menu li').each(function(i,val){
+  $('.navi__menu li').each(function(i,val){
     if ( $(val).find('a').attr('href') == window.location.pathname.split('/').pop() ){
-      $(val).addClass('active');
+      $(val).addClass('is-active');
     } else {
-      $(val).removeClass('active')
+      $(val).removeClass('is-active')
     }
   });
 
@@ -205,6 +205,20 @@ $(document).ready(function(){
       $('[js-header-search]').removeClass('is-active');
     }
   });
+
+
+
+  //////////
+  // HOMEPAGE
+  //////////
+
+  // BENEFITS
+  $('.benefits__card').on('click', function(e){
+    if ( _window.width() < media.tablet ){
+      $(this).find('.benefits__card-plus').click();
+    }
+  })
+
 
 
   //////////
@@ -290,34 +304,10 @@ $(document).ready(function(){
   //////////
   // MODALS
   //////////
-  // Custom modals
-  // $('*[data-modal]').on('click', function(){
-  //   // remove all active first
-  //   $('.modal').removeClass('opened');
-  //
-  //   // find by id
-  //   var target = $(this).data('modal');
-  //   $('#'+target).addClass('opened');
-  //
-  //   window.location.hash = target;
-  // });
-  //
-  // $('.modal__close').on('click', function(){
-  //   $(this).closest('.modal').removeClass('opened');
-  //   window.location.hash = "";
-  // });
-  //
-  // // CHECK SAVED STATE
-  // if(window.location.hash) {
-  //   var hash = window.location.hash.substring(1);
-  //   $('#'+hash).addClass('opened');
-  // }
-  //
-
 
   // Magnific Popup
   // var startWindowScroll = 0;
-  $('.js-popup').magnificPopup({
+  $('[js-popup]').magnificPopup({
     type: 'inline',
     fixedContentPos: true,
     fixedBgPos: true,
@@ -452,7 +442,7 @@ $(document).ready(function(){
 
 });
 
-
+// YANDEX MAPS
 ymaps.ready(initMap);
 var myMap,
     myPlacemark;

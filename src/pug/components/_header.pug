@@ -14,14 +14,12 @@ header.header
             a(href='#') Вход
             a(href='#') Регистрация
             a(href='#') Восстановление пароля
-          
       .header__like
         +icon('ico-like')
       .header__cart
         +icon('ico-cart')
         .header__cart-counter
           span 3
-      
       .header__hamburger
         .hamburger.hamburger--squeeze(js-hamburger-menu)
           span.hamburger-box
@@ -46,7 +44,7 @@ header.header
         li
           a(href="#") Контакты
       
-      .navi__search
+      .navi__search(js-teleport data-teleport-to="mobile-search" data-teleport-condition="<768")
         form.navi__search-form(action="#" js-header-search)
           button(type="submit")
             i.icon.icon-search
@@ -110,12 +108,15 @@ header.header
           img.navi-drop-card__image(src='img/dropdownImg.jpg' srcset='img/dropdownImg@2x.jpg 2x')
           .navi-drop-card__name Куртка «Жасмин»
           
-        
+// MOBILE NAVI :: START
 .mobile-navi
   .mobile-navi__wrapper
     ul.mobile-navi__menu(data-teleport-target="mobile-menu")
       // teleported content
     
+    .mobile-navi__search(data-teleport-target="mobile-search")
+      // teleported
+      
     .mobile-navi__phone
       a(href='tel:+74956451010').h-link +7 (495) 645 10 10
     
@@ -123,7 +124,4 @@ header.header
       .navi-drop__socials-list(data-teleport-target="mobile-socials")
       
     
-      
-    
-          
 // HEADER :: END
