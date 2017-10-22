@@ -1,0 +1,72 @@
+// CATEGORIES
+.home-catalog
+  margin: 120px 0
+  &__wrapper
+    margin-top: 60px
+
+.catalog-card
+  display: flex
+  flex-direction: column
+  position: relative
+  height: 260px
+  margin-bottom: 40px
+  background: #F3F5F7
+  &--smaller
+    height: 200px
+  &--bg-peach
+    background: #FFEBD7
+  &__image
+    display: block
+    font-size: 0
+    position: absolute
+    z-index: 2
+    transform-origin: 50% 100%
+    transition: all .3s ease-out
+    &--tr-bottom
+      transform-origin: 50% 0%
+  &__content
+    flex: 1 1 auto
+    display: flex
+    flex-direction: column
+    position: relative
+    z-index: 2
+    padding: 20px
+    &--right
+      text-align: right
+  &__name
+    margin-top: auto
+    font-size: 32px
+    font-weight: 900
+    letter-spacing: 0.96px
+  &__short
+    margin-top: 5px
+    color: $fontColor60
+    font-size: 16px
+    letter-spacing: .48px
+
+  &:hover
+    .catalog-card__image
+      transform: scale(1.06)
+
+
++r($desktop)
+  .home-catalog
+    margin: 80px 0
+    // &__wrapper
+    //   margin-top: 50px
+
++r($desktop)
+  .catalog-card
+    height: 240px
+    &--smaller
+      height: 240px
+    &__name
+      font-size: 28px
+    &__short
+      font-size: 15px
+
++r($tablet)
+  .catalog-card
+    max-width: 400px
+    margin-left: auto
+    margin-right: auto

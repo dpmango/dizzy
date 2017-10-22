@@ -118,9 +118,9 @@ $(document).ready(function(){
   }
 
   // HAMBURGER TOGGLER
-  $('.hamburger').on('click', function(){
-    $('.hamburger').toggleClass('active');
-    $('.mobile-navi').toggleClass('active');
+  $('[js-hamburger-menu]').on('click', function(){
+    $(this).toggleClass('is-active');
+    $('.mobile-navi').toggleClass('is-active');
   });
 
   // SET ACTIVE CLASS IN HEADER
@@ -201,14 +201,30 @@ $(document).ready(function(){
       arrows: self.data('slick-arrows') !== undefined ? self.data('slick-arrows') : false,
       infinite: self.data('slick-infinite') !== undefined ? self.data('slick-infinite') : false,
       speed: 300,
-      slidesToShow: 1,
       accessibility: false,
       adaptiveHeight: true,
       slidesToShow: self.data('slick-slides') !== undefined ? self.data('slick-slides') : true,
       draggable: self.data('slick-controls') !== undefined ? self.data('slick-controls') : true,
       swipe: self.data('slick-controls') !== undefined ? self.data('slick-controls') : true,
       swipeToSlide: self.data('slick-controls') !== undefined ? self.data('slick-controls') : true,
-      touchMove: self.data('slick-controls') !== undefined ? self.data('slick-controls') : true
+      touchMove: self.data('slick-controls') !== undefined ? self.data('slick-controls') : true,
+      responsive: [
+        {breakpoint: 1100,
+          settings: {slidesToShow: 5}
+        },
+        {breakpoint: 992,
+          settings: {slidesToShow: 4}
+        },
+        {breakpoint: 768,
+          settings: {slidesToShow: 3}
+        },
+        {breakpoint: 568,
+          settings: {slidesToShow: 2}
+        },
+        {breakpoint: 414,
+          settings: {slidesToShow: 1}
+        },
+      ]
     }
 
     self.slick(slickOptions);

@@ -27,6 +27,27 @@ block content
           .container.container--grow
             .hero__name Коллекция
             .hero__big Осень-Зима’17
+      
+      .hero__slide
+        img.hero__slide-bg(src='img/heroBg.jpg' srcset='img/heroBg@2x.jpg 2x')
+        .hero__content
+          .container.container--grow
+            .hero__name Коллекция
+            .hero__big Осень-Зима’17
+      .hero__slide
+        img.hero__slide-bg(src='img/collectionBg-2.jpg' srcset='img/collectionBg-2@2x.jpg 2x')
+        .hero__content
+          .container.container--grow
+            .hero__name Коллекция
+            .hero__big Осень-Зима’17  
+      
+      .hero__slide
+        img.hero__slide-bg(src='img/collectionBg-3.jpg' srcset='img/collectionBg-3@2x.jpg 2x')
+        .hero__content
+          .container.container--grow
+            .hero__name Коллекция
+            .hero__big Осень-Зима’17
+            
                   
       
   // iteration example
@@ -43,7 +64,7 @@ block content
       
       .home-catalog__wrapper
         .row
-          .col-md-4
+          .col-md-6.col-lg-4
             a(href="#").catalog-card.catalog-card--bg-peach
               .catalog-card__image(style="bottom: 0; left: 20px")
                 img(src='img/catalogCard-1.png' srcset='img/catalogCard-1@2x.png 2x')
@@ -51,7 +72,7 @@ block content
                 .catalog-card__name Пальто
                 .catalog-card__short С натуральным мехом
           // card
-          .col-md-4
+          .col-md-6.col-lg-4
             a(href="#").catalog-card
               .catalog-card__image(style="bottom: 0; right: 10px; z-index: 3")
                 img(src='img/catalogCard-2.png' srcset='img/catalogCard-2@2x.png 2x')
@@ -59,17 +80,16 @@ block content
                 .catalog-card__name Куртки / Парки
                 .catalog-card__short Демисезонные
           //card
-          .col-md-4
+          .col-md-6.col-lg-4
             a(href="#").catalog-card
               .catalog-card__image(style="bottom: 0; right: 25px")
                 img(src='img/catalogCard-3.png' srcset='img/catalogCard-3@2x.png 2x')
               .catalog-card__content
                 .catalog-card__name Плащи
                 .catalog-card__short Утпеленные
-        
-        // row
-        .row
-          .col-md-3
+          
+          //card
+          .col-md-6.col-lg-3
             a(href="#").catalog-card.catalog-card--smaller
               .catalog-card__image.catalog-card__image--tr-bottom(style="top: 0; right: -20px; z-index: 3")
                 img(src='img/catalogCard-4.png' srcset='img/catalogCard-4@2x.png 2x')
@@ -77,7 +97,7 @@ block content
                 .catalog-card__name Юбки / брюки
                 .catalog-card__short С натуральным мехом
           // card
-          .col-md-3
+          .col-md-4.col-lg-3
             a(href="#").catalog-card.catalog-card--smaller
               .catalog-card__image(style="bottom: 0; right: 30px")
                 img(src='img/catalogCard-5.png' srcset='img/catalogCard-5@2x.png 2x')
@@ -85,7 +105,7 @@ block content
                 .catalog-card__name Платья / Комбинезоны
                 .catalog-card__short Утепленные
           // card
-          .col-md-3
+          .col-md-4.col-lg-3
             a(href="#").catalog-card.catalog-card--smaller.catalog-card--bg-peach
               .catalog-card__image.catalog-card__image--tr-bottom(style="top: -22px; left: 10px; z-index: 3")
                 img(src='img/catalogCard-6.png' srcset='img/catalogCard-6@2x.png 2x')
@@ -94,7 +114,7 @@ block content
                 .catalog-card__short Зимние
           
           // card
-          .col-md-3
+          .col-md-4.col-lg-3
             a(href="#").catalog-card.catalog-card--smaller.catalog-card--bg-peach
               .catalog-card__image.catalog-card__image--tr-bottom(style="top: 0; left: 5px; z-index: 3")
                 img(src='img/catalogCard-7.png' srcset='img/catalogCard-7@2x.png 2x')
@@ -244,7 +264,7 @@ block content
       .title Популярное
       
       .goods-slider__wrapper
-        .goods-slider__slider(js-slider data-slick-slides='6' data-slick-arrows="true" data-slick-infinite="true")
+        .goods-slider__slider.slick-arrows(js-slider data-slick-slides='6' data-slick-arrows="true" data-slick-infinite="true")
           // card
           .slider-card
             a(href='#').slider-card__image
@@ -301,7 +321,7 @@ block content
       .title Распродажа
       
       .goods-slider__wrapper
-        .goods-slider__slider(js-slider data-slick-slides='6' data-slick-arrows="true" data-slick-infinite="true")
+        .goods-slider__slider.slick-arrows(js-slider data-slick-slides='6' data-slick-arrows="true" data-slick-infinite="true")
           // card
           .slider-card
             a(href='#').slider-card__image
@@ -378,7 +398,7 @@ block content
       
       .home-news__wrapper
         .row
-          .col-md-4
+          .col-md-6.col-lg-4
             a(href='#').news-card
               .news-card__image.news-card__image--filter
                 img(src='img/newsCard-1.jpg' srcset='img/newsCard-1@2x.jpg 2x')
@@ -386,31 +406,31 @@ block content
                 .news-card__date 11.07.2017
                 .news-card__name Открыт предзаказ на коллекцию одежды  «Осень 2017»
           //card
-          .col-md-4
+          .col-md-6.col-lg-4
             a(href='#').news-card
               .news-card__content
                 .news-card__date 11.07.2017
                 .news-card__name Коллекция  «Весна 2017» Скидка до 35%!
           //card
-          .col-md-4
+          .col-md-6.col-lg-4
             a(href='#').news-card.news-card--bg-peach
               .news-card__content
                 .news-card__date 11.07.2017
                 .news-card__name «Весна 2016» и «Осень/Зима 2015» — последняя цена!
           //card
-          .col-md-4
+          .col-md-6.col-lg-4
             a(href='#').news-card
               .news-card__content
                 .news-card__date 11.07.2017
                 .news-card__name «Все по 1900» — коллекции «Весна 2016» и «Осень/Зима 2015»
           //card
-          .col-md-4
+          .col-md-6.col-lg-4
             a(href='#').news-card.news-card--bg-peach
               .news-card__content
                 .news-card__date 11.07.2017
                 .news-card__name Коллекция одежды «Лето 2017» уже  в продаже
           //card
-          .col-md-4
+          .col-md-6.col-lg-4
             a(href='#').news-card
               .news-card__image.news-card__image--filter
                 img(src='img/newsCard-2.jpg' srcset='img/newsCard-2@2x.jpg 2x')

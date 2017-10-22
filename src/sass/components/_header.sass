@@ -61,13 +61,15 @@
         pointer-events: all
         transform: translate3d(-50%,0,0)
 
-
-
   &__like
     font-size: 25px
 
   &__cart
+    position: relative
     font-size: 31px
+
+  &__hamburger
+    display: none
 
 
   // line
@@ -111,12 +113,75 @@
       &__cart
         color: $fontColor60
 
+      &__hamburger
+        .hamburger-inner
+          background-color: $fontColor60
+          &::before, &::after
+            background-color: $fontColor60
+
+
 
   &--fixed
     // position: fixed
     opacity: 1
     transform: translate3d(0,0,0)
     transition: transform .3s $ease, opacity .3s $ease
+
++r($desktop)
+  .header
+    &__logo
+      margin-top: 3px
+      font-size: 63px
+    &__phone
+      font-size: 16px
+    &__profile
+      font-size: 16px
+    &__like
+      display: none
+    &__cart
+      font-size: 25px
+
++r($tablet)
+  .header
+    &__profile
+      display: none
+
+    &__cart
+      padding-right: 50px
+      &::after
+        display: inline-block
+        content: ' '
+        position: absolute
+        right: 25px
+        top: 50%
+        transform: translateY(-50%)
+        width: 2px
+        background: rgba(white, .4)
+        height: 18px
+
+    &__hamburger
+      display: inline-block
+
+    &--transformed
+      .header
+        &__cart
+          &::after
+            background: rgba($fontColor, .2)
+
++r($mobile)
+  .header
+    &__logo
+      margin-top: 10px
+      font-size: 55px
+    &__cart
+      display: none
+
++r(460)
+  .header
+    &__phone
+      display: none
+    &__hamburger
+      margin-left: auto
 
 
 // NAVI
@@ -155,6 +220,17 @@
         font-size: 16px
         margin-right: 5px
 
+
++r($desktop)
+  .navi
+    &__wrapper
+      font-size: 15px
+    &__menu
+      margin: 0 60px 0 0
+
++r($tablet)
+  .navi
+    display: none
 
 .navi-drop
   position: absolute

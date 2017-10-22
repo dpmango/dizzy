@@ -48,12 +48,39 @@
     margin-bottom: auto
     margin-left: -3px
 
++r($desktop)
+  .hero
+    &__name
+      font-size: 26px
+    &__big
+      font-size: 70px
+
++r($tablet)
+  .hero
+    &__name
+      font-size: 22px
+    &__big
+      font-size: 60px
+
++r($mobile)
+  .hero
+    &__content
+      min-height: 400px
+      height: 100vh
+      max-height: 700px
+    &__name
+      font-size: 20px
+    &__big
+      font-size: 45px
+
 // dots
 .slick-c-dots
   .slick-dots
     position: absolute
-    bottom: 0
+    bottom: 50px
     left: 0
+    margin: 0
+    padding: 20px
     display: flex
     align-items: center
     li
@@ -80,3 +107,11 @@
       &:hover
         &::before
           background: white
+
+
++r($mobile)
+  .slick-c-dots
+    .slick-dots
+      bottom: 0
+      li
+        margin-right: 10px

@@ -1,0 +1,76 @@
+
+// NEWS
+.home-news
+  margin: 75px 0
+  &__wrapper
+    margin-top: 60px
+
+.news-card
+  display: flex
+  flex-direction: column
+  position: relative
+  height: 260px
+  margin-bottom: 20px
+  background: #F3F5F7
+  transition: background $transitionSpeed $ease
+  &--smaller
+    height: 200px
+  &--bg-peach
+    background: #FFEBD7
+  &__image
+    display: block
+    font-size: 0
+    position: absolute 0
+    overflow: hidden
+    z-index: 2
+    img
+      width: 100%
+    &--filter
+      &::before
+        display: inline-block
+        content: ' '
+        position: absolute -10px
+        background: rgba(white, .6)
+        filter: blur(2px)
+        backdrop-filter: blur(2px)
+        transition: all $transitionSpeed $ease
+
+  &__content
+    flex: 1 1 auto
+    display: flex
+    flex-direction: column
+    position: relative
+    z-index: 2
+    padding: 20px
+  &__name
+    margin-top: auto
+    font-size: 32px
+    font-weight: 900
+    letter-spacing: 0.96px
+  &__date
+    margin-top: 5px
+    color: $fontColor60
+    font-size: 16px
+    letter-spacing: .48px
+  &:hover
+    background: #FFEBD7
+    &.news-card--bg-peach
+      background: #F3F5F7
+    .news-card__image
+      &::before
+        backdrop-filter: none
+
++r($wide)
+  .news-card
+    &__name
+      font-size: 27px
+    &__date
+
++r($tablet)
+  .news-card
+    height: 220px
+    max-width: 400px
+    margin-left: auto
+    margin-right: auto
+    &__name
+      font-size: 24px
