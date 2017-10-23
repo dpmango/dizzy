@@ -2,15 +2,15 @@ ProjectTitle: Dizzy-way
 
 PageList:
 - file: homepage.html
-  ready: 90
+  ready: 100
 - file: catalog.html
-  ready: 10
+  ready: 20
 - file: card.html
   ready: 10
 - file: collections.html
-  ready: 80
+  ready: 100
 - file: about.html
-  ready: 75
+  ready: 100
 - file: certificate.html
   ready: 75
 - file: bank-info.html

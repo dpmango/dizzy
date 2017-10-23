@@ -11,6 +11,7 @@
     padding: 5px 0
     color: white
   &__logo
+    line-height: 1
     font-size: 71px
 
   &__phone
@@ -132,9 +133,13 @@
 
       &__like
         color: $fontColor60
+        &:hover
+          color: $colorOrange
 
       &__cart
         color: $fontColor60
+        &:hover
+          color: $colorOrange
 
       &__hamburger
         .hamburger-inner
@@ -151,6 +156,7 @@
     .header
       &__wrapper
         padding: 7px 0
+        height: 60px
       &__logo
         font-size: 45px
         color: $fontColor
@@ -237,6 +243,11 @@
       display: none
     &__hamburger
       margin-left: auto
+
+    &--inner
+      .header
+        &__phone
+          display: none
 
 
 // NAVI

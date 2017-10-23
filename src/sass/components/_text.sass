@@ -9,8 +9,10 @@
     font-weight: 900
     margin-top: 2em
 
+// INNER
 .text-page
-  margin: 20px 0
+  margin: 20px 0 60px 0px
+  padding-bottom: 30px
   &__paragraph
     margin-top: 50px
 
@@ -24,6 +26,57 @@
     font-weight: 900
     letter-spacing: 0.96px
     line-height: 1
+    margin: 0 0 .7em 0
+
++r($desktop)
+  .text-page
+    &__paragraph
+      margin-top: 35px
+
+
++r($tablet)
+  .text-page
+    margin: 20px 0
+    padding-bottom: 0
+    &__paragraph
+      margin-top: 25px
+
+    &__title
+      font-size: 28px
+
++r($mobile-s)
+  .text-page
+    &__title
+      font-size: 24px
+      letter-spacing: 0.46px
+
+
+.img-holder
+  flex: 1 1 auto
+  position: relative
+  width: 100%
+  overflow: hidden
+  img
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate3d(-50%,-50%,0)
+    min-width: 100%
+    min-height: 100%
+    width: auto
+    height: auto
+
++r($tablet)
+  .img-holder
+    height: 400px
+
++r($mobile)
+  .img-holder
+    height: 300px
+
++r($mobile-s)
+  .img-holder
+    height: 240px
 
 
 // CERTIFICATE

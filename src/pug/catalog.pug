@@ -5,7 +5,54 @@ outClass: inner
 extends shared/_layout
 block content
 
+  // BREADCRUMBS :: START
+  .breadcrumbs
+    .container
+      a(href='homepage.html') Главная
+      a(href='#') Каталог
+      a(href='#') Осень/Весна
+      a(href='#') Плащи
   
+  // CATALOG :: START
+  .catalog
+    .container
+      .catalog__wrapper
+        .catalog__sidebar
+        
+        .catalog__list
+          
+          .catalog__head
+          
+          .row
+            //card
+            .col-sm-6.col-md-4.col-lg-3
+              .c-card
+                a(href='#').c-card__image
+                  img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+                
+                a(href='#').c-card__name Lora Cole
+                .c-card__category Куртка
+                .c-card__price 1 300 ₽
+            //card
+            .col-sm-6.col-md-4.col-lg-3
+              .c-card
+                a(href='#').c-card__image
+                  img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
+                
+                a(href='#').c-card__name Lora Cole
+                .c-card__category Куртка
+                .c-card__price 1 300 ₽
+            //card
+            .col-sm-6.col-md-4.col-lg-3
+              .c-card
+                a(href='#').c-card__image
+                  img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                
+                a(href='#').c-card__name Lora Cole
+                .c-card__category Куртка
+                .c-card__price 1 300 ₽
+                
+      
   include components/_discount
   +discount
 

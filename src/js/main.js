@@ -173,21 +173,18 @@ $(document).ready(function(){
     var self = $(val);
 
     var dropTarget = self.data('for');
-    var linkedDrop = $('[data-drop='+ dropTarget +']')
+    var linkedDrop = '[data-drop='+ dropTarget +']'
 
-    var locked = false;
-
-    self.hover(function(){
-      locked = true;
-      linkedDrop.addClass('is-active')
-    }, function(){
-      // linkedDrop.removeClass('is-active')
+    $('.navi__menu').on('mouseenter', 'a[data-for='+ dropTarget +']', function(){
+      $(linkedDrop).addClass('is-active')
     });
 
-    linkedDrop.hover(function(){
-      linkedDrop.addClass('is-active')
-    }, function(){
-      linkedDrop.removeClass('is-active')
+    $(document).on('mouseenter', linkedDrop, function(){
+      $(linkedDrop).addClass('is-active')
+    });
+
+    $(document).on('mouseleave', linkedDrop, function(){
+      $(linkedDrop).removeClass('is-active')
     });
 
   })
@@ -200,13 +197,19 @@ $(document).ready(function(){
   });
 
   // HEADER SEARCH
-  $('[js-header-search]').on('click', function(e){
+  $(document).on('click', '[js-header-search]', function(e){
+    console.log('clicked');
     if ( $(this).is('is-active') ){
 
     } else {
       $(this).addClass('is-active')
       e.preventDefault();
     }
+  })
+
+  $('[js-header-search]').on('submit', function(e){
+    // search submit handler
+    e.preventDefault();
   })
 
   $(document).click(function(event) {
@@ -495,31 +498,33 @@ function initMap(){
 
   // CONTACT MAP ::
 
-  myMap2 = new ymaps.Map("contactMap", {
-    center: [55.739483, 37.719603],
-    zoom: 14
-  });
+  if ( $('#contactMap').length ){
+    myMap2 = new ymaps.Map("contactMap", {
+      center: [55.739483, 37.719603],
+      zoom: 14
+    });
 
-  // myMap.controls.remove('zoomControl');
-  myMap2.controls.remove('trafficControl');
-  myMap2.controls.remove('searchControl');
-  myMap2.controls.remove('fullscreenControl');
-  myMap2.controls.remove('rulerControl');
-  myMap2.controls.remove('geolocationControl');
-  myMap2.controls.remove('routeEditor');
+    // myMap.controls.remove('zoomControl');
+    myMap2.controls.remove('trafficControl');
+    myMap2.controls.remove('searchControl');
+    myMap2.controls.remove('fullscreenControl');
+    myMap2.controls.remove('rulerControl');
+    myMap2.controls.remove('geolocationControl');
+    myMap2.controls.remove('routeEditor');
 
-  myMap2.behaviors.disable('scrollZoom');
+    myMap2.behaviors.disable('scrollZoom');
 
-  myPlacemark2 = new ymaps.Placemark([55.739483, 37.719603], {
-    hintContent: 'Наш офис'
-  },
-  {
-    iconLayout: 'default#image',
-    iconImageHref: 'img/el/marker.png',
-    iconImageSize: [50, 70],
-    iconImageOffset: [-10, -50]
-  });
+    myPlacemark2 = new ymaps.Placemark([55.739483, 37.719603], {
+      hintContent: 'Наш офис'
+    },
+    {
+      iconLayout: 'default#image',
+      iconImageHref: 'img/el/marker.png',
+      iconImageSize: [50, 70],
+      iconImageOffset: [-10, -50]
+    });
 
-  myMap2.geoObjects.add(myPlacemark2);
+    myMap2.geoObjects.add(myPlacemark2);
+  }
 
 }
