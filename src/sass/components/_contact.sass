@@ -1,6 +1,6 @@
 
 .contact-section
-  margin: 60px 0
+  margin: 60px 0 0 0
 
 
 .contact-row
@@ -19,10 +19,33 @@
 
 
 .contact-form
-
+  &__cta
+    text-align: right
 
 .contact-map
   margin: 40px 0 60px 0
 
 #contactMap
   height: 480px
+
+
++r($desktop)
+  #contactMap
+    height: 420px
+
++r($tablet)
+  .contact-section
+    margin: 40px 0
+  .contact-form
+    max-width: 400px
+    margin-left: auto
+    margin-right: auto
+    // &__cta
+    //   text-align: center
+
+
+  .contact-map
+    margin: 20px -20px -20px -20px
+
+  #contactMap
+    height: 375px

@@ -2,13 +2,25 @@
 
 
 .ui-group
+  position: relative
   display: flex
+  align-items: center
   margin-bottom: 20px
-  label
+  > label:not(.ui-group__validation)
     flex: 0 0 30%
     font-size: 13px
+    font-weight: 500
     color: $fontColor60
     letter-spacing: 0.38px
+
+  &__validation
+    position: absolute
+    bottom: -15px
+    color: $colorRed
+    font-size: 10px
+    right: 0
+    text-align: right
+
 
 
 .ui-input
@@ -22,12 +34,16 @@
   padding: 7px 15px
   font-size: 14px
   box-shadow: inset 0 3px 5px 0 rgba(0,0,0,0.20)
+  transition: all $transitionSpeed $ease
   &::placeholder
     color: $fontColor60
+  &:focus
+    box-shadow: inset 0 1px 3px 0 rgba(0,0,0,0.10)
+
 
 textarea
   &.ui-input
-    min-height: 90px
+    // min-height: 90px
     resize: horizontal
 
 

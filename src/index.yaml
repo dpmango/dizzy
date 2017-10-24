@@ -12,15 +12,15 @@ PageList:
 - file: about.html
   ready: 100
 - file: certificate.html
-  ready: 75
+  ready: 100
 - file: bank-info.html
-  ready: 75
+  ready: 100
 - file: charity.html
-  ready: 75
+  ready: 100
 - file: team.html
-  ready: 75
+  ready: 100
 - file: contact.html
-  ready: 50
+  ready: 100
 - file: delivery.html
   ready: 25
 

@@ -11,7 +11,7 @@ $(document).ready(function(){
   ////////////////////
 
   var validateErrorPlacement = function(error, element) {
-    error.addClass('ui-input__validation');
+    error.addClass('ui-group__validation');
     error.appendTo(element.parent("div"));
   }
   var validateHighlight = function(element) {
@@ -92,6 +92,36 @@ $(document).ready(function(){
       //     required: "Заполните это поле",
       //     minlength: "Введите корректный телефон"
       // }
+    }
+  });
+
+
+  $("[js-validate-contact]").validate({
+    errorPlacement: validateErrorPlacement,
+    highlight: validateHighlight,
+    unhighlight: validateUnhighlight,
+    submitHandler: validateSubmitHandler,
+    rules: {
+      name: "required",
+      email: {
+        required: true,
+        email: true
+      },
+      message: {
+        required: true,
+        minlength: 10
+      }
+    },
+    messages: {
+      name: "Заполните это поле",
+      email: {
+          required: "Заполните это поле",
+          email: "Email содержит неправильный формат"
+      },
+      message: {
+          required: "Заполните это поле",
+          minlength: "Сообщение слишком короткое"
+      }
     }
   });
 
