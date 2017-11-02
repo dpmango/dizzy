@@ -2,33 +2,82 @@
   margin: 20px 0 50px 0
 
   &__wrapper
-    display: flex
+    width: 100%
+    display: inline-block
+    vertical-align: top
 
   &__sidebar
-    flex: 0 0 200px
-    width: 200px
-    min-width: 0
-    padding: 20px
-    box-shadow: 0px 3px 8px rgba($fontColor, .2)
+    +rmin($desktop)
+      float: left
+      width: 200px
+      margin-right: -100%
+  &__content
+    +rmin($desktop)
+       padding: 20px 0 0 240px
+  &__heading
+    display: block
+    margin: 0 0 12px
+    font-size: 16px
+    line-height: 22px
+    font-weight: 500
+    letter-spacing: 0.2px
+    small
+      font-size: 13px
+      opacity: 0.6
+      margin: 0 0 0 10px
+  &__settings
+    margin: 0 0 30px
 
-  &__list
-    flex: 1 1 auto
-    padding-left: 40px
-    width: 100%
 
+
+.no-touch-device .c-card:hover
+  z-index: 20
+  &:after, .c-card__ctrl, .c-card__size, .c-card__thumbs
+    opacity: 1
+    visibility: visible
+  .c-card__thumbs, .c-card__ctrl
+    transform: translate(0,0)
 
 .c-card
   width: 100%
   position: relative
-  margin-bottom: 35px
+  z-index: 10
+  margin: 0
+  // margin-bottom: 35px
+  // margin: 0 0 25px
+  &:hover
+    // z-index: 20
+    // &:after, .c-card__ctrl, .c-card__size, .c-card__thumbs
+    //   opacity: 1
+    //   visibility: visible
+    // .c-card__thumbs, .c-card__ctrl
+    //   transform: translate(0,0)
+  &:after
+    content: ''
+    display: block
+    position: absolute
+    top: -20px
+    left: -70px
+    right: -10px
+    bottom: -20px
+    background: #fff
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2)
+    z-index: -1
+    transition: opacity $transitionSpeed $ease
+    opacity: 0
+    visibility: hidden
   &__image
     display: block
-    background: rgba($fontColor, .07)
+    // background: rgba($fontColor, .07)
+    background: #EDEDED
     overflow: hidden
+    height: 340px
+    line-height: 340px
+    text-align: center
     img
+      display: inline-block
+      vertical-align: middle
       max-width: 100%
-      margin-left: auto
-      margin-right: auto
       transition: all $transitionSpeed $ease
     &:hover
       img
@@ -52,3 +101,124 @@
     font-size: 13px
     letter-spacing: 0.39px
     color: $colorOrange
+  &__size
+    font-size: 13px
+    line-height: 16px
+    font-weight: 500
+    letter-spacing: 0.2px
+    color: rgba(0,0,0,0.6)
+    padding: 5px 0
+    transition: all $transitionSpeed $ease
+    opacity: 0
+    visibility: hidden
+    b
+      font-weight: 500
+      color: rgba(0,0,0,1)
+
+  &__wrapper
+    position: relative
+  &__ctrl
+    position: absolute
+    bottom: 10px
+    right: 10px
+    z-index: 3
+    transition: all $transitionSpeed $ease
+    opacity: 0
+    visibility: hidden
+    transform: translate(0,-20px)
+    &-link
+      transition: all $transitionSpeed $ease
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 30px
+      height: 30px
+      border-radius: 50%
+      background: rgba(0,0,0,0.2)
+      margin: 10px 0 0
+      color: #fff
+      .ico-cart
+        font-size: 15px
+      .ico-like
+        font-size: 12px
+      &:hover
+        background: #FF8F5B
+
+  &__slides
+    position: relative
+    z-index: 2
+  &__thumbs
+    transition: $transitionSpeed $ease
+    position: absolute
+    z-index: 1
+    top: 0
+    bottom: 0
+    right: 100%
+    
+    width: 70px
+    padding: 20px 10px
+    overflow: hidden
+    opacity: 0
+    visibility: hidden
+    transform: translate(70px,0)
+    .slick-prev, .slick-next
+      display: block
+      position: absolute
+      left: 0
+      z-index: 10
+      background: #fff
+      text-indent: -9999px
+      width: 100%
+      height: 20px
+      &:after
+        content: ''
+        display: block
+        border-left: 7px solid transparent
+        border-right: 7px solid transparent
+        position: absolute
+        left: 50%
+        margin: 0 0 0 -7px
+        opacity: 0.2
+        transition: .25s
+      &:hover:after
+        border-bottom-color: #ff8f5b
+        opacity: 1
+    .slick-prev
+      top: 0
+      &:after
+        top: 0
+        border-bottom: 10px solid #000
+    .slick-next
+      bottom: 0
+      &:after
+        bottom: 0
+        border-top: 10px solid #000
+  &__thumb
+    width: 50px
+    height: 70px
+    line-height: 70px
+    max-height: 70px
+    position: relative
+    background: #EDEDED
+    overflow: hidden
+    margin: 0 0 5px
+    &.slick-current:after
+      opacity: 1
+    &:after
+      content: ''
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      border: 2px solid #ff8f5b
+      z-index: 10
+      opacity: 0
+      transition: $transitionSpeed $ease
+    img
+      display: inline-block
+      vertical-align: middle
+      max-width: 100%
+      max-height: 100%
+

@@ -1,0 +1,88 @@
+// Sorting
+
+
+.sorting
+	position: relative
+	font-size: 13px
+	line-height: 22px
+	display: flex
+	margin: 0 0 12px
+	color: rgba(0,0,0,1)
+	&__text
+		margin: 0 10px 0 0
+		display: block
+	&__select
+		position: relative
+	+rmin($tablet)
+		justify-content: flex-end
+
+
+.sorting__select
+	position: relative
+	&.is-open
+		.sorting__select-trigger:after
+			transform: rotate(180deg)
+
+		.sorting__select-dropdown
+			opacity: 1
+			visibility: visible
+			transform: translate(-50%,0)
+	&-trigger
+		position: relative
+		background: none
+		padding: 0 12px 0 0
+		font-size: 13px
+		line-height: 22px
+		font-weight: 500
+		transition: .25s
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			top: 50%
+			right: 0
+			border-left: 5px solid transparent
+			border-right: 5px solid transparent
+			border-top: 8px solid #000
+			margin: -4px 0 0
+			transition: inherit
+		.ico
+			margin: 0 5px 0 0
+			font-size: 8px
+		&:hover
+			color: rgba(0,0,0,0.6)
+	&-dropdown
+		position: absolute
+		top: 100%
+		left: 50%
+		min-width: 100%
+		background: #fff
+		box-shadow: 0px 3px 18px rgba($fontColor, .2)
+		z-index: 100
+		padding: 10px 20px
+		white-space: nowrap
+		transition: .25s
+		margin: 10px 0 0
+		opacity: 0
+		visibility: hidden
+		transform: translate(-50%,-20px)
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			bottom: 100%
+			left: 50%
+			border-left: 5px solid transparent
+			border-right: 5px solid transparent
+			border-bottom: 5px solid #fff
+			// margin: -4px 0 0
+			
+	&-option
+		transition: .25s 
+		display: block
+		color: rgba(0,0,0,1)
+		padding: 4px 0
+		&:hover
+			color: rgba(0,0,0,0.6)
+		&.is-active
+			color: #FF8F5B

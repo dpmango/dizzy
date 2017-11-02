@@ -12,11 +12,100 @@ button
   position: relative
   text-align: center
   transition: all $transitionSpeed ease-in-out
+  span
+    position: relative
+    z-index: 2
+    display: block
   &:focus, &:active
     outline: none
   &--block
     display: block
     width: 100%
+  &-reset
+    position: relative
+    overflow: hidden
+    min-width: 160px
+    background: none
+    font: 400 13px/20px 'Helvetica Neue', Helvetica, Arial, sans-serif
+    border: 2px solid rgba(0,0,0,0.6)
+    color: rgba(0,0,0,0.6)
+    padding: 8px 10px
+    letter-spacing: 0.2px
+    border-radius: 20px
+    
+    &::after
+      display: inline-block
+      content: ' '
+      position: absolute
+      top: 50%
+      left: 50%
+      size: 20px
+      transform: translate3d(-50%,-50%,0) scale(0)
+      background: #000
+      border-radius: 50%
+      transition: all $transitionSpeed $ease
+    &:hover
+      box-shadow: 0px 3px 6px rgba($fontColor, .2)
+      color: #fff
+      border-color: #000
+      &::after
+        transform: translate3d(-50%,-50%,0) scale(8)
+  &-up
+    font: 500 13px/20px 'MuseoSansCyrl', 'Helvetica Neue', Helvetica, Arial, sans-serif
+    letter-spacing: 0.2px
+    width: 100%
+    text-align: center
+    padding: 0 40px
+    margin: 0 0 20px
+    position: relative
+    &:after
+      content: ''
+      display: block
+      position: absolute
+      top: 50%
+      right: 20px
+      border-left: 5px solid transparent
+      border-right: 5px solid transparent
+      border-top: 8px solid #000
+      margin: -4px 0 0
+      transition: inherit
+      transform: rotate(180deg)
+    &:hover
+      color: #FF8F5B
+      &:after
+        border-top-color: #FF8F5B
+    +r($desktop)
+      display: none
+  &-like
+    text-align: left
+    padding: 0 0 0 50px
+    font-size: 11px
+    line-height: 13px
+    letter-spacing: 0.2px
+    position: relative
+    color: rgba(0,0,0,0.4)
+    transition: all $transitionSpeed $ease
+    &:hover
+      color: rgba(0,0,0,1)
+      .btn-like-icon
+        background: rgba(0,0,0,0.6)
+
+  &-like-icon
+    position: absolute
+    top: 50%
+    left: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 40px
+    height: 40px
+    border-radius: 50%
+    background: rgba(0,0,0,0.2)
+    margin: -20px 0 0
+    transition: inherit
+    .ico
+      font-size: 15px
+      color: #fff
 
   &-primary
     position: relative
@@ -38,13 +127,13 @@ button
       position: absolute
       top: 50%
       left: 50%
-      size: 20px
+      size: 40px
       transform: translate3d(-50%,-50%,0) scale(0)
       background: white
       border-radius: 50%
       transition: all $transitionSpeed $ease
-  &:hover
-    box-shadow: 0px 3px 6px rgba($fontColor, .2)
-    color: $fontColor
-    &::after
-      transform: translate3d(-50%,-50%,0) scale(8)
+    &:hover
+      box-shadow: 0px 3px 6px rgba($fontColor, .2)
+      color: $fontColor
+      &::after
+        transform: translate3d(-50%,-50%,0) scale(8)

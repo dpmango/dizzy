@@ -1,0 +1,22 @@
+// Display
+
+
+.display
+	font-size: 13px
+	line-height: 15px
+	display: flex
+	margin: 0 0 12px
+	color: rgba(0,0,0,0.6)
+	&__text
+		display: block
+		margin: 0 5px 0 0
+		color: rgba(0,0,0,1)
+	&__link
+		display: block
+		color: rgba(0,0,0,0.6)
+		margin: 0 5px
+		&:hover, &.is-active
+			color: rgba(0,0,0,1)
+			text-decoration: underline
+	+rmin($tablet)
+		justify-content: flex-end

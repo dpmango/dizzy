@@ -1,0 +1,304 @@
+// Card
+
+
+.zoomContainer
+	visibility: hidden
+	opacity: 0
+	transition: .4s
+	+rmin($desktop)
+		&.is-visible
+			visibility: visible
+			opacity: 1
+
+.zoomLens
+	box-shadow: 0 20px 70px rgba(0,0,0,0.4)
+
+.card
+	font-size: 13px
+	line-height: 15px
+	letter-spacing: 0.2px
+	&__heading
+		font-size: 20px
+		line-height: 22px
+		font-weight: 500
+		letter-spacing: 0.3px
+		margin: 0 0 14px
+	&__info
+		margin: 0
+		padding: 0 0 10px
+		list-style: none
+		& > li
+			display: block
+			margin: 0 0 5px
+		mark
+			background: none
+			opacity: 0.6
+			margin: 0 10px 0 0
+	&__price
+		margin: 0 0 24px
+		.row
+			align-items: flex-end
+		&-text
+			font-size: 32px
+			line-height: 40px
+			font-weight: 700
+			letter-spacing: 0.5px
+			margin: 0
+			color: #ff8f5b
+			b
+				font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+				font-weight: 700
+			small
+				display: block
+				font-size: 13px
+				line-height: 20px
+				font-weight: 500
+				color: #000
+		&-link
+			transition: .25s
+			display: inline-block
+			color: #000
+			opacity: 0.6
+			white-space: nowrap
+			text-decoration: underline
+			line-height: 20px
+			float: right
+			.ico
+				position: relative
+				top: 4px
+				font-size: 16px
+				margin: 0 10px 0 0
+			&:hover
+				opacity: 1
+				text-decoration: underline
+	&__colors
+		margin: 0 0 10px
+		&-text
+			margin: 0 0 7px
+			mark
+				background: none
+				opacity: 0.6
+				margin: 0 10px 0 0
+		&-group
+			display: flex
+			flex-wrap: wrap
+			margin: 0 -10px
+		&-item
+			width: 20%
+			border: 10px solid #fff
+			border-top: 0
+			border-bottom: 0
+			margin: 0 0 10px
+			position: relative
+			cursor: pointer
+			background: #F1F1F1
+			display: flex
+			align-items: center
+			justify-content: center
+			&:after
+				content: ''
+				display: block
+				position: absolute
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				border: 2px solid #ff8f5b
+				transition: .25s
+				opacity: 0
+			img
+				display: block
+				max-width: 100%
+			&.is-active:after
+				opacity: 1
+
+	&__size
+		line-height: 20px
+		margin: 0 0 28px
+		.row
+			align-items: flex-end
+		&-text
+			margin: 0
+		&-link
+			transition: .25s
+			display: inline-block
+			color: #000
+			opacity: 0.6
+			white-space: nowrap
+			text-decoration: underline
+			line-height: 20px
+			float: right
+			.ico
+				position: relative
+				top: 4px
+				font-size: 17px
+				margin: 0 10px 0 0
+			&:hover
+				opacity: 1
+				text-decoration: underline
+		&-group
+			display: flex
+			flex-wrap: wrap
+			padding: 8px 0 0
+			margin: 0 -3px
+		&-table
+			width: 100%
+			text-align: center
+			color: rgba(0,0,0,0.6)
+			white-space: nowrap
+			// border-collapse: collapse
+			// cellspacing: 2px
+			border-spacing: 0 5px
+			margin: 10px 0
+			tfoot td
+				padding: 10px 0 0
+				background: none
+				text-align: left
+				&:after
+					display: none
+				
+			th
+				font-weight: 400
+			td
+				padding: 0
+				width: 24px
+				height: 24px
+				background-color: rgba(0, 0, 0, 0.1)
+				vertical-align: middle
+				position: relative
+				&:after
+					content: ''
+					display: block
+					position: absolute
+					top: 0
+					bottom: 0
+					left: 0
+					right: -1px
+					border: solid 1px #6a6a6a
+					z-index: 1
+				&.is-has
+					background: #fff
+				&.is-few
+					background: #fff
+					&:after
+						border-color: #ff8f5b
+						z-index: 2
+
+				// Colors
+
+				&[class^="bg-"]
+					background: #ccc
+					color: #fff
+					padding: 0 12px
+					&:after
+						opacity: 0
+
+				&.bg-red
+					background: #9f0216
+				&.bg-green
+					background: #7ed321
+				&.bg-brown
+					background: #8b572a
+
+
+			&-type
+				display: inline-block
+				vertical-align: top
+				padding: 0 12px
+				height: 24px
+				line-height: 24px
+				background-color: rgba(0, 0, 0, 0.1)
+				vertical-align: middle
+				position: relative
+				margin: 0 5px 0 0
+				&:after
+					content: ''
+					display: block
+					position: absolute
+					top: 0
+					bottom: 0
+					left: 0
+					right: -1px
+					border: solid 1px #6a6a6a
+					z-index: 1
+				&.is-has
+					background: #fff
+				&.is-few
+					background: #fff
+					&:after
+						border-color: #ff8f5b
+						z-index: 2
+
+
+	&__check
+		margin: 0 3px 6px
+		position: relative
+		&-input
+			position: absolute
+			top: 0
+			left: 0
+			visibility: hidden
+			&:checked ~ .card__check-btn
+				border-color: #ff8f5b
+				background: #ff8f5b
+				color: #fff
+		&-btn
+			display: flex
+			align-items: center
+			justify-content: center
+			width: 26px
+			height: 26px
+			border: 1px solid rgba(0,0,0,0.6)
+			color: rgba(0,0,0,0.6)
+			letter-spacing: 0.2px
+			cursor: pointer
+			transition: .25s
+			&:hover
+				border-color: #ff8f5b
+
+	&__ctrl
+		display: flex
+		align-items: center
+		margin: 0 0 40px
+		.btn-primary
+			min-width: 210px
+			margin: 0 10px 0 0
+	&__details
+		dt
+			display: block
+			position: relative
+			cursor: pointer
+			margin: 0 0 14px
+			color: rgba(0,0,0,0.6)
+			transition: .25s
+			&:after
+				content: ''
+				display: block
+				position: absolute
+				top: 50%
+				right: 0
+				border-left: 5px solid transparent
+				border-right: 5px solid transparent
+				border-top: 8px solid #000
+				margin: -4px 0 0
+				transition: inherit
+			&.is-active:after
+				transform: rotate(180deg)
+		dd
+			display: none
+			margin: 0 0 14px
+		ul
+			margin: 0 0 14px
+			padding: 0
+			list-style: none
+			line-height: 18px
+			& > li
+				display: block
+		p
+			margin: 0 0 14px
+		mark
+			background: none
+			color: rgba(0,0,0,0.6)
+
+
+

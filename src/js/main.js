@@ -1,5 +1,88 @@
 $(document).ready(function(){
 
+
+  // --------------------------------------------------------------------------
+  // Detect Touch
+  // --------------------------------------------------------------------------
+
+  function detectTouch() {
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+          $('html').addClass('touch-device');
+      }
+      else {
+        $('html').addClass('no-touch-device');
+      }
+  }
+  detectTouch();
+
+
+  // --------------------------------------------------------------------------
+  // Tabs
+  // --------------------------------------------------------------------------
+
+  $('.js-tabs__menu').on('click', 'li:not(.active)', function() {
+      $(this).addClass('is-active').siblings().removeClass('is-active')
+      .closest('.js-tabs').find('.js-tabs__panel').removeClass('is-active').eq($(this).index()).addClass('is-active');
+  });
+
+  // --------------------------------------------------------------------------
+  // Sorting
+  // --------------------------------------------------------------------------
+
+  $('.sorting__select').on('click', '.sorting__select-trigger', function(event) {
+      event.preventDefault();
+      if ($(this).is('.is-active')) {
+          $(this).removeClass('is-active').closest('.sorting__select').removeClass('is-open');
+      }
+      else {
+          $(this).addClass('is-active').closest('.sorting__select').addClass('is-open');
+      }
+  });
+
+  $('.sorting__select').on('click', '.sorting__select-option', function(event) {
+      event.preventDefault();
+      $('.sorting__select-option').removeClass('is-active');
+      $(this).addClass('is-active');
+      var selected = $(this).text();
+
+      $('.sorting__select-trigger').text(selected);
+      alert(selected)
+  });
+
+  $('body').on( 'click', function(event) {
+
+    if($(event.target).closest('.sorting__select').length==0) {
+
+      $('.sorting__select, .sorting__select-trigger').removeClass('is-open is-active');
+
+    }
+  });
+
+  // --------------------------------------------------------------------------
+  // Filter
+  // --------------------------------------------------------------------------
+
+  // $('.filter').on('click', '.filter__btn', function(event) {
+  //     event.preventDefault();
+  //     if ($(this).closest('.filter').find('.filter-group__content').is(':hidden') ) {
+  //         $(this).closest('.filter').removeClass('is-open').find('.filter-group__content').slideDown('fast');
+  //     }
+  //     else {
+  //         $(this).closest('.filter').addClass('is-open');
+  //     }
+  // });
+
+  $('.filter-group').on('click', '.filter-group__btn', function(event) {
+      event.preventDefault();
+      if ($(this).closest('.filter-group').find('.filter-group__content').is(':hidden') ) {
+          $(this).closest('.filter-group').removeClass('is-open').find('.filter-group__content').slideDown('fast');
+      }
+      else {
+          $(this).closest('.filter-group').addClass('is-open').find('.filter-group__content').slideUp('fast');
+      }
+  });
+
+
   //////////
   // Global variables
   //////////
@@ -314,6 +397,256 @@ $(document).ready(function(){
   })
 
 
+
+// c-card-slides
+
+$('[data-card]').each(function(){
+
+    var card = $(this),
+        cardSlides = card.find('[data-card-slides]'),
+        cardThumbs = card.find('[data-card-thumbs]');
+
+    cardSlides.slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      fade: true,
+      asNavFor: cardThumbs,
+      infinite: true
+    });
+    cardThumbs.slick({
+      infinite: true,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      asNavFor: cardSlides,
+      dots: false,
+      centerMode: false,
+      focusOnSelect: true,
+      vertical: true,
+      arrows: true,
+      centerPadding: '80px',
+    });
+
+
+  });
+
+
+
+
+$('[data-gallery]').each(function(){
+
+    var gallery = $(this),
+        gallerySlides = gallery.find('[data-gallery-slides]'),
+        galleryThumbs = gallery.find('[data-gallery-thumbs]');
+
+    gallerySlides.on('init afterChange', function(event, slick, currentSlide, nextSlide){
+      $('[data-color]').removeClass('is-active').eq(slick.currentSlide).addClass('is-active');
+    });
+
+    gallerySlides.slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      fade: true,
+      asNavFor: galleryThumbs,
+      infinite: true
+    });
+
+    galleryThumbs.slick({
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      asNavFor: gallerySlides,
+      dots: false,
+      centerMode: false,
+      focusOnSelect: true,
+      vertical: false,
+      arrows: true,
+      mobileFirst: true,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            vertical: true
+          }
+        }
+      ]
+    });
+
+
+});
+
+
+$('[data-color]').on('click', function(event) {
+  event.preventDefault();
+
+  var dataColor = $(this).data('color'),
+      dataIndex = $(this).index();
+
+    if(dataColor === '') dataColor = 'Цвет не указан'
+
+    $('[data-color]').removeClass('is-active').eq(dataIndex).addClass('is-active');
+    $('[data-color-selected]').text(dataColor);
+    $('[data-gallery-slides]').slick('slickGoTo', dataIndex);
+
+});
+
+
+
+$('[data-zoom-image]').elevateZoom({
+    zoomActivation: "hover",
+    zoomEnabled: true,
+    preloading: 1,
+    zoomLevel: 1,
+    scrollZoom: false,
+    scrollZoomIncrement: 0.1,
+    minZoomLevel: false,
+    maxZoomLevel: false,
+    easing: false,
+    easingAmount: 12,
+    lensSize: 200,
+    zoomWindowWidth: 400,
+    zoomWindowHeight: 400,
+    zoomWindowOffetx: 0,
+    zoomWindowOffety: 0,
+    zoomWindowPosition: 1,
+    zoomWindowBgColour: "#fff",
+    lensFadeIn: false,
+    lensFadeOut: false,
+    debug: false,
+    zoomWindowFadeIn: false,
+    zoomWindowFadeOut: false,
+    zoomWindowAlwaysShow: false,
+    zoomTintFadeIn: false,
+    zoomTintFadeOut: false,
+    borderSize: 2,
+    showLens: true,
+    borderColour: "#FF8F5B",
+    lensBorderSize: 1,
+    lensBorderColour: "#FF8F5B",
+    lensShape: "round", 
+    zoomType: "lens",
+    containLensZoom: false,
+    lensColour: "white", //colour of the lens background
+    lensOpacity: 0.4, //opacity of the lens
+    lenszoom: false,
+    tint: false, //enable the tinting
+    tintColour: "#333", //default tint color, can be anything, red, #ccc, rgb(0,0,0)
+    tintOpacity: 0.4, //opacity of the tint
+    gallery: false,
+    galleryActiveClass: "zoomGalleryActive",
+    imageCrossfade: false,
+    constrainType: false,  //width or height
+    constrainSize: false,  //in pixels the dimensions you want to constrain on
+    loadingIcon: false, //http://www.example.com/spinner.gif
+    cursor:"pointer", // user should set to what they want the cursor as, if they have set a click function
+    responsive:true
+
+});
+
+
+$('[data-gallery-slides]').on('mouseover', '[data-slick-index]', function(event) {
+    event.preventDefault();
+    var dataIndex = $(this).data('slick-index');
+
+    $('.zoomContainer').removeClass('is-visible').eq(dataIndex).addClass('is-visible')
+});
+
+
+
+
+$('[data-mfp-galllery]').magnificPopup({
+  // // delegate: '[data-mfp-galllery]',
+  type: 'image',
+  closeOnContentClick: false,
+  closeBtnInside: false,
+  tLoading: 'Loading image #%curr%...',
+  mainClass: 'mfp-with-zoom',
+  removalDelay: 300,
+  gallery: {
+    enabled: true,
+    navigateByImgClick: true,
+    preload: [0,1],
+    tPrev: 'Назад', // title for left button
+    tNext: 'Вперед', // title for right button
+    tCounter: '<span class="mfp-counter"><span>%curr%</span> из %total%</span>'
+  },
+  image: {
+    verticalFit: true,
+    tError: '<a href="%url%">Изображение #%curr%</a> не может быть загружено.'
+  },
+  // zoom: {
+  //   enabled: true,
+  //   duration: 300,
+  //   easing: 'ease-in-out'
+  // }
+});
+
+
+// $('[data-gallery-slides]').elevateZoom({
+//   constrainType:"height",
+//   // constrainSize:274,
+//   zoomType: "lens",
+//   containLensZoom: false,
+//   gallery:'gallery_01f',
+//   cursor: 'pointer',
+//   galleryActiveClass: "active"
+// }); 
+
+// $("#zoom_03f").bind("click", function(e) {  
+//   var ez =   $('#zoom_03f').data('elevateZoom');
+//   ez.closeAll(); //NEW: This function force hides the lens, tint and window 
+//   $.fancybox(ez.getGalleryList());
+
+//   console.log(ez.getGalleryList())   
+    
+//   return false;
+// }); 
+
+
+
+  // --------------------------------------------------------------------------
+  // Range
+  // --------------------------------------------------------------------------
+
+  $('.ui-range__input').ionRangeSlider({
+      type: "double",
+      from: 0,
+      step: 1,
+      hide_min_max: true,
+      hide_from_to: true,
+      force_edges: true,
+      grid: false
+  });
+
+
+  $('.ui-range__input').on('change', function(event) {
+      event.preventDefault();
+
+      var range = $(this),
+          rangeData = range.data("ionRangeSlider"),
+          rangeDataFrom = range.data("from"),
+          rangeDataTo = range.data("to");
+
+      range.closest('.ui-range').find('.ui-range__from').text(rangeDataFrom)
+      range.closest('.ui-range').find('.ui-range__to').text(rangeDataTo)
+      // .closest('.app-range').find('.app-range-data').text(rangeDataFrom + ' - ' + rangeDataTo)
+
+  });
+
+
+  $('.card__details').on('click', 'dt', function(event) {
+    event.preventDefault();
+    if ($(this).is('.is-active')) {
+        $(this).removeClass('is-active').next('dd').slideUp('fast');
+    }
+    else {
+        $(this).addClass('is-active').next('dd').slideDown('fast');
+    }
+  });
+  
+
+
   //////////
   // MODALS
   //////////
@@ -342,30 +675,33 @@ $(document).ready(function(){
     }
   });
 
-  $('[js-popup-gallery]').magnificPopup({
-		delegate: 'img',
-		type: 'image',
-    closeOnContentClick: false,
-		closeBtnInside: false,
-		tLoading: 'Loading image #%curr%...',
-		mainClass: 'mfp-with-zoom',
-		gallery: {
-			enabled: true,
-			navigateByImgClick: true,
-			preload: [0,1]
-		},
-		image: {
-      verticalFit: true,
-			tError: '<a href="%url%">Изображение #%curr%</a> не может быть загружено.'
-		},
-    zoom: {
-			enabled: true,
-			duration: 300, // don't foget to change the duration also in CSS
-			// opener: function(element) {
-			// 	return element.find('img');
-			// }
-		}
-	});
+ //  $('[js-popup-gallery]').magnificPopup({
+	// 	delegate: 'img',
+	// 	type: 'image',
+ //    closeOnContentClick: false,
+	// 	closeBtnInside: false,
+	// 	tLoading: 'Loading image #%curr%...',
+	// 	mainClass: 'mfp-with-zoom',
+	// 	gallery: {
+	// 		enabled: true,
+	// 		navigateByImgClick: true,
+	// 		preload: [0,1]
+	// 	},
+	// 	image: {
+ //      verticalFit: true,
+	// 		tError: '<a href="%url%">Изображение #%curr%</a> не может быть загружено.'
+	// 	},
+ //    zoom: {
+	// 		enabled: true,
+	// 		duration: 300, // don't foget to change the duration also in CSS
+	// 		// opener: function(element) {
+	// 		// 	return element.find('img');
+	// 		// }
+	// 	}
+	// });
+
+
+
 
 
   // TELEPORT PLUGIN

@@ -11,48 +11,788 @@ block content
       a(href='homepage.html') Главная
       a(href='#') Каталог
       a(href='#') Осень/Весна
-      a(href='#') Плащи
+      a(href='#') Плащи утепленные
   
   // CATALOG :: START
   .catalog
     .container
       .catalog__wrapper
+
         .catalog__sidebar
-        
-        .catalog__list
           
-          .catalog__head
-          
+
+          // Filter :: START
+
+          .filter
+            form(action="#")
+
+              //- button.filter__btn Фильтр
+
+              //- .filter__dropdown
+
+              .filter-group
+
+                .filter-group__btn Категория
+
+                .filter-group__content
+
+                  a(href="#").filter__title Зима
+                  ul.filter__menu
+                    li
+                      a(href="#").filter__link Пальто 
+                    li
+                      a(href="#").filter__link Куртки / Парки
+                    li
+                      a(href="#").filter__link Юбки / Брюки
+                    li
+                      a(href="#").filter__link Аксессуары
+
+                  a(href="#").filter__title Осень / Весна
+                  ul.filter__menu
+                    li
+                      a(href="#").filter__link Плащи утепленные
+                    li
+                      a(href="#").filter__link Куртки / Парки
+                    li
+                      a(href="#").filter__link Пальто демисезонные
+                    li
+                      a(href="#").filter__link Плащи / Ветровки
+                    li
+                      a(href="#").filter__link Аксессуары
+
+                  a(href="#").filter__title Лето
+                  ul.filter__menu
+                    li
+                      a(href="#").filter__link Платья / Комбинезоны
+                    li
+                      a(href="#").filter__link Блузы / Жакеты
+                    li
+                      a(href="#").filter__link Юбки
+                    li
+                      a(href="#").filter__link Брюки
+
+
+              .filter-group
+
+                .filter-group__btn
+                  | Цена
+                  button.filter-group__btn-reset
+                    +icon('ico-close')
+
+                .filter-group__content
+                  .ui-range
+                    input(type="range", data-min="3000", data-max="25000").ui-range__input
+                    .row
+                      .col-6
+                        label.ui-range__from 3000
+                      .col-6
+                        label.ui-range__to 25000
+
+
+              .filter-group
+
+                .filter-group__btn
+                  | Размер
+                  button.filter-group__btn-reset
+                    +icon('ico-close')
+
+                .filter-group__content
+                  
+                  .row
+                    .col-4
+                      label.ui-check
+                        input(type="checkbox", name="").ui-check__input
+                        span.ui-check__checkbox
+                        span.ui-check__text 42
+                      label.ui-check
+                        input(type="checkbox", name="").ui-check__input
+                        span.ui-check__checkbox
+                        span.ui-check__text 44
+                      label.ui-check
+                        input(type="checkbox", name="").ui-check__input
+                        span.ui-check__checkbox
+                        span.ui-check__text 46
+                      label.ui-check
+                        input(type="checkbox", name="").ui-check__input
+                        span.ui-check__checkbox
+                        span.ui-check__text 48
+
+                    .col-4
+                      label.ui-check
+                        input(type="checkbox", name="").ui-check__input
+                        span.ui-check__checkbox
+                        span.ui-check__text 50
+                      label.ui-check
+                        input(type="checkbox", name="").ui-check__input
+                        span.ui-check__checkbox
+                        span.ui-check__text 52
+                      label.ui-check
+                        input(type="checkbox", name="").ui-check__input
+                        span.ui-check__checkbox
+                        span.ui-check__text 54
+                      label.ui-check
+                        input(type="checkbox", name="").ui-check__input
+                        span.ui-check__checkbox
+                        span.ui-check__text 56
+
+                    .col-4
+                      label.ui-check
+                        input(type="checkbox", name="").ui-check__input
+                        span.ui-check__checkbox
+                        span.ui-check__text 58
+                      label.ui-check
+                        input(type="checkbox", name="").ui-check__input
+                        span.ui-check__checkbox
+                        span.ui-check__text 60
+                      label.ui-check
+                        input(type="checkbox", name="").ui-check__input
+                        span.ui-check__checkbox
+                        span.ui-check__text 62
+
+
+              .filter-group
+
+                .filter-group__btn Сезон
+
+                .filter-group__content
+
+                  label.ui-check
+                    input(type="checkbox", name="").ui-check__input
+                    span.ui-check__checkbox
+                    span.ui-check__text Осень
+
+                  label.ui-check
+                    input(type="checkbox", name="").ui-check__input
+                    span.ui-check__checkbox
+                    span.ui-check__text Лето
+
+                  label.ui-check
+                    input(type="checkbox", name="").ui-check__input
+                    span.ui-check__checkbox
+                    span.ui-check__text Весна
+
+                  label.ui-check
+                    input(type="checkbox", name="").ui-check__input
+                    span.ui-check__checkbox
+                    span.ui-check__text Зима
+
+
+              .filter-group
+
+                .filter-group__btn
+                  | Коллекция
+                  button.filter-group__btn-reset
+                    +icon('ico-close')
+
+                .filter-group__content
+
+                  label.ui-check
+                    input(type="checkbox", name="").ui-check__input
+                    span.ui-check__checkbox
+                    span.ui-check__text Осень 2017
+
+                  label.ui-check
+                    input(type="checkbox", name="").ui-check__input
+                    span.ui-check__checkbox
+                    span.ui-check__text Лето 2017
+
+                  label.ui-check
+                    input(type="checkbox", name="").ui-check__input
+                    span.ui-check__checkbox
+                    span.ui-check__text Весна 2017
+
+                  label.ui-check
+                    input(type="checkbox", name="").ui-check__input
+                    span.ui-check__checkbox
+                    span.ui-check__text Зима 2016
+
+                  label.ui-check
+                    input(type="checkbox", name="").ui-check__input
+                    span.ui-check__checkbox
+                    span.ui-check__text Осень 2016
+
+                  label.ui-check
+                    input(type="checkbox", name="").ui-check__input
+                    span.ui-check__checkbox
+                    span.ui-check__text Лето 2016
+
+                  label.ui-check
+                    input(type="checkbox", name="").ui-check__input
+                    span.ui-check__checkbox
+                    span.ui-check__text Весна 2016
+
+                  label.ui-check
+                    input(type="checkbox", name="").ui-check__input
+                    span.ui-check__checkbox
+                    span.ui-check__text Зима 2015
+
+                  label.ui-check
+                    input(type="checkbox", name="").ui-check__input
+                    span.ui-check__checkbox
+                    span.ui-check__text Осень 2015
+              
+
+              .filter-group
+
+                .filter-group__btn Акции
+
+                .filter-group__content
+
+                  label.ui-check
+                    input(type="checkbox", name="").ui-check__input
+                    span.ui-check__checkbox
+                    span.ui-check__text Новинки
+
+                  label.ui-check
+                    input(type="checkbox", name="").ui-check__input
+                    span.ui-check__checkbox
+                    span.ui-check__text Распродажа
+
+                  label.ui-check
+                    input(type="checkbox", name="").ui-check__input
+                    span.ui-check__checkbox
+                    span.ui-check__text Уцененные
+
+              
+              .filter__ctrl
+                button(type="reset").btn.btn-block.btn-reset
+                  span Сбросить фильтры
+
+          // Filter :: End
+
+          a(href="#").btn.btn-up Наверх
+               
+
+        .catalog__content
+
+          .catalog__settings
+            .row
+              .col-md-6
+                h1.catalog__heading Плащи утепленные <small>152 товара</small>
+                .pages
+                  span.pages__text Страница:
+                  a(href="#").pages__link 1
+                  a(href="#").pages__link 2
+                  a(href="#").pages__link 3
+                  a(href="#").pages__link.is-active 4
+                  a(href="#").pages__link 5
+                  a(href="#").pages__link 6
+                  a(href="#").pages__link 7
+                  a(href="#").pages__link 8
+                  a(href="#").pages__link 9
+                  a(href="#").pages__link 10
+                  a(href="#").pages__link 11
+                  a(href="#").pages__link 12
+                  a(href="#").pages__link 13
+              .col-md-6
+                .sorting
+                  span.sorting__text Сортировать:
+                  .sorting__select
+                    button.sorting__select-trigger
+                      +icon('ico-sort')
+                      | По артикулам (По убыванию)
+                    .sorting__select-dropdown
+                      a(href="#").sorting__select-option.is-active По артикулам (По убыванию)
+                      a(href="#").sorting__select-option По артикулам (По возрастанию)
+                      a(href="#").sorting__select-option По цене (По убыванию)
+                      a(href="#").sorting__select-option По цене (По возрастанию)
+
+                  
+                .display
+                  span.display__text Показывать:
+                  a(href="#").display__link 20
+                  | /
+                  a(href="#").display__link.is-active 40
+                  | /
+                  a(href="#").display__link Все
+
+              
           .row
             //card
             .col-sm-6.col-md-4.col-lg-3
-              .c-card
-                a(href='#').c-card__image
-                  img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
-                
-                a(href='#').c-card__name Lora Cole
-                .c-card__category Куртка
-                .c-card__price 1 300 ₽
+              .c-card(data-card)
+                  .c-card__wrapper
+                    .c-card__ctrl
+                      a(href="#", title="В корзину").c-card__ctrl-link
+                        +icon('ico-cart')
+                      a(href="#", title="В избранное").c-card__ctrl-link
+                        +icon('ico-like')
+                    //- button.c-card__prev Prev
+                    //- button.c-card__next Next
+                    .c-card__slides(data-card-slides)
+                      a(href='#').c-card__image
+                        img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                    .c-card__thumbs(data-card-thumbs)
+                      a(href='#').c-card__thumb
+                        img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                  
+                  a(href='#').c-card__name Lora Cole
+                  .c-card__category Куртка
+                  .c-card__price 1 300 ₽
+                  .c-card__size <b>Размеры:</b> 42, 44, 46, 48, 50, 52, 54, 56, 58 60, 62
+
             //card
             .col-sm-6.col-md-4.col-lg-3
-              .c-card
-                a(href='#').c-card__image
-                  img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
-                
-                a(href='#').c-card__name Lora Cole
-                .c-card__category Куртка
-                .c-card__price 1 300 ₽
+              .c-card(data-card)
+                  .c-card__wrapper
+                    .c-card__ctrl
+                      a(href="#", title="В корзину").c-card__ctrl-link
+                        +icon('ico-cart')
+                      a(href="#", title="В избранное").c-card__ctrl-link
+                        +icon('ico-like')
+                    .c-card__slides(data-card-slides)
+                      a(href='#').c-card__image
+                        img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+                    .c-card__thumbs(data-card-thumbs)
+                      
+                      a(href='#').c-card__thumb
+                        img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+                  
+                  a(href='#').c-card__name Lora Cole
+                  .c-card__category Куртка
+                  .c-card__price 1 300 ₽
+                  .c-card__size <b>Размеры:</b> 42, 44, 46, 48, 50, 52, 54, 56, 58 60, 62
+
             //card
             .col-sm-6.col-md-4.col-lg-3
-              .c-card
-                a(href='#').c-card__image
-                  img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
-                
-                a(href='#').c-card__name Lora Cole
-                .c-card__category Куртка
-                .c-card__price 1 300 ₽
-                
-      
+              .c-card(data-card)
+                  .c-card__wrapper
+                    .c-card__ctrl
+                      a(href="#", title="В корзину").c-card__ctrl-link
+                        +icon('ico-cart')
+                      a(href="#", title="В избранное").c-card__ctrl-link
+                        +icon('ico-like')
+                    .c-card__slides(data-card-slides)
+                      a(href='#').c-card__image
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
+                    .c-card__thumbs(data-card-thumbs)
+                      a(href='#').c-card__thumb
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
+                  
+                  a(href='#').c-card__name Lora Cole
+                  .c-card__category Куртка
+                  .c-card__price 1 300 ₽
+                  .c-card__size <b>Размеры:</b> 42, 44, 46, 48, 50, 52, 54, 56, 58 60, 62
+
+            //card
+            .col-sm-6.col-md-4.col-lg-3
+              .c-card(data-card)
+                  .c-card__wrapper
+                    .c-card__ctrl
+                      a(href="#", title="В корзину").c-card__ctrl-link
+                        +icon('ico-cart')
+                      a(href="#", title="В избранное").c-card__ctrl-link
+                        +icon('ico-like')
+                    .c-card__slides(data-card-slides)
+                      a(href='#').c-card__image
+                        img(src='img/card-4.jpg' srcset='img/card-4@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+
+                    .c-card__thumbs(data-card-thumbs)
+                      a(href='#').c-card__thumb
+                        img(src='img/card-4.jpg' srcset='img/card-4@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+                  
+                  a(href='#').c-card__name Lora Cole
+                  .c-card__category Куртка
+                  .c-card__price 1 300 ₽
+                  .c-card__size <b>Размеры:</b> 42, 44, 46, 48, 50, 52, 54, 56, 58 60, 62
+
+            //card
+            .col-sm-6.col-md-4.col-lg-3
+              .c-card(data-card)
+                  .c-card__wrapper
+                    .c-card__ctrl
+                      a(href="#", title="В корзину").c-card__ctrl-link
+                        +icon('ico-cart')
+                      a(href="#", title="В избранное").c-card__ctrl-link
+                        +icon('ico-like')
+                    .c-card__slides(data-card-slides)
+                      a(href='#').c-card__image
+                        img(src='img/card-5.jpg' srcset='img/card-5@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-4.jpg' srcset='img/card-4@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
+
+                    .c-card__thumbs(data-card-thumbs)
+                      a(href='#').c-card__thumb
+                        img(src='img/card-5.jpg' srcset='img/card-5@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-4.jpg' srcset='img/card-4@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
+                  
+                  a(href='#').c-card__name Lora Cole
+                  .c-card__category Куртка
+                  .c-card__price 1 300 ₽
+                  .c-card__size <b>Размеры:</b> 42, 44, 46, 48, 50, 52, 54, 56, 58 60, 62
+
+            //card
+            .col-sm-6.col-md-4.col-lg-3
+              .c-card(data-card)
+                  .c-card__wrapper
+                    .c-card__ctrl
+                      a(href="#", title="В корзину").c-card__ctrl-link
+                        +icon('ico-cart')
+                      a(href="#", title="В избранное").c-card__ctrl-link
+                        +icon('ico-like')
+                    .c-card__slides(data-card-slides)
+                      a(href='#').c-card__image
+                        img(src='img/card-6.jpg' srcset='img/card-6@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-5.jpg' srcset='img/card-5@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-4.jpg' srcset='img/card-4@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+
+                    .c-card__thumbs(data-card-thumbs)
+                      a(href='#').c-card__thumb
+                        img(src='img/card-6.jpg' srcset='img/card-6@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-5.jpg' srcset='img/card-5@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-4.jpg' srcset='img/card-4@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                  
+                  a(href='#').c-card__name Lora Cole
+                  .c-card__category Куртка
+                  .c-card__price 1 300 ₽
+                  .c-card__size <b>Размеры:</b> 42, 44, 46, 48, 50, 52, 54, 56, 58 60, 62
+            //card
+            .col-sm-6.col-md-4.col-lg-3
+              .c-card(data-card)
+                  .c-card__wrapper
+                    .c-card__ctrl
+                      a(href="#", title="В корзину").c-card__ctrl-link
+                        +icon('ico-cart')
+                      a(href="#", title="В избранное").c-card__ctrl-link
+                        +icon('ico-like')
+                    //- button.c-card__prev Prev
+                    //- button.c-card__next Next
+                    .c-card__slides(data-card-slides)
+                      a(href='#').c-card__image
+                        img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                    .c-card__thumbs(data-card-thumbs)
+                      a(href='#').c-card__thumb
+                        img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                  
+                  a(href='#').c-card__name Lora Cole
+                  .c-card__category Куртка
+                  .c-card__price 1 300 ₽
+                  .c-card__size <b>Размеры:</b> 42, 44, 46, 48, 50, 52, 54, 56, 58 60, 62
+
+            //card
+            .col-sm-6.col-md-4.col-lg-3
+              .c-card(data-card)
+                  .c-card__wrapper
+                    .c-card__ctrl
+                      a(href="#", title="В корзину").c-card__ctrl-link
+                        +icon('ico-cart')
+                      a(href="#", title="В избранное").c-card__ctrl-link
+                        +icon('ico-like')
+                    .c-card__slides(data-card-slides)
+                      a(href='#').c-card__image
+                        img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+                    .c-card__thumbs(data-card-thumbs)
+                      
+                      a(href='#').c-card__thumb
+                        img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+                  
+                  a(href='#').c-card__name Lora Cole
+                  .c-card__category Куртка
+                  .c-card__price 1 300 ₽
+                  .c-card__size <b>Размеры:</b> 42, 44, 46, 48, 50, 52, 54, 56, 58 60, 62
+
+            //card
+            .col-sm-6.col-md-4.col-lg-3
+              .c-card(data-card)
+                  .c-card__wrapper
+                    .c-card__ctrl
+                      a(href="#", title="В корзину").c-card__ctrl-link
+                        +icon('ico-cart')
+                      a(href="#", title="В избранное").c-card__ctrl-link
+                        +icon('ico-like')
+                    .c-card__slides(data-card-slides)
+                      a(href='#').c-card__image
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
+                    .c-card__thumbs(data-card-thumbs)
+                      a(href='#').c-card__thumb
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
+                  
+                  a(href='#').c-card__name Lora Cole
+                  .c-card__category Куртка
+                  .c-card__price 1 300 ₽
+                  .c-card__size <b>Размеры:</b> 42, 44, 46, 48, 50, 52, 54, 56, 58 60, 62
+
+            //card
+            .col-sm-6.col-md-4.col-lg-3
+              .c-card(data-card)
+                  .c-card__wrapper
+                    .c-card__ctrl
+                      a(href="#", title="В корзину").c-card__ctrl-link
+                        +icon('ico-cart')
+                      a(href="#", title="В избранное").c-card__ctrl-link
+                        +icon('ico-like')
+                    .c-card__slides(data-card-slides)
+                      a(href='#').c-card__image
+                        img(src='img/card-4.jpg' srcset='img/card-4@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+
+                    .c-card__thumbs(data-card-thumbs)
+                      a(href='#').c-card__thumb
+                        img(src='img/card-4.jpg' srcset='img/card-4@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+                  
+                  a(href='#').c-card__name Lora Cole
+                  .c-card__category Куртка
+                  .c-card__price 1 300 ₽
+                  .c-card__size <b>Размеры:</b> 42, 44, 46, 48, 50, 52, 54, 56, 58 60, 62
+
+            //card
+            .col-sm-6.col-md-4.col-lg-3
+              .c-card(data-card)
+                  .c-card__wrapper
+                    .c-card__ctrl
+                      a(href="#", title="В корзину").c-card__ctrl-link
+                        +icon('ico-cart')
+                      a(href="#", title="В избранное").c-card__ctrl-link
+                        +icon('ico-like')
+                    .c-card__slides(data-card-slides)
+                      a(href='#').c-card__image
+                        img(src='img/card-5.jpg' srcset='img/card-5@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-4.jpg' srcset='img/card-4@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
+
+                    .c-card__thumbs(data-card-thumbs)
+                      a(href='#').c-card__thumb
+                        img(src='img/card-5.jpg' srcset='img/card-5@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-4.jpg' srcset='img/card-4@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-2.jpg' srcset='img/card-2@2x.jpg 2x')
+                  
+                  a(href='#').c-card__name Lora Cole
+                  .c-card__category Куртка
+                  .c-card__price 1 300 ₽
+                  .c-card__size <b>Размеры:</b> 42, 44, 46, 48, 50, 52, 54, 56, 58 60, 62
+
+            //card
+            .col-sm-6.col-md-4.col-lg-3
+              .c-card(data-card)
+                  .c-card__wrapper
+                    .c-card__ctrl
+                      a(href="#", title="В корзину").c-card__ctrl-link
+                        +icon('ico-cart')
+                      a(href="#", title="В избранное").c-card__ctrl-link
+                        +icon('ico-like')
+                    .c-card__slides(data-card-slides)
+                      a(href='#').c-card__image
+                        img(src='img/card-6.jpg' srcset='img/card-6@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-5.jpg' srcset='img/card-5@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-4.jpg' srcset='img/card-4@2x.jpg 2x')
+                      a(href='#').c-card__image
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+
+                    .c-card__thumbs(data-card-thumbs)
+                      a(href='#').c-card__thumb
+                        img(src='img/card-6.jpg' srcset='img/card-6@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-5.jpg' srcset='img/card-5@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-4.jpg' srcset='img/card-4@2x.jpg 2x')
+                      a(href='#').c-card__thumb
+                        img(src='img/card-3.jpg' srcset='img/card-3@2x.jpg 2x')
+                  
+                  a(href='#').c-card__name Lora Cole
+                  .c-card__category Куртка
+                  .c-card__price 1 300 ₽
+                  .c-card__size <b>Размеры:</b> 42, 44, 46, 48, 50, 52, 54, 56, 58 60, 62
+           
+
+          .row
+            .col-md-6
+
+              .pages
+                span.pages__text Страница:
+                a(href="#").pages__link 1
+                a(href="#").pages__link 2
+                a(href="#").pages__link 3
+                a(href="#").pages__link.is-active 4
+                a(href="#").pages__link 5
+                a(href="#").pages__link 6
+                a(href="#").pages__link 7
+                a(href="#").pages__link 8
+                a(href="#").pages__link 9
+                a(href="#").pages__link 10
+                a(href="#").pages__link 11
+                a(href="#").pages__link 12
+                a(href="#").pages__link 13
+
+            .col-md-6
+             
+              .display
+                span.display__text Показывать:
+                a(href="#").display__link 20
+                | /
+                a(href="#").display__link.is-active 40
+                | /
+                a(href="#").display__link Все     
+    
   include components/_discount
   +discount
 

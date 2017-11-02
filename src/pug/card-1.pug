@@ -1,0 +1,303 @@
+---
+title: Карточка товара 1
+outClass: inner
+---
+extends shared/_layout
+block content
+
+
+  // BREADCRUMBS :: START
+  .breadcrumbs
+    .container
+      a(href='homepage.html') Главная
+      a(href='#') Каталог
+      a(href='#') Осень/Весна
+      a(href='#') Плащи утепленные
+
+  // BREADCRUMBS :: END
+
+  // Card :: START
+
+  .card
+    .container
+      .row
+        .col-lg-8
+
+          // Gallery :: START
+          .gallery(data-gallery)
+            .gallery-slides(data-gallery-slides)
+              .gallery-slides__item
+                figure.gallery-slides__image
+                  img(src='img/card-1-big.jpg', data-zoom-image="img/card-1-big.jpg")
+                a(href="img/card-1-big.jpg", data-mfp-galllery).gallery-slides__zoom
+                  +icon('ico-zoom')
+              .gallery-slides__item
+                figure.gallery-slides__image
+                  img(src='img/zoom/small/image1.png', data-zoom-image="img/zoom/large/image1.jpg")
+                a(href="img/zoom/large/image1.jpg", data-mfp-galllery).gallery-slides__zoom
+                  +icon('ico-zoom')
+              .gallery-slides__item
+                figure.gallery-slides__image
+                  img(src='img/zoom/small/image2.png', data-zoom-image="img/zoom/large/image2.jpg")
+                a(href="img/zoom/large/image2.jpg", data-mfp-galllery).gallery-slides__zoom
+                  +icon('ico-zoom')
+              .gallery-slides__item
+                figure.gallery-slides__image
+                  img(src='img/zoom/small/image3.png', data-zoom-image="img/zoom/large/image3.jpg")
+                a(href="img/zoom/large/image3.jpg", data-mfp-galllery).gallery-slides__zoom
+                  +icon('ico-zoom')
+              .gallery-slides__item
+                figure.gallery-slides__image
+                  img(src='img/zoom/small/image4.png', data-zoom-image="img/zoom/large/image4.jpg")
+                a(href="img/zoom/large/image4.jpg", data-mfp-galllery).gallery-slides__zoom
+                  +icon('ico-zoom')
+
+            .gallery-thumbs(data-gallery-thumbs)
+              .gallery-thumbs__item
+                img(src='img/card-1-big.jpg')
+              .gallery-thumbs__item
+                img(src='img/zoom/small/image1.png')
+              .gallery-thumbs__item
+                img(src='img/zoom/small/image2.png')
+              .gallery-thumbs__item
+                img(src='img/zoom/small/image3.png')
+              .gallery-thumbs__item
+                img(src='img/zoom/small/image4.png')
+
+          // Gallery :: END
+
+        .col-lg-4
+
+          h1.card__heading Парка "Сандрин"
+
+          ul.card__info
+            li <mark>Артикул:</mark> 12345 6789
+            li <mark>Коллекция:</mark> <a href="#">Осень-Зима 2017</a>
+          
+          .card__price
+            .row
+              .col-6
+                p.card__price-text 11 999 <b>₽</b> <small>Розничная цена</small>
+              .col-6
+                a(href="#").card__price-link
+                  +icon('ico-commerce')
+                  | Показать оптовую цену
+
+          .card__colors
+            p.card__colors-text <mark>Цвет:</mark><span data-color-selected>Красно-бордовый</span>
+            .card__colors-group
+
+              .card__colors-item(data-color="Красно-бордовый")
+                img(src='img/card-1-big.jpg')
+
+              .card__colors-item(data-color="Красный")
+                img(src='img/zoom/small/image1.png')
+
+              .card__colors-item(data-color="Бордовый")
+                img(src='img/zoom/small/image2.png')
+
+              .card__colors-item(data-color="")
+                img(src='img/zoom/small/image3.png')
+
+              .card__colors-item(data-color="Черный")
+                img(src='img/zoom/small/image4.png')
+          
+          .card__size
+            .row
+              .col-6
+                p.card__size-text Размер:
+              .col-6
+                a(href="#").card__size-link
+                  +icon('ico-size')
+                  | Таблица размеров
+
+            .card__size-group
+              label.card__check
+                input(type="checkbox").card__check-input
+                span.card__check-btn 42
+              label.card__check
+                input(type="checkbox").card__check-input
+                span.card__check-btn 44
+              label.card__check
+                input(type="checkbox").card__check-input
+                span.card__check-btn 46
+              label.card__check
+                input(type="checkbox").card__check-input
+                span.card__check-btn 48
+              label.card__check
+                input(type="checkbox").card__check-input
+                span.card__check-btn 50
+              label.card__check
+                input(type="checkbox").card__check-input
+                span.card__check-btn 52
+              label.card__check
+                input(type="checkbox").card__check-input
+                span.card__check-btn 54
+              label.card__check
+                input(type="checkbox").card__check-input
+                span.card__check-btn 56
+              label.card__check
+                input(type="checkbox").card__check-input
+                span.card__check-btn 58
+              label.card__check
+                input(type="checkbox").card__check-input
+                span.card__check-btn 60
+              label.card__check
+                input(type="checkbox").card__check-input
+                span.card__check-btn 62
+              label.card__check
+                input(type="checkbox").card__check-input
+                span.card__check-btn 64
+
+          .card__ctrl
+            a(href="#").btn.btn-primary
+              span Добавить в корзину
+            a(href="#").btn.btn-like
+              u.btn-like-icon
+                +icon('ico-like')
+              | Добавить в список<br>желаний
+
+          dl.card__details
+            dt Информация о товаре:
+            dd
+              p Ветровка "Сандрин" прямого силуэта с втачными рукавами. Застежка - на тесьму «молния» с ветрозащитной планкой на кнопках
+              ul
+                li <mark>Вид застежки:</mark> Молния
+                li <mark>Длина изделия:</mark> по спинке: 64 см
+                li <mark>Длина рукава:</mark> Длинные
+                li <mark>Покрой:</mark> прямой
+                li <mark>Рисунок:</mark> без рисунка
+                li <mark>Фактура материала:</mark> гладкий
+                li <mark>Тип карманов:</mark> прорезные
+                li <mark>Утеплитель:</mark> без утепления
+                li <mark>Уход за вещами:</mark> химическая чистка разрешена
+                li <mark>Назначение:</mark> повседневная
+                li <mark>Опции капюшона:</mark> без капюшона
+                li <mark>Опции опушки:</mark> без опушки
+                li <mark>Сезон:</mark> демисезон
+            dt Доставка
+            dd Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Журчит прямо по всей вскоре инициал выйти всеми продолжил, коварный продолжил, свой подзаголовок речью реторический города жизни которое своих семантика, своих.
+            dt Возврат
+            dd Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Журчит прямо по всей вскоре инициал выйти всеми продолжил, коварный продолжил, свой подзаголовок речью реторический города жизни которое своих семантика, своих.
+            dt Для оптовых клиентов
+            dd Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Журчит прямо по всей вскоре инициал выйти всеми продолжил, коварный продолжил, свой подзаголовок речью реторический города жизни которое своих семантика, своих.
+          
+
+  // Card :: END
+
+  // HOME GOODS :: START
+  .goods-slider
+    .container
+      .title Вы смотрели
+      
+      .goods-slider__wrapper
+        .goods-slider__slider.slick-arrows(js-slider data-slick-slides='6' data-slick-arrows="true" data-slick-infinite="true")
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-6.jpg' srcset='img/card-6@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-4.jpg' srcset='img/card-4@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-4.jpg' srcset='img/card-4@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-5.jpg' srcset='img/card-5@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-6.jpg' srcset='img/card-6@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+                  
+                  
+
+
+  // HOME GOODS :: START
+  .goods-slider
+    .container
+      .title Возможно вам понравится
+      
+      .goods-slider__wrapper
+        .goods-slider__slider.slick-arrows(js-slider data-slick-slides='6' data-slick-arrows="true" data-slick-infinite="true")
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-6.jpg' srcset='img/card-6@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-4.jpg' srcset='img/card-4@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-4.jpg' srcset='img/card-4@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-5.jpg' srcset='img/card-5@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-6.jpg' srcset='img/card-6@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+                  
+                  
