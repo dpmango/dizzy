@@ -1,0 +1,252 @@
+---
+title: Моя корзина "New"
+outClass: inner
+---
+extends shared/_layout
+block content
+
+  // BREADCRUMBS :: START
+  .breadcrumbs
+    .container
+      a(href='homepage.html') Главная
+      a(href='#') Моя корзина
+  
+  // LK :: START
+  .lk
+    .container
+
+      .lk__left-sidebar
+        
+        nav.lk__nav
+          a(href="#").lk__nav-link Вход
+          a(href="#").lk__nav-link Регистрация
+          a(href="#").lk__nav-link Восстановление пароля
+          a(href="#").lk__nav-link.is-active Моя корзина
+
+
+      .lk__right-sidebar
+
+        .adv
+          .adv__item
+            figure.adv__item-icon
+              +icon('ico-adv-1')
+            p.adv__item-text Качественное Российское производство
+          .adv__item
+            figure.adv__item-icon
+              +icon('ico-adv-2')
+            p.adv__item-text Лучшее сочетание цена-качество
+          .adv__item
+            figure.adv__item-icon
+              +icon('ico-adv-3')
+            p.adv__item-text Выгодные условия сотрудничества
+          .adv__item
+            figure.adv__item-icon
+              +icon('ico-adv-4')
+            p.adv__item-text Широкий размерный ряд
+          .adv__item
+            figure.adv__item-icon
+              +icon('ico-adv-5')
+            p.adv__item-text Бесплатная доставка по Москве
+
+
+      .lk__content
+        form(action="#")
+
+          h1.lk__heading Моя корзина
+
+          .lk__form
+            .ui-group
+              label.ui-label Имя
+              input(type="text", value="Федор").ui-input
+            .ui-group.is-error
+              label.ui-label Телефон
+              input(type="tel", value="+7 (123) 456-78-90").ui-input
+            .ui-group
+              label.ui-label E-mail
+              .ui-group-content
+                input(type="email", value="fnozdrin@yandex.ru").ui-input
+                label.ui-check
+                  input(type="checkbox").ui-check__input
+                  span.ui-check__checkbox
+                    +icon('ico-check')
+                  | Подписаться на получение рассылки
+            .ui-group
+              label.ui-label Адрес доставки
+              textarea.ui-textarea.ui-textarea__50 Россия, Москва, Саянска ул. 11/2/291
+            .ui-group
+              label.ui-label Комментарий
+              textarea(placeholder="Введите комментарии (не обязательно)").ui-textarea
+            .ui-group
+              label.ui-label Способ доставки
+              select.ui-select
+                option Самовывоз
+                option Самовывоз 2
+                option Самовывоз 3
+            .ui-group
+              label.ui-label Способ оплаты
+              select.ui-select
+                option Наличный расчет при доставке
+                option Наличный расчет при доставке 2
+                option Наличный расчет при доставке 3
+
+            p.ui-attention
+              +icon('ico-attention')
+              | Поля, отмеченные красным цветом, обязательные для заполнения
+
+          
+          .lk__total
+            p.lk__total-text Итого: 4 товара на сумму 100 000 ₽ <small>Заказ рассчитан по розничной цене без учета доставки. Окончательную сумму заказа уточняйте у менеджеров компании.</small>
+            button.btn.btn-primary
+              span Подтвердить заказ
+        
+          .lk__scroll
+
+            table.lk__products
+              thead
+                tr
+                  th №
+                  th
+                  th Описание
+                  th Количество
+                  th Цена
+                  th Сумма
+              tbody
+                tr
+                  td 1
+                  td
+                    figure.lk__products-image
+                      img(src="img/card-1.jpg", alt="")
+                  td
+                    h2.lk__products-title Пальто "Рут"
+                    ul.lk__products-info
+                      li <mark>Артикул:</mark> 12345 6789
+                      li <mark>Коллекция:</mark> <a href="#">Осень-Зима 2017</a>
+                      li <mark>Размер:</mark> 46
+                      li <mark>Цвет:</mark> Красно-бордовый
+            
+                  td
+                    input(type="number", value="2").ui-number
+                  td 12 456 ₽
+                  td
+                    | 24 912 ₽
+                    .lk__products-ctrl
+                      a(href="#").lk__products-delete
+                        +icon('ico-delete')
+                        | Удалить
+
+                tr
+                  td 2
+                  td
+                    figure.lk__products-image
+                      img(src="img/card-2.jpg", alt="")
+                  td
+                    h2.lk__products-title Пальто "Рут"
+                    ul.lk__products-info
+                      li <mark>Артикул:</mark> 12345 6789
+                      li <mark>Коллекция:</mark> <a href="#">Осень-Зима 2017</a>
+                      li <mark>Размер:</mark> 46
+                      li <mark>Цвет:</mark> Красно-бордовый
+                  td
+                    input(type="number", value="2").ui-number
+                  td 12 456 ₽
+                  td
+                    | 24 912 ₽
+                    .lk__products-ctrl
+                      a(href="#").lk__products-delete
+                        +icon('ico-delete')
+                        | Удалить
+                tr
+                  td 3
+                  td
+                    figure.lk__products-image
+                      img(src="img/card-3.jpg", alt="")
+                  td
+                    h2.lk__products-title Пальто "Рут"
+                    ul.lk__products-info
+                      li <mark>Артикул:</mark> 12345 6789
+                      li <mark>Коллекция:</mark> <a href="#">Осень-Зима 2017</a>
+                      li <mark>Размер:</mark> 46
+                      li <mark>Цвет:</mark> Красно-бордовый
+  
+                  td
+                    input(type="number", value="2").ui-number
+                  td 12 456 ₽
+                  td
+                    | 24 912 ₽
+                    .lk__products-ctrl
+                      a(href="#").lk__products-delete
+                        +icon('ico-delete')
+                        | Удалить
+
+          
+              
+  // LK :: End
+  
+
+
+  // HOME GOODS :: START
+  .goods-slider
+    .container
+      .title Возможно вам понравится
+      
+      .goods-slider__wrapper
+        .goods-slider__slider.slick-arrows(js-slider data-slick-slides='6' data-slick-arrows="true" data-slick-infinite="true")
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-6.jpg' srcset='img/card-6@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-4.jpg' srcset='img/card-4@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-4.jpg' srcset='img/card-4@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-5.jpg' srcset='img/card-5@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-6.jpg' srcset='img/card-6@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+  
+  // HOME GOODS :: END
+  
+  // DISCOUNT :: START
+  include components/_discount
+  +discount
+  // DISCOUNT :: END
+ 
+
+
+  

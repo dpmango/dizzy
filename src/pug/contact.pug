@@ -47,17 +47,17 @@ block content
             
             form(action="#" js-validate-contact).contact-form
               .ui-group
-                label Имя
+                label.ui-label Имя
                 input(type='text' name="name").ui-input
               .ui-group
-                label E-mail
+                label.ui-label E-mail
                 input(type='email' name="email").ui-input
               .ui-group
-                label Заголовок
+                label.ui-label Заголовок
                 input(type='text' name="title").ui-input
               .ui-group
-                label Сообщение
-                textarea(type='text' name="message" rows='5' data-min-rows='5').ui-input.js-autoExpand
+                label.ui-label Сообщение
+                textarea(type='text' name="message" rows='5' data-min-rows='5').ui-textarea.js-autoExpand
               
               .contact-form__cta
                 button(type='submit').btn.btn-primary

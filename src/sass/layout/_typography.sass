@@ -1,0 +1,80 @@
+// Typography
+
+.typography
+	font-size: 13px
+	line-height: 15px
+	font-weight: 500
+	letter-spacing: 0.2px
+	h1, h2, h3, h4, h5, h6
+		line-height: 1
+		letter-spacing: 0.5px
+	h1
+		font-size: 32px
+		font-weight: 900
+		margin: 0 0 60px
+
+	h2
+		font-size: 32px
+		font-weight: 300
+		margin: 0 0 40px
+	mark
+		background: none
+		color: #ff8f5b
+	ol
+		margin: 0 0 42px
+		padding: 0
+		list-style: none
+		counter-reset: point
+		max-width: 1040px
+		.attention
+			margin: 0 0 0 -22px
+		& > li
+			position: relative
+			margin: 0 0 15px
+			padding: 0 0 0 22px
+			&:after
+				content: counter(point) "."
+				counter-increment: point 1
+				display: block
+				font-weight: 900
+				color: #ff8f5b
+				position: absolute
+				top: 0
+				left: 0
+	ul
+		margin: 0 0 42px
+		padding: 0
+		list-style: none
+		max-width: 1040px
+		.attention
+			margin: 0 0 0 -22px
+		& > li
+			position: relative
+			margin: 0 0 15px
+			padding: 0 0 0 22px
+			&:after
+				content: ''
+				display: block
+				background: #ff8f5b
+				position: absolute
+				top: 5px
+				left: 0
+				display: block
+				width: 5px
+				height: 5px
+				border-radius: 50%
+
+.attention
+	position: relative
+	background: none
+	color: #ff8f5b
+	padding: 4px 0 4px 22px
+	display: block
+	.ico-attention
+		position: absolute
+		top: 6px
+		left: -2px
+		font-size: 12px
+
+.text-center
+	text-align: center

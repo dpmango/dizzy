@@ -1,0 +1,196 @@
+---
+title: Регистрация
+outClass: inner
+---
+extends shared/_layout
+block content
+
+  // BREADCRUMBS :: START
+  .breadcrumbs
+    .container
+      a(href='homepage.html') Главная
+      a(href='#') Моя корзина
+  
+  // LK :: START
+  .lk
+    .container
+
+      .lk__left-sidebar
+        
+        nav.lk__nav
+          a(href="#").lk__nav-link Вход
+          a(href="#").lk__nav-link.is-active Регистрация
+          a(href="#").lk__nav-link Восстановление пароля
+          a(href="#").lk__nav-link Моя корзина
+
+
+      .lk__right-sidebar
+
+        .adv
+          .adv__item
+            figure.adv__item-icon
+              +icon('ico-adv-1')
+            p.adv__item-text Качественное Российское производство
+          .adv__item
+            figure.adv__item-icon
+              +icon('ico-adv-2')
+            p.adv__item-text Лучшее сочетание цена-качество
+          .adv__item
+            figure.adv__item-icon
+              +icon('ico-adv-3')
+            p.adv__item-text Выгодные условия сотрудничества
+          .adv__item
+            figure.adv__item-icon
+              +icon('ico-adv-4')
+            p.adv__item-text Широкий размерный ряд
+          .adv__item
+            figure.adv__item-icon
+              +icon('ico-adv-5')
+            p.adv__item-text Бесплатная доставка по Москве
+
+
+      .lk__content
+        form(action="#")
+
+          h1.lk__heading Моя корзина
+
+          .lk__form
+            .ui-group
+              label.ui-label Имя
+              input(type="text", placeholder="Введите имя").ui-input
+            .ui-group
+              label.ui-label Фамилия
+              input(type="text", placeholder="Введите фамилию").ui-input
+            .ui-group
+              label.ui-label Название организации
+              input(type="text").ui-input
+            .ui-group.is-error
+              label.ui-label Телефон*
+              input(type="tel", value="+7 (123) 456-78-90").ui-input
+            .ui-group
+              label.ui-label E-mail
+              .ui-group-content
+                input(type="email", value="fnozdrin@yandex.ru").ui-input
+                label.ui-check
+                  input(type="checkbox").ui-check__input
+                  span.ui-check__checkbox
+                    +icon('ico-check')
+                  | Подписаться на новости и скидки
+            .ui-group
+              label.ui-label Адрес доставки
+              textarea.ui-textarea.ui-textarea__50 Россия, Москва, Саянска ул. 11/2/291
+            .ui-group
+              label.ui-label Пароль
+              input(type="password", placeholder="").ui-input
+            .ui-group
+              label.ui-label Подтверждение
+              input(type="password", placeholder="").ui-input
+            .ui-group
+              label.ui-label Тип покупателя
+              ul.ui-checklist
+                li
+                  label.ui-check
+                    input(type="checkbox").ui-check__input
+                    span.ui-check__checkbox
+                      +icon('ico-check')
+                    | Розничный
+                li
+                  label.ui-check
+                    input(type="checkbox").ui-check__input
+                    span.ui-check__checkbox
+                      +icon('ico-check')
+                    | Оптовый (требует подтверждения)
+           
+            .ui-group
+              label.ui-label Введите код,<br>указанный на картинке
+              .ui-group-content
+                .ui-captcha
+                  input(type="text", placeholder="CAPTCHA!").ui-captcha__input
+                  figure.ui-captcha__image
+                    img(src="img/img-captcha.jpg", alt="")
+                label.ui-check
+                    input(type="checkbox").ui-check__input
+                    span.ui-check__checkbox
+                      +icon('ico-check')
+                    | Да, я принимаю условия работы Diway.ru
+
+            p.ui-attention
+              +icon('ico-attention')
+              | Поля, отмеченные красным цветом, обязательные для заполнения
+          
+            button.btn.btn-primary
+              span Регистрация
+
+            button(disabled).btn.btn-primary
+              span Регистрация
+              
+  // LK :: End
+  
+
+
+  // HOME GOODS :: START
+  .goods-slider
+    .container
+      .title Возможно вам понравится
+      
+      .goods-slider__wrapper
+        .goods-slider__slider.slick-arrows(js-slider data-slick-slides='6' data-slick-arrows="true" data-slick-infinite="true")
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-6.jpg' srcset='img/card-6@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-4.jpg' srcset='img/card-4@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-1.jpg' srcset='img/card-1@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-4.jpg' srcset='img/card-4@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-5.jpg' srcset='img/card-5@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+          // card
+          .slider-card
+            a(href='#').slider-card__image
+              img(src='img/card-6.jpg' srcset='img/card-6@2x.jpg 2x')
+            
+            a(href='#').slider-card__name Lora Cole
+            .slider-card__category Куртка
+            .slider-card__price 1 300 ₽
+  
+  // HOME GOODS :: END
+  
+  // DISCOUNT :: START
+  include components/_discount
+  +discount
+  // DISCOUNT :: END
+ 
+
+
+  

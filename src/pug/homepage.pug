@@ -138,7 +138,7 @@ block content
         .benefits__card
           .benefits__card-icon
             +icon('ico-wallet')
-          .benefits__card-name Лучшее сочетание  цена-качество 
+          .benefits__card-name Лучшее сочетание цена-качество 
           .benefits__card-plus(js-popup data-mfp-src="#mfpBenefits")
             +icon('ico-plus')
             
@@ -152,25 +152,55 @@ block content
         .benefits__card
           .benefits__card-icon
             +icon('ico-coat')
-          .benefits__card-name Широкий размерный  ряд от 42 до 64
+          .benefits__card-name Широкий размерный ряд от 42 до 64
           .benefits__card-plus(js-popup data-mfp-src="#mfpBenefits")
             +icon('ico-plus')
             
         .benefits__card
           .benefits__card-icon
             +icon('ico-delivery-truck')
-          .benefits__card-name Бесплатная доставка  по Москве
+          .benefits__card-name Бесплатная доставка по Москве
           .benefits__card-plus(js-popup data-mfp-src="#mfpBenefits")
             +icon('ico-plus')
   
   // POPUP DIALOG
   .popup-dialog.popup-benefits.mfp-hide#mfpBenefits
-    .popup-benefits__content
-      .popup-benefits__title Качественное российское производство
-      .popup-benefits__text
-        p Торговая марка (Компания) Dizzy way (Diway) – один из ведущих российских производителей  женской верхней одежды, действующий на рынке с 2006 года.  Компания занимается комплексной  разработкой  сезонных коллекций с учетом модных направлений и рассчитанных на самую широкую женскую аудиторию. Мы гордимся тем, что наши изделия – это полностью отечественный продукт.
-    .popup-benefits__ico-bg
-      +icon('ico-sewing-machine')
+    .popup-benefits-slides(data-benefits-slides)
+
+      .popup-benefits__content
+        .popup-benefits__title Качественное российское производство
+        .popup-benefits__text
+          p Торговая марка (Компания) Dizzy way (Diway) – один из ведущих российских производителей  женской верхней одежды, действующий на рынке с 2006 года.  Компания занимается комплексной  разработкой  сезонных коллекций с учетом модных направлений и рассчитанных на самую широкую женскую аудиторию. Мы гордимся тем, что наши изделия – это полностью отечественный продукт.
+        .popup-benefits__ico-bg
+          +icon('ico-sewing-machine')
+
+      .popup-benefits__content
+        .popup-benefits__title Лучшее сочетание цена-качество 
+        .popup-benefits__text
+          p Торговая марка (Компания) Dizzy way (Diway) – один из ведущих российских производителей  женской верхней одежды, действующий на рынке с 2006 года.  Компания занимается комплексной  разработкой  сезонных коллекций с учетом модных направлений и рассчитанных на самую широкую женскую аудиторию. Мы гордимся тем, что наши изделия – это полностью отечественный продукт.
+        .popup-benefits__ico-bg
+          +icon('ico-wallet')
+
+      .popup-benefits__content
+        .popup-benefits__title Выгодные условия сотрудничества
+        .popup-benefits__text
+          p Торговая марка (Компания) Dizzy way (Diway) – один из ведущих российских производителей  женской верхней одежды, действующий на рынке с 2006 года.  Компания занимается комплексной  разработкой  сезонных коллекций с учетом модных направлений и рассчитанных на самую широкую женскую аудиторию. Мы гордимся тем, что наши изделия – это полностью отечественный продукт.
+        .popup-benefits__ico-bg
+          +icon('ico-handshake')
+
+      .popup-benefits__content
+        .popup-benefits__title Широкий размерный <br>ряд от 42 до 64
+        .popup-benefits__text
+          p Торговая марка (Компания) Dizzy way (Diway) – один из ведущих российских производителей  женской верхней одежды, действующий на рынке с 2006 года.  Компания занимается комплексной  разработкой  сезонных коллекций с учетом модных направлений и рассчитанных на самую широкую женскую аудиторию. Мы гордимся тем, что наши изделия – это полностью отечественный продукт.
+        .popup-benefits__ico-bg
+          +icon('ico-coat')
+
+      .popup-benefits__content
+        .popup-benefits__title Бесплатная доставка <br>по Москве
+        .popup-benefits__text
+          p Торговая марка (Компания) Dizzy way (Diway) – один из ведущих российских производителей  женской верхней одежды, действующий на рынке с 2006 года.  Компания занимается комплексной  разработкой  сезонных коллекций с учетом модных направлений и рассчитанных на самую широкую женскую аудиторию. Мы гордимся тем, что наши изделия – это полностью отечественный продукт.
+        .popup-benefits__ico-bg
+          +icon('ico-delivery-truck')
     
     
   
@@ -410,13 +440,13 @@ block content
                 img(src='img/newsCard-1.jpg' srcset='img/newsCard-1@2x.jpg 2x')
               .news-card__content
                 .news-card__date 11.07.2017
-                .news-card__name Открыт предзаказ на коллекцию одежды  «Осень 2017»
+                .news-card__name Открыт предзаказ на коллекцию одежды «Осень 2017»
           //card
           .col-md-6.col-lg-4
             a(href='#').news-card
               .news-card__content
                 .news-card__date 11.07.2017
-                .news-card__name Коллекция  «Весна 2017» Скидка до 35%!
+                .news-card__name Коллекция «Весна 2017»Скидка до 35%!
           //card
           .col-md-6.col-lg-4
             a(href='#').news-card.news-card--bg-peach
@@ -434,7 +464,7 @@ block content
             a(href='#').news-card.news-card--bg-peach
               .news-card__content
                 .news-card__date 11.07.2017
-                .news-card__name Коллекция одежды «Лето 2017» уже  в продаже
+                .news-card__name Коллекция одежды «Лето 2017» уже в продаже
           //card
           .col-md-6.col-lg-4
             a(href='#').news-card
@@ -442,7 +472,7 @@ block content
                 img(src='img/newsCard-2.jpg' srcset='img/newsCard-2@2x.jpg 2x')
               .news-card__content
                 .news-card__date 11.07.2017
-                .news-card__name Открыт предзаказ на коллекцию одежды  «Осень 2017»  
+                .news-card__name Открыт предзаказ на коллекцию одежды «Осень 2017»  
                 
   // TEXT :: START
   .text

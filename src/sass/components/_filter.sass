@@ -140,3 +140,48 @@
 		.filter-group__content
 			display: block
 		
+
+
+.filter-check
+    display: block
+    position: relative
+    font-size: 13px
+    line-height: 18px
+    font-weight: 500
+    color: rgba(0,0,0,0.6)
+    padding: 0 0 0 20px
+    cursor: pointer
+    transition: .25s
+    &:hover
+        color: rgba(0,0,0,1)
+        .filter-check__text
+            text-decoration: underline
+    &__input
+        position: absolute
+        top: 0
+        left: 0
+        visibility: hidden
+        &:checked ~ .filter-check__checkbox
+            border-color: #ff8f5b
+            background: #ff8f5b
+        &:checked ~ .filter-check__text
+            text-decoration: underline
+            color: rgba(0,0,0,1)
+    &__checkbox
+        transition: .25s
+        width: 10px
+        height: 10px
+        background: #fff
+        border: 1px solid rgba(0,0,0,0.6);
+        display: block
+        position: absolute
+        top: 4px
+        left: 0
+        display: flex
+        align-items: center
+        justify-content: center
+        .ico
+            transition: inherit
+            font-size: 10px
+            color: #1EA0E4
+            opacity: 0

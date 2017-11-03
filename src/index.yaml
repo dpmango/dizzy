@@ -4,11 +4,11 @@ PageList:
 - file: homepage.html
   ready: 100
 - file: catalog.html
-  ready: 50
+  ready: 100
 - file: card-1.html
-  ready: 50
+  ready: 100
 - file: card-2.html
-  ready: 50
+  ready: 100
 - file: collections.html
   ready: 100
 - file: about.html
@@ -24,16 +24,16 @@ PageList:
 - file: contact.html
   ready: 100
 - file: delivery.html
-  ready: 25
-
-
-- file: orders.html
-  ready: 0
-- file: favourite.html
-  ready: 0
-- file: cart-registred.html
-  ready: 0
-- file: cart-new.html
-  ready: 0
+  ready: 100
+- file: lk-orders.html
+  ready: 100
+- file: lk-cart-reg.html
+  ready: 100
+- file: lk-cart-reg-opt.html
+  ready: 100
+- file: lk-favourite.html
+  ready: 100
+- file: lk-cart-new.html
+  ready: 100
 - file: registration.html
-  ready: 0
+  ready: 100

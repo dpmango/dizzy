@@ -186,6 +186,7 @@
 .charity-card
   flex: 0 0 200px
   width: 200px
+  // width: 16.6666%
   min-width: 0
   cursor: pointer
   padding: 0px 10px
@@ -206,6 +207,11 @@
     img
       max-width: 100%
       transition: all $transitionSpeed $ease
+  +r($wide)
+    // width: 20%
+  +r($desktop)
+    // width: 25%
+
 
 +r($mobile)
   .charity-list

@@ -1,0 +1,399 @@
+// Lk
+
+
+.lk
+	padding: 20px 0 50px
+	& ~ .goods-slider
+		margin-top: 10px
+	&__left-sidebar
+		width: 100%
+		+rmin($desktop)
+			float: left
+			width: 200px
+			margin-right: -100%
+	&__right-sidebar
+		width: 100%
+		+rmin($desktop)
+			float: right
+			width: 200px
+			margin-left: -100%
+	&__content
+		width: 100%
+		+rmin($desktop)
+			padding: 0 220px 0 240px	
+			
+	&__heading
+		font-size: 32px
+		line-height: 1
+		font-weight: 900
+		margin: 0 0 15px
+	&__scroll
+		position: relative
+		overflow-x: auto
+		margin: 0 -10px 20px
+		padding: 0 10px 10px
+	&__form
+		padding: 20px 0 25px
+		.ui-select
+			max-width: 380px
+		
+		
+	+r($desktop)
+		.container
+			display: flex
+			flex-wrap: wrap
+		&__left-sidebar
+			order: 1
+		&__right-sidebar
+			order: 3
+		&__content
+			order: 2
+
+
+.lk__nav
+	padding: 24px 20px
+	margin: 0 0 40px
+	background: #fff
+	box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2)
+	font-size: 16px
+	line-height: 22px
+	font-weight: 500
+	
+	&-link
+		transition: .25s
+		display: block
+		margin: 0 0 18px
+		color: rgba(0,0,0,0.6)
+		&:last-child
+			margin: 0
+		&:hover, &.is-active
+			color: rgba(0,0,0,1)
+			text-decoration: underline
+		
+		.ico
+			font-size: 16px
+			margin: 0 10px 0 0
+			vertical-align: middle
+			position: relative
+			top: -1px
+	+rmin($tablet)
+		display: flex
+		flex-wrap: wrap
+		&-link
+			margin: 0 18px 0 0
+	+rmin($desktop)
+		display: block
+		&-link
+			margin: 0 0 18px
+			&:last-child
+				margin: 0
+			
+
+
+
+.lk__orders
+	width: 100%
+	border-collapse: collapse
+	border-spacing: 0
+	font-size: 16px
+	line-height: 22px
+	font-weight: 500
+	letter-spacing: 0.2px
+	text-align: center
+	margin: 0
+	th
+		font-size: 13px
+		color: rgba(0,0,0,0.6)
+		padding: 14px 10px
+		white-space: nowrap
+		font-weight: 500
+	td
+		padding: 14px 10px
+		border-top: 1px solid #ccc
+
+	.lk__products tr:hover
+		box-shadow: none
+		td
+			border-top-color: #ccc
+	
+	&-group
+		&.is-open
+			.lk__orders-group-trigger
+				background: #f3f5f7
+				box-shadow: inset 0 1.5px 2.5px 0 rgba(0, 0, 0, 0.2)
+	&-group:not(.is-open)
+		.lk__orders-group-content
+			display: none
+
+	&-group-trigger
+		cursor: pointer
+		transition: background .25s, box-shadow .25s
+		&:hover
+			background: #f3f5f7
+			box-shadow: inset 0 1.5px 2.5px 0 rgba(0, 0, 0, 0.2)
+	&-group-content
+		background-color: #fff
+		box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2)
+		td
+			padding: 0
+			border: none
+	
+
+.lk__products
+	width: 100%
+	border-collapse: collapse
+	font-size: 16px
+	line-height: 22px
+	font-weight: 500
+	white-space: nowrap
+	text-align: center
+	.ui-number .jq-number__spin
+		opacity: 0
+	&-number
+		text-align: left
+		display: block
+		font-size: 20px
+		line-height: 22px
+		letter-spacing: 0.3px
+		font-weight: 500
+		margin: 0
+	th
+		padding: 9px 10px
+		font-size: 13px
+		font-weight: 500
+		color: rgba(0,0,0,0.6)
+	td
+		position: relative
+		padding: 10px 5px
+		border-bottom: none
+		border-top: 1px solid #ccc
+		vertical-align: top
+		transition: inherit
+	tr:last-child td
+		// border: none
+	tbody tr
+		transition: .25s
+		&:hover
+			background-color: #ffffff
+			box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2)
+			td
+				border-color: transparent
+			.lk__products-ctrl
+				opacity: 1
+				visibility: visible
+			.ui-number .jq-number__spin
+				opacity: 1
+
+	&-image
+		width: 90px
+		margin: 0 -5px
+		padding: 5px
+		background: #EDEDED
+		img
+			width: 100%
+			max-width: 100%
+			display: block
+	&-title
+		text-align: left
+		display: block
+		margin: 0 0 32px
+		font-size: 16px
+		line-height: 22px
+		font-weight: 500
+	&-info
+		margin: 0
+		padding: 0
+		list-style: none
+		text-align: left
+		font-size: 13px
+		line-height: 15px
+		& > li
+			display: block
+			margin: 0 0 5px
+		a
+			text-decoration: underline
+			color: #000
+			&:hover
+				color: #ff8f5b
+				text-decoration: none
+		mark
+			margin: 0 5px 0 0
+			background: none
+			color: rgba(0,0,0,0.6)
+	&-ctrl
+		position: absolute
+		bottom: 0
+		right: 0
+		display: flex
+		align-items: center
+		font-size: 13px
+		line-height: 22px
+		padding: 10px
+		background: #fff
+		transition: .25s
+		opacity: 0
+		visibility: hidden
+		z-index: 10
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			bottom: 0
+			right: 100%
+			width: 30px
+			background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%)
+		.btn
+			margin: 0 10px
+	&-add
+		display: inline-block
+		vertical-align: top
+		position: relative
+		margin: 0 10px
+		text-decoration: underline
+		color: rgba(0,0,0,0.6)
+		&:hover
+			color: rgba(0,0,0,1)
+	&-delete
+		display: inline-block
+		vertical-align: top
+		position: relative
+		padding: 0 0 0 18px
+		margin: 0 10px
+		text-decoration: underline
+		color: #ff8f5b
+		.ico
+			display: block
+			position: absolute
+			top: 50%
+			left: 0
+			font-size: 11px
+			transform: translate(0,-50%)
+			stroke: currentColor
+
+
+
+.lk__total
+	padding: 12px 20px 20px
+	background: #FFEBD7
+	margin: 0 0 40px
+	&-text
+		display: block
+		font-size: 20px
+		line-height: 22px
+		font-weight: 500
+		letter-spacing: 0.4px
+		margin: 0 0 14px
+		small
+			display: block
+			font-size: 10px
+			line-height: 12px
+			padding: 5px 0
+			letter-spacing: 0.1px
+			opacity: 0.6
+	.btn
+		min-width: 200px
+
+
+
+.lk__products-size
+	width: 100%
+	text-align: center
+	color: rgba(0,0,0,0.6)
+	white-space: nowrap
+	border-spacing: 0 5px
+	margin: -5px 0 0
+	max-width: 340px
+	line-height: 15px
+	tfoot td
+		padding: 10px 0 0
+		background: none
+		text-align: left
+		&:after
+			display: none
+	thead, tbody
+		tr:hover
+			box-shadow: none
+	th
+		font-weight: 400
+		padding: 0
+		&:first-child
+			text-align: left
+	td
+		padding: 0
+		width: 24px
+		height: 24px
+		background-color: rgba(0, 0, 0, 0.1)
+		vertical-align: middle
+		position: relative
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 0
+			right: -1px
+			border: solid 1px #6a6a6a
+			z-index: 1
+		&.is-has
+			background: #fff
+		&.is-few
+			background: #fff
+			&:after
+				border-color: #ff8f5b
+				z-index: 2
+
+		// Colors
+
+		// &[class^="bg-"]
+		// 	background: #ccc
+		// 	color: #fff
+		// 	padding: 0 12px
+		// 	&:after
+		// 		opacity: 0
+
+		// &.bg-red
+		// 	background: #9f0216
+		// &.bg-green
+		// 	background: #7ed321
+		// &.bg-brown
+		// 	background: #8b572a
+
+
+	&-type
+		display: inline-block
+		vertical-align: top
+		padding: 0 12px
+		height: 24px
+		line-height: 24px
+		background-color: rgba(0, 0, 0, 0.1)
+		vertical-align: middle
+		position: relative
+		margin: 0 5px 0 0
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 0
+			right: -1px
+			border: solid 1px #6a6a6a
+			z-index: 1
+		&.is-has
+			background: #fff
+		&.is-few
+			background: #fff
+			&:after
+				border-color: #ff8f5b
+				z-index: 2
+
+// .lk__table
+// 	width: 100%
+// 	border-collapse: collapse
+
+// .lk__table-item-trigger
+// 	border-bottom: 20px solid #fff
+// 	background-color: #f3f5f7
+// 	box-shadow: inset 0 1.5px 2.5px 0 rgba(0, 0, 0, 0.2)

@@ -1,0 +1,50 @@
+// Adv
+
+.adv
+	margin: 0 0 40px
+	display: flex
+	flex-wrap: wrap
+	justify-content: center
+	&__item
+		font-size: 13px
+		line-height: 15px
+		letter-spacing: 0.2px
+		text-align: center
+		margin: 0 0 32px
+		width: 100%
+		max-width: 200px
+		&-icon
+			display: flex
+			align-items: center
+			justify-content: center
+			width: 80px
+			height: 80px
+			border-radius: 50%
+			background: #f3f5f7
+			margin: 0 auto 18px
+			color: #000
+			.ico-adv-1
+				font-size: 40px
+			.ico-adv-2
+				font-size: 35px
+			.ico-adv-3
+				font-size: 40px
+			.ico-adv-4
+				font-size: 40px
+			.ico-adv-5
+				font-size: 32px
+		&-text
+			margin: 0
+
+	+rmin($mobile-s)
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+	+rmin($tablet)
+		&__item
+			width: 20%
+			max-width: none
+	+rmin($desktop)
+		&__item
+			width: 100%
+			

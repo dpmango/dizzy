@@ -7,13 +7,15 @@
     vertical-align: top
 
   &__sidebar
-    +rmin($desktop)
+    +rmin($tablet)
       float: left
       width: 200px
       margin-right: -100%
   &__content
+    +rmin($tablet)
+       padding: 20px 0 0 220px
     +rmin($desktop)
-       padding: 20px 0 0 240px
+      padding-left: 240px
   &__heading
     display: block
     margin: 0 0 12px
@@ -71,8 +73,8 @@
     // background: rgba($fontColor, .07)
     background: #EDEDED
     overflow: hidden
-    height: 340px
-    line-height: 340px
+    height: 240px
+    line-height: 240px
     text-align: center
     img
       display: inline-block
@@ -82,6 +84,9 @@
     &:hover
       img
         transform: scale(1.05)
+    +rmin($desktop)
+      height: 340px
+      line-height: 340px
   &__name
     display: block
     margin-top: auto

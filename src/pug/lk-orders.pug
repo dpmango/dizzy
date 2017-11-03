@@ -1,0 +1,293 @@
+---
+title: Мои заказы
+outClass: inner
+---
+extends shared/_layout
+block content
+
+  // BREADCRUMBS :: START
+  .breadcrumbs
+    .container
+      a(href='homepage.html') Главная
+      a(href='#') Мои заказы
+  
+  // lk :: START
+  .lk
+    .container
+
+      .lk__left-sidebar
+        
+        nav.lk__nav
+          a(href="#").lk__nav-link.is-active Мои заказы
+          a(href="#").lk__nav-link Моя корзина
+          a(href="#").lk__nav-link Избранное
+          a(href="#").lk__nav-link Мои данные
+          a(href="#").lk__nav-link
+            +icon('ico-logout')
+            | Выход
+
+
+      .lk__right-sidebar
+
+        .adv
+          .adv__item
+            figure.adv__item-icon
+              +icon('ico-adv-1')
+            p.adv__item-text Качественное Российское производство
+          .adv__item
+            figure.adv__item-icon
+              +icon('ico-adv-2')
+            p.adv__item-text Лучшее сочетание цена-качество
+          .adv__item
+            figure.adv__item-icon
+              +icon('ico-adv-3')
+            p.adv__item-text Выгодные условия сотрудничества
+          .adv__item
+            figure.adv__item-icon
+              +icon('ico-adv-4')
+            p.adv__item-text Широкий размерный ряд
+          .adv__item
+            figure.adv__item-icon
+              +icon('ico-adv-5')
+            p.adv__item-text Бесплатная доставка по Москве
+
+
+      .lk__content
+        
+        h1.lk__heading Мои заказы
+        
+        .lk__scroll
+          table.lk__orders
+            thead
+              tr
+                th Заказ
+                th Дата и время заказа
+                th Количество
+                th Сумма
+                th Статус
+
+            tbody.lk__orders-group.is-open
+              tr.lk__orders-group-trigger
+                td 5823
+                td 11.07.2017
+                td 3
+                td 1 129 456 ₽
+                td Неподтвержден
+              tr.lk__orders-group-content
+                td(colspan="100")
+                  
+                  table.lk__products
+                    thead
+                      tr
+                        th(colspan="100")
+                          p.lk__products-number Заказ № 5823 
+                      tr
+                        th №
+                        th
+                        th Описание
+                        th Количество
+                        th Цена
+                        th Сумма
+                    tbody
+                      tr
+                        td 1
+                        td
+                          figure.lk__products-image
+                            img(src="img/card-1.jpg", alt="")
+                        td
+                          h2.lk__products-title Пальто "Рут"
+                          ul.lk__products-info
+                            li <mark>Артикул:</mark> 12345 6789
+                            li <mark>Коллекция:</mark> <a href="#">Осень-Зима 2017</a>
+                            li <mark>Размер:</mark> 46
+                            li <mark>Цвет:</mark> Красно-бордовый
+                        td 2
+                        td 12 456 ₽
+                        td 24 912 ₽
+                      tr
+                        td 2
+                        td
+                          figure.lk__products-image
+                            img(src="img/card-2.jpg", alt="")
+                        td
+                          h2.lk__products-title Пальто "Рут"
+                          ul.lk__products-info
+                            li <mark>Артикул:</mark> 12345 6789
+                            li <mark>Коллекция:</mark> <a href="#">Осень-Зима 2017</a>
+                            li <mark>Размер:</mark> 46
+                            li <mark>Цвет:</mark> Красно-бордовый
+                        td 2
+                        td 12 456 ₽
+                        td 24 912 ₽
+            
+            tbody.lk__orders-group
+              tr.lk__orders-group-trigger
+                td 5823
+                td 11.07.2017
+                td 3
+                td 1 129 456 ₽
+                td Неподтвержден
+              tr.lk__orders-group-content
+                td(colspan="100")
+                  
+                  table.lk__products
+                    thead
+                      tr
+                        th(colspan="100")
+                          p.lk__products-number Заказ № 5823 
+                      tr
+                        th №
+                        th
+                        th Описание
+                        th Количество
+                        th Цена
+                        th Сумма
+                    tbody
+                      tr
+                        td 1
+                        td
+                          figure.lk__products-image
+                            img(src="img/card-1.jpg", alt="")
+                        td
+                          h2.lk__products-title Пальто "Рут"
+                          ul.lk__products-info
+                            li <mark>Артикул:</mark> 12345 6789
+                            li <mark>Коллекция:</mark> <a href="#">Осень-Зима 2017</a>
+                            li <mark>Размер:</mark> 46
+                            li <mark>Цвет:</mark> Красно-бордовый
+                        td 2
+                        td 12 456 ₽
+                        td 24 912 ₽
+                      tr
+                        td 2
+                        td
+                          figure.lk__products-image
+                            img(src="img/card-2.jpg", alt="")
+                        td
+                          h2.lk__products-title Пальто "Рут"
+                          ul.lk__products-info
+                            li <mark>Артикул:</mark> 12345 6789
+                            li <mark>Коллекция:</mark> <a href="#">Осень-Зима 2017</a>
+                            li <mark>Размер:</mark> 46
+                            li <mark>Цвет:</mark> Красно-бордовый
+                        td 2
+                        td 12 456 ₽
+                        td 24 912 ₽
+            
+            tbody.lk__orders-group
+              tr.lk__orders-group-trigger
+                td 5823
+                td 11.07.2017
+                td 3
+                td 1 129 456 ₽
+                td Неподтвержден
+              tr.lk__orders-group-content
+                td(colspan="100")
+                  
+                  table.lk__products
+                    thead
+                      tr
+                        th(colspan="100")
+                          p.lk__products-number Заказ № 5823 
+                      tr
+                        th №
+                        th
+                        th Описание
+                        th Количество
+                        th Цена
+                        th Сумма
+                    tbody
+                      tr
+                        td 1
+                        td
+                          figure.lk__products-image
+                            img(src="img/card-1.jpg", alt="")
+                        td
+                          h2.lk__products-title Пальто "Рут"
+                          ul.lk__products-info
+                            li <mark>Артикул:</mark> 12345 6789
+                            li <mark>Коллекция:</mark> <a href="#">Осень-Зима 2017</a>
+                            li <mark>Размер:</mark> 46
+                            li <mark>Цвет:</mark> Красно-бордовый
+                        td 2
+                        td 12 456 ₽
+                        td 24 912 ₽
+                      tr
+                        td 2
+                        td
+                          figure.lk__products-image
+                            img(src="img/card-2.jpg", alt="")
+                        td
+                          h2.lk__products-title Пальто "Рут"
+                          ul.lk__products-info
+                            li <mark>Артикул:</mark> 12345 6789
+                            li <mark>Коллекция:</mark> <a href="#">Осень-Зима 2017</a>
+                            li <mark>Размер:</mark> 46
+                            li <mark>Цвет:</mark> Красно-бордовый
+                        td 2
+                        td 12 456 ₽
+                        td 24 912 ₽
+            
+            tbody.lk__orders-group
+              tr.lk__orders-group-trigger
+                td 5823
+                td 11.07.2017
+                td 3
+                td 1 129 456 ₽
+                td Неподтвержден
+              tr.lk__orders-group-content
+                td(colspan="100")
+                  
+                  table.lk__products
+                    thead
+                      tr
+                        th(colspan="100")
+                          p.lk__products-number Заказ № 5823 
+                      tr
+                        th №
+                        th
+                        th Описание
+                        th Количество
+                        th Цена
+                        th Сумма
+                    tbody
+                      tr
+                        td 1
+                        td
+                          figure.lk__products-image
+                            img(src="img/card-1.jpg", alt="")
+                        td
+                          h2.lk__products-title Пальто "Рут"
+                          ul.lk__products-info
+                            li <mark>Артикул:</mark> 12345 6789
+                            li <mark>Коллекция:</mark> <a href="#">Осень-Зима 2017</a>
+                            li <mark>Размер:</mark> 46
+                            li <mark>Цвет:</mark> Красно-бордовый
+                        td 2
+                        td 12 456 ₽
+                        td 24 912 ₽
+                      tr
+                        td 2
+                        td
+                          figure.lk__products-image
+                            img(src="img/card-2.jpg", alt="")
+                        td
+                          h2.lk__products-title Пальто "Рут"
+                          ul.lk__products-info
+                            li <mark>Артикул:</mark> 12345 6789
+                            li <mark>Коллекция:</mark> <a href="#">Осень-Зима 2017</a>
+                            li <mark>Размер:</mark> 46
+                            li <mark>Цвет:</mark> Красно-бордовый
+                        td 2
+                        td 12 456 ₽
+                        td 24 912 ₽
+
+
+
+   
+        
+    
+  // lk :: End
+
+
+  

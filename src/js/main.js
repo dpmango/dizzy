@@ -26,6 +26,21 @@ $(document).ready(function(){
   });
 
   // --------------------------------------------------------------------------
+  // Lk
+  // --------------------------------------------------------------------------
+
+  $('.lk__orders-group').on('click', '.lk__orders-group-trigger', function() {
+      if ($(this).closest('.lk__orders-group').is('.is-open')) {
+        $(this).closest('.lk__orders-group').removeClass('is-open').find('.lk__orders-group-content').hide();
+      }
+      else {
+        $('.lk__orders-group').removeClass('is-open').find('.lk__orders-group-content').hide();
+        $(this).closest('.lk__orders-group').addClass('is-open').find('.lk__orders-group-content').show()
+      }
+      
+  });
+
+  // --------------------------------------------------------------------------
   // Sorting
   // --------------------------------------------------------------------------
 
@@ -397,6 +412,18 @@ $(document).ready(function(){
   })
 
 
+// benefits-slides
+
+  $('[data-benefits-slides]').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    fade: false,
+    infinite: true,
+    dots: true
+
+  });
+
 
 // c-card-slides
 
@@ -556,12 +583,11 @@ $('[data-gallery-slides]').on('mouseover', '[data-slick-index]', function(event)
 
 
 $('[data-mfp-galllery]').magnificPopup({
-  // // delegate: '[data-mfp-galllery]',
   type: 'image',
   closeOnContentClick: false,
   closeBtnInside: false,
   tLoading: 'Loading image #%curr%...',
-  mainClass: 'mfp-with-zoom',
+  mainClass: 'mfp-with-scale',
   removalDelay: 300,
   gallery: {
     enabled: true,
@@ -574,36 +600,23 @@ $('[data-mfp-galllery]').magnificPopup({
   image: {
     verticalFit: true,
     tError: '<a href="%url%">Изображение #%curr%</a> не может быть загружено.'
-  },
-  // zoom: {
-  //   enabled: true,
-  //   duration: 300,
-  //   easing: 'ease-in-out'
-  // }
+  }
 });
 
 
-// $('[data-gallery-slides]').elevateZoom({
-//   constrainType:"height",
-//   // constrainSize:274,
-//   zoomType: "lens",
-//   containLensZoom: false,
-//   gallery:'gallery_01f',
-//   cursor: 'pointer',
-//   galleryActiveClass: "active"
-// }); 
 
-// $("#zoom_03f").bind("click", function(e) {  
-//   var ez =   $('#zoom_03f').data('elevateZoom');
-//   ez.closeAll(); //NEW: This function force hides the lens, tint and window 
-//   $.fancybox(ez.getGalleryList());
+ 
 
-//   console.log(ez.getGalleryList())   
-    
-//   return false;
-// }); 
+  // --------------------------------------------------------------------------
+  // Formstyler
+  // --------------------------------------------------------------------------
 
-
+  $('.ui-select, .ui-number').styler({
+      selectSmartPositioning: false,
+      selectSearch: false,
+      selectVisibleOptions: 0,
+      selectSearchLimit: 6
+  });
 
   // --------------------------------------------------------------------------
   // Range
@@ -657,16 +670,26 @@ $('[data-mfp-galllery]').magnificPopup({
     type: 'inline',
     fixedContentPos: true,
     fixedBgPos: true,
-    overflowY: 'auto',
+    overflowY: 'scroll',
     closeBtnInside: true,
     preloader: false,
     midClick: true,
     removalDelay: 300,
     mainClass: 'popup-buble',
+    // gallery: {
+    //   enabled: true,
+    //   navigateByImgClick: true,
+    //   preload: [0,1],
+    //   tPrev: 'Назад', // title for left button
+    //   tNext: 'Вперед', // title for right button
+    //   tCounter: '<span class="mfp-counter"><span>%curr%</span> из %total%</span>'
+    // },
     callbacks: {
+
       beforeOpen: function() {
         // startWindowScroll = _window.scrollTop();
         // $('html').addClass('mfp-helper');
+        $('[data-benefits-slides]').slick('slickGoTo', $.magnificPopup.instance.index );
       },
       close: function() {
         // $('html').removeClass('mfp-helper');
@@ -675,32 +698,33 @@ $('[data-mfp-galllery]').magnificPopup({
     }
   });
 
- //  $('[js-popup-gallery]').magnificPopup({
-	// 	delegate: 'img',
-	// 	type: 'image',
- //    closeOnContentClick: false,
-	// 	closeBtnInside: false,
-	// 	tLoading: 'Loading image #%curr%...',
-	// 	mainClass: 'mfp-with-zoom',
-	// 	gallery: {
-	// 		enabled: true,
-	// 		navigateByImgClick: true,
-	// 		preload: [0,1]
-	// 	},
-	// 	image: {
- //      verticalFit: true,
-	// 		tError: '<a href="%url%">Изображение #%curr%</a> не может быть загружено.'
-	// 	},
- //    zoom: {
-	// 		enabled: true,
-	// 		duration: 300, // don't foget to change the duration also in CSS
-	// 		// opener: function(element) {
-	// 		// 	return element.find('img');
-	// 		// }
-	// 	}
-	// });
-
-
+  $('[js-popup-gallery]').magnificPopup({
+		delegate: 'a',
+		type: 'image',
+    closeOnContentClick: false,
+		closeBtnInside: false,
+		tLoading: 'Loading image #%curr%...',
+		mainClass: 'mfp-with-zoom mfp-img-mobile',
+    removalDelay: 300,
+		gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+			preload: [1,1]
+		},
+		image: {
+      verticalFit: true,
+			tError: '<a href="%url%">Изображение #%curr%</a> не может быть загружено.',
+      tCounter: '<span class="mfp-counter"><span>%curr%</span> из %total%</span>'
+		},
+    zoom: {
+			enabled: true,
+			duration:300,
+      easing: 'ease-out', // don't foget to change the duration also in CSS
+			opener: function(element) {
+				return element.find('img');
+			}
+		}
+	});
 
 
 
