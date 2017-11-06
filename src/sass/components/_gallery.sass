@@ -37,7 +37,7 @@
 		align-items: center
 		justify-content: center
 		background: #F2F2F2
-		
+
 		width: 100%
 		// height: 700px
 		// height: 90vh
@@ -61,7 +61,7 @@
 		right: 30px
 		color: #000
 		opacity: 0.2
-		transition: 0.25s
+		transition: $transitionSpeed
 		cursor: pointer
 		width: 30px
 		height: 30px
@@ -107,7 +107,7 @@
 			left: 50%
 			margin: -5px 0 0 -7px
 			opacity: 0.2
-			transition: .25s
+			transition: all $transitionSpeed $ease
 		&:hover:after
 			border-bottom-color: #ff8f5b
 			opacity: 1
@@ -181,7 +181,7 @@
 			margin: 0 10px
 		+rmin($desktop)
 			margin: 10px 0
-		
+
 		&:after
 			content: ''
 			display: block
@@ -203,4 +203,3 @@
 
 		&.slick-current:after
 			opacity: 1
-

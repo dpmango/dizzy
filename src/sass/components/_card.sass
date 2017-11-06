@@ -24,12 +24,13 @@
 		font-weight: 300
 		display: flex
 		align-items: center
-		transition: .25s
+		transition: all $transitionSpeed $ease
 		margin: 0 0 20px
 		background: #fff
 		&-back
 			color: #000
 			opacity: 0.6
+			transition: all $transitionSpeed $ease
 			&:hover
 				opacity: 1
 				text-decoration: none
@@ -43,9 +44,9 @@
 			display: block
 			padding: 0 2px
 			color: #000
-			transition: .25s
-			&:hover
-				color: #FF8F5B
+			transition: all $transitionSpeed $ease
+		a.card__nav-link:hover
+			color: #FF8F5B
 		+rmin($mobile)
 			position: absolute
 			top: -35px
@@ -93,7 +94,7 @@
 				font-weight: 500
 				color: #000
 		&-link
-			transition: .25s
+			transition: all $transitionSpeed $ease
 			display: inline-block
 			color: #000
 			opacity: 0.6
@@ -118,7 +119,7 @@
 
 			+rmin($mobile-s)
 				margin-left: auto
-			
+
 
 	&__colors
 		margin: 0 0 10px
@@ -159,7 +160,7 @@
 				right: 0
 				bottom: 0
 				border: 2px solid #ff8f5b
-				transition: .25s
+				transition: all $transitionSpeed $ease
 				opacity: 0
 			img
 				display: block
@@ -177,11 +178,11 @@
 		margin: 0 0 28px
 		.table-size
 			max-width: none
-			
+
 		&-text
 			margin: 0 10px 0 0
 		&-link
-			transition: .25s
+			transition: all $transitionSpeed $ease
 			display: inline-block
 			color: #000
 			opacity: 0.6
@@ -228,7 +229,7 @@
 				text-align: left
 				&:after
 					display: none
-				
+
 			th
 				font-weight: 400
 			td
@@ -321,13 +322,15 @@
 			display: flex
 			align-items: center
 			justify-content: center
-			width: 26px
-			height: 26px
+			min-width: 26px
+			min-height: 26px
 			border: 1px solid rgba(0,0,0,0.6)
 			color: rgba(0,0,0,0.6)
 			letter-spacing: 0.2px
+			line-height: 1.1
 			cursor: pointer
-			transition: .25s
+			padding-top: 1px
+			transition: all $transitionSpeed $ease
 			&:hover
 				border-color: #ff8f5b
 
@@ -351,7 +354,7 @@
 			cursor: pointer
 			margin: 0 0 14px
 			color: rgba(0,0,0,0.6)
-			transition: .25s
+			transition: all $transitionSpeed $ease
 			&:after
 				content: ''
 				display: block
@@ -380,6 +383,3 @@
 		mark
 			background: none
 			color: rgba(0,0,0,0.6)
-
-
-

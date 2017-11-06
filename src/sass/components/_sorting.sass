@@ -34,7 +34,7 @@
 		font-size: 13px
 		line-height: 22px
 		font-weight: 500
-		transition: .25s
+		transition: all $transitionSpeed $ease
 		&:after
 			content: ''
 			display: block
@@ -61,7 +61,7 @@
 		z-index: 100
 		padding: 10px 20px
 		white-space: nowrap
-		transition: .25s
+		transition: all $transitionSpeed $ease
 		margin: 10px 0 0
 		opacity: 0
 		visibility: hidden
@@ -76,9 +76,9 @@
 			border-right: 5px solid transparent
 			border-bottom: 5px solid #fff
 			// margin: -4px 0 0
-			
+
 	&-option
-		transition: .25s 
+		transition: all $transitionSpeed $ease
 		display: block
 		color: rgba(0,0,0,1)
 		padding: 4px 0

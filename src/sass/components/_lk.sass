@@ -11,7 +11,7 @@
 			float: left
 			width: 200px
 			margin-left: -100%
-			
+
 	&__right-sidebar
 		width: 100%
 		clear: both
@@ -22,13 +22,13 @@
 			margin-left: -200px
 	&__content
 		width: 100%
-		
+
 		+rmin($desktop)
 			float: left
 			padding: 0 0 0 220px
 		// +rmin($desktop)
 			// padding: 0 200px 0 220px
-		+rmin($wide)	
+		+rmin($wide)
 			padding: 0 220px 0 240px
 	&__heading
 		font-size: 32px
@@ -45,8 +45,8 @@
 		padding: 20px 0 25px
 		.ui-select
 			max-width: 380px
-		
-		
+
+
 	+r($desktop)
 		.container
 			display: flex
@@ -76,7 +76,7 @@
 			margin: 0 0 18px
 			&:last-child
 				margin: 0
-	
+
 	&-link
 		@extend .link-grey
 		display: inline
@@ -85,14 +85,14 @@
 			color: #000
 			border-color: #000
 			// text-decoration: underline
-		
+
 	&-exit
 		color: rgba(0,0,0,0.6)
 		text-decoration: none
-		transition: color .25s
+		transition: color $transitionSpeed
 		white-space: nowrap
 		u
-			transition: border-color .25s
+			transition: border-color $transitionSpeed
 			text-decoration: none
 			border-bottom: 1px solid transparent
 		.ico
@@ -131,7 +131,7 @@
 	// 		margin: 0 0 18px
 	// 		&:last-child
 	// 			margin: 0
-			
+
 
 
 
@@ -176,7 +176,7 @@
 		box-shadow: none
 		td
 			border-top-color: #ccc
-	
+
 	&-group
 		&.is-open
 			.lk__orders-group-trigger
@@ -188,7 +188,7 @@
 
 	&-group-trigger
 		cursor: pointer
-		transition: background .25s, box-shadow .25s
+		transition: background $transitionSpeed, box-shadow $transitionSpeed
 		&:hover
 			background: #f3f5f7
 			box-shadow: inset 0 3px 5px 0 rgba(0, 0, 0, 0.2)
@@ -198,7 +198,7 @@
 		td
 			padding: 0
 			border: none
-	
+
 
 .lk__products
 	width: 100%
@@ -241,7 +241,7 @@
 		vertical-align: top
 		transition: inherit
 	& > tbody > tr
-		transition: .25s
+		transition: all $transitionSpeed $ease
 		&:first-child td
 			border-top: none
 		&:hover
@@ -295,7 +295,7 @@
 		// a
 		// 	text-decoration: underline
 		// 	color: #000
-		// 	transition: .25s
+		// 	transition: all $transitionSpeed $ease
 		// 	&:hover
 		// 		color: rgba(0,0,0,0.6)
 		// 		text-decoration: underline
@@ -314,7 +314,7 @@
 		line-height: 22px
 		padding: 10px
 		background: #fff
-		transition: .25s
+		transition: all $transitionSpeed $ease
 		opacity: 0
 		visibility: hidden
 		z-index: 10
@@ -369,7 +369,7 @@
 		text-align: left
 		// padding: 10px
 		white-space: normal
-		
+
 		& > thead, & > tbody
 			display: block
 			& > tr > th
