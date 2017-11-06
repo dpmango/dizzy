@@ -1,21 +1,5 @@
 // States
 
-table td
-	&[class^="bg-"]
-		background: #ccc
-		color: #fff
-		padding: 0 12px
-		&:after
-			opacity: 0
-
-		&.bg-red
-			background: #9f0216
-		&.bg-green
-			background: #7ed321
-		&.bg-brown
-			background: #8b572a
-
-
 
 .is-error, .has-error
 	.ui-label
@@ -24,8 +8,34 @@ table td
 	    box-shadow: inset 0 3px 5px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 2px #d0021b
 	    color: #d0021b
 
+.is-disabled
+
+	.ui-label
+		padding: 0
+	.ui-input
+		background: none
+		box-shadow: none
+		pointer-events: none
+		padding: 0
+
+.row
+	.col-xs-12
+	  +r($mobile-s)
+	    flex: 0 0 100%
+	    max-width: 100%
+
+.is-hide_mobile-s
+	+r($mobile-s)
+		display: none
 
 
-
-
-	
+.is-novalidate
+	.btn-primary
+		background: #CCCCCC
+		color: #fff
+		cursor: default
+		box-shadow: none
+		pointer-events: none
+		&:after
+		  display: none
+		  

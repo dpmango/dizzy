@@ -15,16 +15,127 @@ block content
   .lk
     .container
 
+
+      .lk__content
+        form(action="#")
+
+          h1.lk__heading Избранное
+
+          table.lk__products
+            thead
+              tr
+                th №
+                th Описание
+                th Цена
+                th Статус
+                th(data-ctrl)
+            tbody
+              tr
+                td 1
+                td
+                  .lk__products-item
+                    figure.lk__products-image
+                      img(src="img/card-1.jpg", alt="")
+                    .lk__products-desc
+                      h2.lk__products-title Пальто "Рут"
+                      ul.lk__products-info
+                        li <mark>Артикул:</mark> 12345 6789
+                        li <mark>Коллекция:</mark> <a href="#">Осень-Зима 2017</a>
+                        li <mark>Размер:</mark> 46
+                        li <mark>Цвет:</mark> Красно-бордовый
+          
+                td(data-text="Цена: ") 12 456 ₽
+                td(data-text="Статус: ")
+                  | Есть на складе
+                td(data-ctrl)
+                  .lk__products-ctrl
+                    a(href="#").lk__products-delete
+                      +icon('ico-delete')
+                      | Удалить
+                    a(href="#").btn.btn-primary-small
+                      span В корзину
+
+              tr
+                td 2
+                td
+                  .lk__products-item
+                    figure.lk__products-image
+                      img(src="img/card-1.jpg", alt="")
+                    .lk__products-desc
+                      h2.lk__products-title Пальто "Рут"
+                      ul.lk__products-info
+                        li <mark>Артикул:</mark> 12345 6789
+                        li <mark>Коллекция:</mark> <a href="#">Осень-Зима 2017</a>
+                        li <mark>Размер:</mark> 46
+                        li <mark>Цвет:</mark> Красно-бордовый
+          
+                td(data-text="Цена: ") 12 456 ₽
+                td(data-text="Статус: ")
+                  <mark>Нет на складе</mark>
+                td(data-ctrl)
+                  .lk__products-ctrl
+                     a(href="#").btn.btn-primary-small
+                      span Сообщить, когда появится
+              tr
+                td 3
+                td
+                  .lk__products-item
+                    figure.lk__products-image
+                      img(src="img/card-1.jpg", alt="")
+                    .lk__products-desc
+                      h2.lk__products-title Пальто "Рут"
+                      ul.lk__products-info
+                        li <mark>Артикул:</mark> 12345 6789
+                        li <mark>Коллекция:</mark> <a href="#">Осень-Зима 2017</a>
+                        li <mark>Размер:</mark> 46
+                        li <mark>Цвет:</mark> Красно-бордовый
+          
+                td(data-text="Цена: ") 12 456 ₽
+                td(data-text="Статус: ")
+                  | Есть на складе
+                td(data-ctrl)
+                  .lk__products-ctrl
+                    a(href="#").btn.btn-primary-small
+                      span В корзину
+
+              tr
+                td 4
+                td
+                  .lk__products-item
+                    figure.lk__products-image
+                      img(src="img/card-1.jpg", alt="")
+                    .lk__products-desc
+                      h2.lk__products-title Пальто "Рут"
+                      ul.lk__products-info
+                        li <mark>Артикул:</mark> 12345 6789
+                        li <mark>Коллекция:</mark> <a href="#">Осень-Зима 2017</a>
+                        li <mark>Размер:</mark> 46
+                        li <mark>Цвет:</mark> Красно-бордовый
+          
+                td(data-text="Цена: ") 12 456 ₽
+                td(data-text="Статус: ")
+                  | Есть на складе
+                td(data-ctrl)
+                  .lk__products-ctrl
+                    a(href="#").btn.btn-primary-small
+                      span В корзину
+
       .lk__left-sidebar
         
         nav.lk__nav
-          a(href="#").lk__nav-link Мои заказы
-          a(href="#").lk__nav-link Моя корзина
-          a(href="#").lk__nav-link.is-active Избранное
-          a(href="#").lk__nav-link Мои данные
-          a(href="#").lk__nav-link
-            +icon('ico-logout')
-            | Выход
+          ul.lk__nav-menu
+            li
+              a(href="#").lk__nav-link Мои заказы
+            li
+              a(href="#").lk__nav-link Моя корзина
+            li
+              a(href="#").lk__nav-link.is-active Избранное
+            li
+              a(href="#").lk__nav-link Мои данные
+            li
+              a(href="#").lk__nav-exit
+                +icon('ico-logout')
+                u Выход
 
 
       .lk__right-sidebar
@@ -37,7 +148,7 @@ block content
           .adv__item
             figure.adv__item-icon
               +icon('ico-adv-2')
-            p.adv__item-text Лучшее сочетание цена-качество
+            p.adv__item-text Лучшее сочетание <br>цена-качество
           .adv__item
             figure.adv__item-icon
               +icon('ico-adv-3')
@@ -49,107 +160,7 @@ block content
           .adv__item
             figure.adv__item-icon
               +icon('ico-adv-5')
-            p.adv__item-text Бесплатная доставка по Москве
+            p.adv__item-text Бесплатная доставка <br>по Москве
 
-
-      .lk__content
-        form(action="#")
-
-          h1.lk__heading Избранное
-
-          .lk__scroll
-
-            table.lk__products
-              thead
-                tr
-                  th №
-                  th
-                  th Описание
-                  th Цена
-                  th Статус
-              tbody
-                tr
-                  td 1
-                  td
-                    figure.lk__products-image
-                      img(src="img/card-1.jpg", alt="")
-                  td
-                    h2.lk__products-title Пальто "Рут"
-                    ul.lk__products-info
-                      li <mark>Артикул:</mark> 12345 6789
-                      li <mark>Коллекция:</mark> <a href="#">Осень-Зима 2017</a>
-                      li <mark>Размер:</mark> 46
-                      li <mark>Цвет:</mark> Красно-бордовый
-            
-                  td 12 456 ₽
-                  td
-                    | Есть на складе
-                    .lk__products-ctrl
-                      a(href="#").lk__products-delete
-                        +icon('ico-delete')
-                        | Удалить
-                      a(href="#").btn.btn-primary-small
-                        span В корзину
-
-                tr
-                  td 2
-                  td
-                    figure.lk__products-image
-                      img(src="img/card-2.jpg", alt="")
-                  td
-                    h2.lk__products-title Пальто "Рут"
-                    ul.lk__products-info
-                      li <mark>Артикул:</mark> 12345 6789
-                      li <mark>Коллекция:</mark> <a href="#">Осень-Зима 2017</a>
-                      li <mark>Размер:</mark> 46
-                      li <mark>Цвет:</mark> Красно-бордовый
-
-                  td 12 456 ₽
-                  td
-                    <mark>Нет на складе</mark>
-                    .lk__products-ctrl
-                       a(href="#").btn.btn-primary-small
-                        span Сообщить, когда появится
-                tr
-                  td 3
-                  td
-                    figure.lk__products-image
-                      img(src="img/card-3.jpg", alt="")
-                  td
-                    h2.lk__products-title Пальто "Рут"
-                    ul.lk__products-info
-                      li <mark>Артикул:</mark> 12345 6789
-                      li <mark>Коллекция:</mark> <a href="#">Осень-Зима 2017</a>
-                      li <mark>Размер:</mark> 46
-                      li <mark>Цвет:</mark> Красно-бордовый
-  
-                  td 12 456 ₽
-                  td
-                    | Есть на складе
-                    .lk__products-ctrl
-                      a(href="#").btn.btn-primary-small
-                        span В корзину
-
-                tr
-                  td 4
-                  td
-                    figure.lk__products-image
-                      img(src="img/card-4.jpg", alt="")
-                  td
-                    h2.lk__products-title Пальто "Рут"
-                    ul.lk__products-info
-                      li <mark>Артикул:</mark> 12345 6789
-                      li <mark>Коллекция:</mark> <a href="#">Осень-Зима 2017</a>
-                      li <mark>Размер:</mark> 46
-                      li <mark>Цвет:</mark> Красно-бордовый
-
-                  td 12 456 ₽
-                  td
-                    | Есть на складе
-                    .lk__products-ctrl
-                      a(href="#").btn.btn-primary-small
-                        span В корзину
-
-              
   // LK :: End
   

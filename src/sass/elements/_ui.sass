@@ -30,12 +30,16 @@
     position: relative
     display: flex
     align-items: flex-start
-    margin-bottom: 20px
+    padding: 10px 0
+
+    &.is-disabled
+        padding: 5px 0
     &__validation
         position: absolute
-        bottom: -15px
+        top: 40px
         color: $colorRed
         font-size: 10px
+        line-height: 20px
         right: 0
         text-align: right
     .ui-label
@@ -88,7 +92,7 @@
     font: 500 13px/15px 'MuseoSansCyrl', 'Helvetica Neue', Helvetica, Arial, sans-serif
     letter-spacing: 0.2px
     box-shadow: inset 0 3px 5px 0 rgba(0,0,0,0.20)
-    transition: all $transitionSpeed $ease
+    transition: border-color $transitionSpeed $ease, background $transitionSpeed $ease, color $transitionSpeed $ease
     margin: 0 0 20px
     &::placeholder
         color: $fontColor60
@@ -105,7 +109,7 @@
 
 .ui-textarea
     @extend .ui-input
-    resize: horizontal
+    resize: vertical
     min-height: 50px
     // height: 80px
     &__50
@@ -571,12 +575,31 @@
 .irs-line
     height: 2px
     top: 7px
-    background-color: #CBCBCB;
+    background-color: #CBCBCB
+    overflow: visible
+    cursor: pointer
+    &:after
+        content: ''
+        display: block
+        position: absolute
+        top: -5px
+        left: 0
+        right: 0
+        bottom: -5px
 
 .irs-bar
     background-color: #ff8f5b
     height: 2px
     top: 7px
+    cursor: pointer
+    &:after
+        content: ''
+        display: block
+        position: absolute
+        top: -5px
+        left: 0
+        right: 0
+        bottom: -5px
 
 .irs-bar-edge
     top: 25px
@@ -596,6 +619,9 @@
     height: 14px
     top: 2px
     cursor: pointer
+    transition: transform .25s
+    &:hover
+        transform: scale(1.2)
     &:after
         content: ''
         display: block

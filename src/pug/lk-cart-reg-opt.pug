@@ -15,58 +15,22 @@ block content
   .lk
     .container
 
-      .lk__left-sidebar
-        
-        nav.lk__nav
-          a(href="#").lk__nav-link Мои заказы
-          a(href="#").lk__nav-link.is-active Моя корзина
-          a(href="#").lk__nav-link Избранное
-          a(href="#").lk__nav-link Мои данные
-          a(href="#").lk__nav-link
-            +icon('ico-logout')
-            | Выход
-
-
-      .lk__right-sidebar
-
-        .adv
-          .adv__item
-            figure.adv__item-icon
-              +icon('ico-adv-1')
-            p.adv__item-text Качественное Российское производство
-          .adv__item
-            figure.adv__item-icon
-              +icon('ico-adv-2')
-            p.adv__item-text Лучшее сочетание цена-качество
-          .adv__item
-            figure.adv__item-icon
-              +icon('ico-adv-3')
-            p.adv__item-text Выгодные условия сотрудничества
-          .adv__item
-            figure.adv__item-icon
-              +icon('ico-adv-4')
-            p.adv__item-text Широкий размерный ряд
-          .adv__item
-            figure.adv__item-icon
-              +icon('ico-adv-5')
-            p.adv__item-text Бесплатная доставка по Москве
-
-
+      
       .lk__content
         form(action="#")
 
           h1.lk__heading Моя корзина
 
           .lk__form
-            .ui-group
+            .ui-group.is-disabled
               label.ui-label Имя
-              input(type="text", value="Федор").ui-input.is-disabled
-            .ui-group
+              input(type="text", value="Федор").ui-input
+            .ui-group.is-disabled
               label.ui-label Телефон
-              input(type="tel", value="+7 (123) 456-78-90").ui-input.is-disabled
-            .ui-group
+              input(type="tel", value="+7 (123) 456-78-90").ui-input
+            .ui-group.is-disabled
               label.ui-label E-mail
-              input(type="email", value="fnozdrin@yandex.ru").ui-input.is-disabled
+              input(type="email", value="fnozdrin@yandex.ru").ui-input
             .ui-group
               label.ui-label Адрес доставки
               textarea.ui-textarea Россия, Москва, Саянска ул. 11/2/291
@@ -86,260 +50,321 @@ block content
                 option Наличный расчет при доставке 2
                 option Наличный расчет при доставке 3
 
-
-        
-          .lk__scroll
-
-            table.lk__products
-              thead
-                tr
-                  th №
-                  th
-                  th Описание
-                  th Цена
-                  th Сумма
-              tbody
-                tr
-                  td 1
-                  td
+          table.lk__products
+            thead
+              tr
+                th №
+                th Описание
+                th Цена
+                th Сумма
+                th(data-ctrl)
+            tbody
+              tr
+                td 1
+                td
+                  .lk__products-item
                     figure.lk__products-image
                       img(src="img/card-1.jpg", alt="")
-                  td
-                    h2.lk__products-title Пальто "Рут"
-                    ul.lk__products-info
-                      li <mark>Артикул:</mark> 12345 6789
-                      li <mark>Коллекция:</mark> <a href="#">Осень-Зима 2017</a>
-                      li
-                        table.lk__products-size
-                          thead
-                            tr
-                              th Размер/цвет:
-                              th 42
-                              th 44
-                              th 46
-                              th 48
-                              th 50
-                              th 52
-                              th 54
-                              th 56
-                              th 58
-                              th 60
-                              th 62
-                              th 64
-                          tbody
-                            tr
-                              td.bg-red Серо-корич.
-                              td.is-has
-                              td.is-has
-                              td.is-has
-                              td.is-few
-                              td.is-has
-                              td -
-                              td.is-has
-                              td.is-has
-                              td -
-                              td.is-few
-                              td.is-has
-                              td.is-has 10
-                            tr
-                              td.bg-green Светло-зел.
-                              td.is-has
-                              td.is-has
-                              td.is-has
-                              td.is-few
-                              td.is-has
-                              td -
-                              td.is-has 10
-                              td -
-                              td -
-                              td.is-few
-                              td.is-has
-                              td.is-has
-                            tr
-                              td.bg-brown Коричневый
-                              td.is-has
-                              td.is-has
-                              td.is-has
-                              td.is-few
-                              td.is-has
-                              td -
-                              td.is-has
-                              td.is-has
-                              td -
-                              td.is-few
-                              td.is-has
-                              td.is-has
+                    .lk__products-desc
+                      h2.lk__products-title Пальто "Рут"
+                      ul.lk__products-info
+                        li <mark>Артикул:</mark> 12345 6789
+                        li <mark>Коллекция:</mark> <a href="#" class="link-dark">Осень-Зима 2017</a>
+                        li
+                          .table-size-scroll
+                            table.table-size
+                              thead
+                                tr
+                                  th
+                                    span.is-hide_mobile-s Размер/цвет:
+                                  th 42
+                                  th 44
+                                  th 46
+                                  th 48
+                                  th 50
+                                  th 52
+                                  th 54
+                                  th 56
+                                  th 58
+                                  th 60
+                                  th 62
+                                  th 64
+                              tbody
+                                tr
+                                  td.bg-red
+                                    span.is-hide_mobile-s Серо-корич.
+                                  td.is-has
+                                  td.is-has
+                                  td.is-has
+                                  td.is-few
+                                  td.is-has
+                                  td -
+                                  td.is-has
+                                  td.is-has
+                                  td -
+                                  td.is-few
+                                  td.is-has
+                                  td.is-has 10
+                                tr
+                                  td.bg-green
+                                    span.is-hide_mobile-s Светло-зел.
+                                  td.is-has
+                                  td.is-has
+                                  td.is-has
+                                  td.is-few
+                                  td.is-has
+                                  td -
+                                  td.is-has 10
+                                  td -
+                                  td -
+                                  td.is-few
+                                  td.is-has
+                                  td.is-has
+                                tr
+                                  td.bg-brown
+                                    span.is-hide_mobile-s Коричневый
+                                  td.is-has
+                                  td.is-has
+                                  td.is-has
+                                  td.is-few
+                                  td.is-has
+                                  td -
+                                  td.is-has
+                                  td.is-has
+                                  td -
+                                  td.is-few
+                                  td.is-has
+                                  td.is-has
+                    
+                td(data-text="Цена: ") 12 456 ₽
+                td(data-text="Сумма: ")
+                  | 24 912 ₽
+                td(data-ctrl)
+                  .lk__products-ctrl
+                    a(href="#").lk__products-delete
+                      +icon('ico-delete')
+                      | Удалить
 
-                  td 12 456 ₽
-                  td
-                    | 24 912 ₽
-                    .lk__products-ctrl
-                      a(href="#").lk__products-delete
-                        +icon('ico-delete')
-                        | Удалить
-
-                tr
-                  td 2
-                  td
+              tr
+                td 2
+                td
+                  .lk__products-item
                     figure.lk__products-image
                       img(src="img/card-2.jpg", alt="")
-                  td
-                    h2.lk__products-title Пальто "Рут"
-                    ul.lk__products-info
-                      li <mark>Артикул:</mark> 12345 6789
-                      li <mark>Коллекция:</mark> <a href="#">Осень-Зима 2017</a>
-                      li
-                        table.lk__products-size
-                          thead
-                            tr
-                              th Размер/цвет:
-                              th 42
-                              th 44
-                              th 46
-                              th 48
-                              th 50
-                              th 52
-                              th 54
-                              th 56
-                              th 58
-                              th 60
-                              th 62
-                              th 64
-                          tbody
-                            tr
-                              td.bg-red Серо-корич.
-                              td.is-has
-                              td.is-has
-                              td.is-has
-                              td.is-few
-                              td.is-has
-                              td -
-                              td.is-has
-                              td.is-has
-                              td -
-                              td.is-few
-                              td.is-has
-                              td.is-has 10
-                            tr
-                              td.bg-green Светло-зел.
-                              td.is-has
-                              td.is-has
-                              td.is-has
-                              td.is-few
-                              td.is-has
-                              td -
-                              td.is-has 10
-                              td -
-                              td -
-                              td.is-few
-                              td.is-has
-                              td.is-has
-                            tr
-                              td.bg-brown Коричневый
-                              td.is-has
-                              td.is-has
-                              td.is-has
-                              td.is-few
-                              td.is-has
-                              td -
-                              td.is-has
-                              td.is-has
-                              td -
-                              td.is-few
-                              td.is-has
-                              td.is-has
-                  td 12 456 ₽
-                  td
-                    | 24 912 ₽
-                    .lk__products-ctrl
-                      a(href="#").lk__products-delete
-                        +icon('ico-delete')
-                        | Удалить
-                tr
-                  td 3
-                  td
+                    .lk__products-desc
+                      h2.lk__products-title Пальто "Рут"
+                      ul.lk__products-info
+                        li <mark>Артикул:</mark> 12345 6789
+                        li <mark>Коллекция:</mark> <a href="#" class="link-dark">Осень-Зима 2017</a>
+                        li
+                          .table-size-scroll
+                            table.table-size
+                              thead
+                                tr
+                                  th
+                                    span.is-hide_mobile-s Размер/цвет:
+                                  th 42
+                                  th 44
+                                  th 46
+                                  th 48
+                                  th 50
+                                  th 52
+                                  th 54
+                                  th 56
+                                  th 58
+                                  th 60
+                                  th 62
+                                  th 64
+                              tbody
+                                tr
+                                  td.bg-red
+                                    span.is-hide_mobile-s Серо-корич.
+                                  td.is-has
+                                  td.is-has
+                                  td.is-has
+                                  td.is-few
+                                  td.is-has
+                                  td -
+                                  td.is-has
+                                  td.is-has
+                                  td -
+                                  td.is-few
+                                  td.is-has
+                                  td.is-has 10
+                                tr
+                                  td.bg-green
+                                    span.is-hide_mobile-s Светло-зел.
+                                  td.is-has
+                                  td.is-has
+                                  td.is-has
+                                  td.is-few
+                                  td.is-has
+                                  td -
+                                  td.is-has 10
+                                  td -
+                                  td -
+                                  td.is-few
+                                  td.is-has
+                                  td.is-has
+                                tr
+                                  td.bg-brown
+                                    span.is-hide_mobile-s Коричневый
+                                  td.is-has
+                                  td.is-has
+                                  td.is-has
+                                  td.is-few
+                                  td.is-has
+                                  td -
+                                  td.is-has
+                                  td.is-has
+                                  td -
+                                  td.is-few
+                                  td.is-has
+                                  td.is-has
+                    
+                td(data-text="Цена: ") 12 456 ₽
+                td(data-text="Сумма: ")
+                  | 24 912 ₽
+                td(data-ctrl)
+                  .lk__products-ctrl
+                    a(href="#").lk__products-delete
+                      +icon('ico-delete')
+                      | Удалить
+              
+              tr
+                td 3
+                td
+                  .lk__products-item
                     figure.lk__products-image
                       img(src="img/card-3.jpg", alt="")
-                  td
-                    h2.lk__products-title Пальто "Рут"
-                    ul.lk__products-info
-                      li <mark>Артикул:</mark> 12345 6789
-                      li <mark>Коллекция:</mark> <a href="#">Осень-Зима 2017</a>
-                      li
-                        table.lk__products-size
-                          thead
-                            tr
-                              th Размер/цвет:
-                              th 42
-                              th 44
-                              th 46
-                              th 48
-                              th 50
-                              th 52
-                              th 54
-                              th 56
-                              th 58
-                              th 60
-                              th 62
-                              th 64
-                          tbody
-                            tr
-                              td.bg-red Серо-корич.
-                              td.is-has
-                              td.is-has
-                              td.is-has
-                              td.is-few
-                              td.is-has
-                              td -
-                              td.is-has
-                              td.is-has
-                              td -
-                              td.is-few
-                              td.is-has
-                              td.is-has 10
-                            tr
-                              td.bg-green Светло-зел.
-                              td.is-has
-                              td.is-has
-                              td.is-has
-                              td.is-few
-                              td.is-has
-                              td -
-                              td.is-has 10
-                              td -
-                              td -
-                              td.is-few
-                              td.is-has
-                              td.is-has
-                            tr
-                              td.bg-brown Коричневый
-                              td.is-has
-                              td.is-has
-                              td.is-has
-                              td.is-few
-                              td.is-has
-                              td -
-                              td.is-has
-                              td.is-has
-                              td -
-                              td.is-few
-                              td.is-has
-                              td.is-has
-  
-
-                  td 12 456 ₽
-                  td
-                    | 24 912 ₽
-                    .lk__products-ctrl
-                      a(href="#").lk__products-delete
-                        +icon('ico-delete')
-                        | Удалить
-
+                    .lk__products-desc
+                      h2.lk__products-title Пальто "Рут"
+                      ul.lk__products-info
+                        li <mark>Артикул:</mark> 12345 6789
+                        li <mark>Коллекция:</mark> <a href="#" class="link-dark">Осень-Зима 2017</a>
+                        li
+                          .table-size-scroll
+                            table.table-size
+                              thead
+                                tr
+                                  th
+                                    span.is-hide_mobile-s Размер/цвет:
+                                  th 42
+                                  th 44
+                                  th 46
+                                  th 48
+                                  th 50
+                                  th 52
+                                  th 54
+                                  th 56
+                                  th 58
+                                  th 60
+                                  th 62
+                                  th 64
+                              tbody
+                                tr
+                                  td.bg-red
+                                    span.is-hide_mobile-s Серо-корич.
+                                  td.is-has
+                                  td.is-has
+                                  td.is-has
+                                  td.is-few
+                                  td.is-has
+                                  td -
+                                  td.is-has
+                                  td.is-has
+                                  td -
+                                  td.is-few
+                                  td.is-has
+                                  td.is-has 10
+                                tr
+                                  td.bg-green
+                                    span.is-hide_mobile-s Светло-зел.
+                                  td.is-has
+                                  td.is-has
+                                  td.is-has
+                                  td.is-few
+                                  td.is-has
+                                  td -
+                                  td.is-has 10
+                                  td -
+                                  td -
+                                  td.is-few
+                                  td.is-has
+                                  td.is-has
+                                tr
+                                  td.bg-brown
+                                    span.is-hide_mobile-s Коричневый
+                                  td.is-has
+                                  td.is-has
+                                  td.is-has
+                                  td.is-few
+                                  td.is-has
+                                  td -
+                                  td.is-has
+                                  td.is-has
+                                  td -
+                                  td.is-few
+                                  td.is-has
+                                  td.is-has
+                    
+                td(data-text="Цена: ") 12 456 ₽
+                td(data-text="Сумма: ")
+                  | 24 912 ₽
+                td(data-ctrl)
+                  .lk__products-ctrl
+                    a(href="#").lk__products-delete
+                      +icon('ico-delete')
+                      | Удалить
+        
           .lk__total
             p.lk__total-text Итого: 4 товара на сумму 100 000 ₽ <small>Заказ рассчитан по розничной цене без учета доставки. Окончательную сумму заказа уточняйте у менеджеров компании.</small>
             button.btn.btn-primary
               span Подтвердить заказ
-              
+      
+      .lk__left-sidebar
+        
+        nav.lk__nav
+          ul.lk__nav-menu
+            li
+              a(href="#").lk__nav-link Мои заказы
+            li
+              a(href="#").lk__nav-link.is-active Моя корзина
+            li
+              a(href="#").lk__nav-link Избранное
+            li
+              a(href="#").lk__nav-link Мои данные
+            li
+              a(href="#").lk__nav-exit
+                +icon('ico-logout')
+                u Выход
+
+
+      .lk__right-sidebar
+
+        .adv
+          .adv__item
+            figure.adv__item-icon
+              +icon('ico-adv-1')
+            p.adv__item-text Качественное Российское производство
+          .adv__item
+            figure.adv__item-icon
+              +icon('ico-adv-2')
+            p.adv__item-text Лучшее сочетание <br>цена-качество
+          .adv__item
+            figure.adv__item-icon
+              +icon('ico-adv-3')
+            p.adv__item-text Выгодные условия сотрудничества
+          .adv__item
+            figure.adv__item-icon
+              +icon('ico-adv-4')
+            p.adv__item-text Широкий размерный ряд
+          .adv__item
+            figure.adv__item-icon
+              +icon('ico-adv-5')
+            p.adv__item-text Бесплатная доставка <br>по Москве
+
+
   // LK :: End
   
 

@@ -26,241 +26,247 @@ block content
           .filter
             form(action="#")
 
-              //- button.filter__btn Фильтр
+              button.filter__toggle Показать фильтр
 
-              //- .filter__dropdown
+              .filter__dropdown
 
-              .filter-group
+                .filter-group
 
-                .filter-group__btn Категория
+                  .filter-group__btn Категория
 
-                .filter-group__content
+                  .filter-group__content
 
-                  a(href="#").filter__title Зима
-                  ul.filter__menu
-                    li
-                      a(href="#").filter__link Пальто 
-                    li
-                      a(href="#").filter__link Куртки / Парки
-                    li
-                      a(href="#").filter__link Юбки / Брюки
-                    li
-                      a(href="#").filter__link Аксессуары
+                    a(href="#").filter__title Зима
+                    ul.filter__menu
+                      li
+                        a(href="#").filter__link Пальто 
+                      li
+                        a(href="#").filter__link Куртки / Парки
+                      li
+                        a(href="#").filter__link Юбки / Брюки
+                      li
+                        a(href="#").filter__link Аксессуары
 
-                  a(href="#").filter__title Осень / Весна
-                  ul.filter__menu
-                    li
-                      a(href="#").filter__link Плащи утепленные
-                    li
-                      a(href="#").filter__link Куртки / Парки
-                    li
-                      a(href="#").filter__link Пальто демисезонные
-                    li
-                      a(href="#").filter__link Плащи / Ветровки
-                    li
-                      a(href="#").filter__link Аксессуары
+                    a(href="#").filter__title Осень / Весна
+                    ul.filter__menu
+                      li
+                        a(href="#").filter__link Плащи утепленные
+                      li
+                        a(href="#").filter__link Куртки / Парки
+                      li
+                        a(href="#").filter__link Пальто демисезонные
+                      li
+                        a(href="#").filter__link Плащи / Ветровки
+                      li
+                        a(href="#").filter__link Аксессуары
 
-                  a(href="#").filter__title Лето
-                  ul.filter__menu
-                    li
-                      a(href="#").filter__link Платья / Комбинезоны
-                    li
-                      a(href="#").filter__link Блузы / Жакеты
-                    li
-                      a(href="#").filter__link Юбки
-                    li
-                      a(href="#").filter__link Брюки
+                    a(href="#").filter__title Лето
+                    ul.filter__menu
+                      li
+                        a(href="#").filter__link Платья / Комбинезоны
+                      li
+                        a(href="#").filter__link Блузы / Жакеты
+                      li
+                        a(href="#").filter__link Юбки
+                      li
+                        a(href="#").filter__link Брюки
 
 
-              .filter-group
+                .filter-group
 
-                .filter-group__btn
-                  | Цена
-                  button.filter-group__btn-reset
+                  .filter-group__btn
+                    | Цена
+                  button.filter-group__reset
                     +icon('ico-close')
 
-                .filter-group__content
-                  .ui-range
-                    input(type="range", data-min="3000", data-max="25000").ui-range__input
+                  .filter-group__content
+                    .ui-range
+                      input(type="range", data-min="3000", data-max="25000").ui-range__input
+                      .row
+                        .col-6
+                          label.ui-range__from 3000
+                        .col-6
+                          label.ui-range__to 25000
+
+
+                .filter-group
+
+                  .filter-group__btn
+                    | Размер
+                  button.filter-group__reset
+                    +icon('ico-close')
+
+                  .filter-group__content
+                    
                     .row
-                      .col-6
-                        label.ui-range__from 3000
-                      .col-6
-                        label.ui-range__to 25000
+                      .col-4
+                        label.filter-check
+                          input(type="checkbox", name="").filter-check__input
+                          span.filter-check__checkbox
+                          span.filter-check__text 42
+                        label.filter-check
+                          input(type="checkbox", name="").filter-check__input
+                          span.filter-check__checkbox
+                          span.filter-check__text 44
+                        label.filter-check
+                          input(type="checkbox", name="").filter-check__input
+                          span.filter-check__checkbox
+                          span.filter-check__text 46
+                        label.filter-check
+                          input(type="checkbox", name="").filter-check__input
+                          span.filter-check__checkbox
+                          span.filter-check__text 48
+
+                      .col-4
+                        label.filter-check
+                          input(type="checkbox", name="").filter-check__input
+                          span.filter-check__checkbox
+                          span.filter-check__text 50
+                        label.filter-check
+                          input(type="checkbox", name="").filter-check__input
+                          span.filter-check__checkbox
+                          span.filter-check__text 52
+                        label.filter-check
+                          input(type="checkbox", name="").filter-check__input
+                          span.filter-check__checkbox
+                          span.filter-check__text 54
+                        label.filter-check
+                          input(type="checkbox", name="").filter-check__input
+                          span.filter-check__checkbox
+                          span.filter-check__text 56
+
+                      .col-4
+                        label.filter-check
+                          input(type="checkbox", name="").filter-check__input
+                          span.filter-check__checkbox
+                          span.filter-check__text 58
+                        label.filter-check
+                          input(type="checkbox", name="").filter-check__input
+                          span.filter-check__checkbox
+                          span.filter-check__text 60
+                        label.filter-check
+                          input(type="checkbox", name="").filter-check__input
+                          span.filter-check__checkbox
+                          span.filter-check__text 62
 
 
-              .filter-group
+                .filter-group
 
-                .filter-group__btn
-                  | Размер
-                  button.filter-group__btn-reset
+                  .filter-group__btn
+                    | Сезон
+                  button.filter-group__reset
                     +icon('ico-close')
 
-                .filter-group__content
-                  
-                  .row
-                    .col-4
-                      label.filter-check
-                        input(type="checkbox", name="").filter-check__input
-                        span.filter-check__checkbox
-                        span.filter-check__text 42
-                      label.filter-check
-                        input(type="checkbox", name="").filter-check__input
-                        span.filter-check__checkbox
-                        span.filter-check__text 44
-                      label.filter-check
-                        input(type="checkbox", name="").filter-check__input
-                        span.filter-check__checkbox
-                        span.filter-check__text 46
-                      label.filter-check
-                        input(type="checkbox", name="").filter-check__input
-                        span.filter-check__checkbox
-                        span.filter-check__text 48
+                  .filter-group__content
 
-                    .col-4
-                      label.filter-check
-                        input(type="checkbox", name="").filter-check__input
-                        span.filter-check__checkbox
-                        span.filter-check__text 50
-                      label.filter-check
-                        input(type="checkbox", name="").filter-check__input
-                        span.filter-check__checkbox
-                        span.filter-check__text 52
-                      label.filter-check
-                        input(type="checkbox", name="").filter-check__input
-                        span.filter-check__checkbox
-                        span.filter-check__text 54
-                      label.filter-check
-                        input(type="checkbox", name="").filter-check__input
-                        span.filter-check__checkbox
-                        span.filter-check__text 56
+                    label.filter-check
+                      input(type="checkbox", name="").filter-check__input
+                      span.filter-check__checkbox
+                      span.filter-check__text Осень
 
-                    .col-4
-                      label.filter-check
-                        input(type="checkbox", name="").filter-check__input
-                        span.filter-check__checkbox
-                        span.filter-check__text 58
-                      label.filter-check
-                        input(type="checkbox", name="").filter-check__input
-                        span.filter-check__checkbox
-                        span.filter-check__text 60
-                      label.filter-check
-                        input(type="checkbox", name="").filter-check__input
-                        span.filter-check__checkbox
-                        span.filter-check__text 62
+                    label.filter-check
+                      input(type="checkbox", name="").filter-check__input
+                      span.filter-check__checkbox
+                      span.filter-check__text Лето
+
+                    label.filter-check
+                      input(type="checkbox", name="").filter-check__input
+                      span.filter-check__checkbox
+                      span.filter-check__text Весна
+
+                    label.filter-check
+                      input(type="checkbox", name="").filter-check__input
+                      span.filter-check__checkbox
+                      span.filter-check__text Зима
 
 
-              .filter-group
+                .filter-group
 
-                .filter-group__btn Сезон
-
-                .filter-group__content
-
-                  label.filter-check
-                    input(type="checkbox", name="").filter-check__input
-                    span.filter-check__checkbox
-                    span.filter-check__text Осень
-
-                  label.filter-check
-                    input(type="checkbox", name="").filter-check__input
-                    span.filter-check__checkbox
-                    span.filter-check__text Лето
-
-                  label.filter-check
-                    input(type="checkbox", name="").filter-check__input
-                    span.filter-check__checkbox
-                    span.filter-check__text Весна
-
-                  label.filter-check
-                    input(type="checkbox", name="").filter-check__input
-                    span.filter-check__checkbox
-                    span.filter-check__text Зима
-
-
-              .filter-group
-
-                .filter-group__btn
-                  | Коллекция
-                  button.filter-group__btn-reset
+                  .filter-group__btn
+                    | Коллекция
+                  button.filter-group__reset
                     +icon('ico-close')
 
-                .filter-group__content
+                  .filter-group__content
 
-                  label.filter-check
-                    input(type="checkbox", name="").filter-check__input
-                    span.filter-check__checkbox
-                    span.filter-check__text Осень 2017
+                    label.filter-check
+                      input(type="checkbox", name="").filter-check__input
+                      span.filter-check__checkbox
+                      span.filter-check__text Осень 2017
 
-                  label.filter-check
-                    input(type="checkbox", name="").filter-check__input
-                    span.filter-check__checkbox
-                    span.filter-check__text Лето 2017
+                    label.filter-check
+                      input(type="checkbox", name="").filter-check__input
+                      span.filter-check__checkbox
+                      span.filter-check__text Лето 2017
 
-                  label.filter-check
-                    input(type="checkbox", name="").filter-check__input
-                    span.filter-check__checkbox
-                    span.filter-check__text Весна 2017
+                    label.filter-check
+                      input(type="checkbox", name="").filter-check__input
+                      span.filter-check__checkbox
+                      span.filter-check__text Весна 2017
 
-                  label.filter-check
-                    input(type="checkbox", name="").filter-check__input
-                    span.filter-check__checkbox
-                    span.filter-check__text Зима 2016
+                    label.filter-check
+                      input(type="checkbox", name="").filter-check__input
+                      span.filter-check__checkbox
+                      span.filter-check__text Зима 2016
 
-                  label.filter-check
-                    input(type="checkbox", name="").filter-check__input
-                    span.filter-check__checkbox
-                    span.filter-check__text Осень 2016
+                    label.filter-check
+                      input(type="checkbox", name="").filter-check__input
+                      span.filter-check__checkbox
+                      span.filter-check__text Осень 2016
 
-                  label.filter-check
-                    input(type="checkbox", name="").filter-check__input
-                    span.filter-check__checkbox
-                    span.filter-check__text Лето 2016
+                    label.filter-check
+                      input(type="checkbox", name="").filter-check__input
+                      span.filter-check__checkbox
+                      span.filter-check__text Лето 2016
 
-                  label.filter-check
-                    input(type="checkbox", name="").filter-check__input
-                    span.filter-check__checkbox
-                    span.filter-check__text Весна 2016
+                    label.filter-check
+                      input(type="checkbox", name="").filter-check__input
+                      span.filter-check__checkbox
+                      span.filter-check__text Весна 2016
 
-                  label.filter-check
-                    input(type="checkbox", name="").filter-check__input
-                    span.filter-check__checkbox
-                    span.filter-check__text Зима 2015
+                    label.filter-check
+                      input(type="checkbox", name="").filter-check__input
+                      span.filter-check__checkbox
+                      span.filter-check__text Зима 2015
 
-                  label.filter-check
-                    input(type="checkbox", name="").filter-check__input
-                    span.filter-check__checkbox
-                    span.filter-check__text Осень 2015
-              
+                    label.filter-check
+                      input(type="checkbox", name="").filter-check__input
+                      span.filter-check__checkbox
+                      span.filter-check__text Осень 2015
+                
 
-              .filter-group
+                .filter-group
 
-                .filter-group__btn Акции
+                  .filter-group__btn Акции
 
-                .filter-group__content
+                  button.filter-group__reset
+                    +icon('ico-close')
 
-                  label.filter-check
-                    input(type="checkbox", name="").filter-check__input
-                    span.filter-check__checkbox
-                    span.filter-check__text Новинки
+                  .filter-group__content
 
-                  label.filter-check
-                    input(type="checkbox", name="").filter-check__input
-                    span.filter-check__checkbox
-                    span.filter-check__text Распродажа
+                    label.filter-check
+                      input(type="checkbox", name="").filter-check__input
+                      span.filter-check__checkbox
+                      span.filter-check__text Новинки
 
-                  label.filter-check
-                    input(type="checkbox", name="").filter-check__input
-                    span.filter-check__checkbox
-                    span.filter-check__text Уцененные
+                    label.filter-check
+                      input(type="checkbox", name="").filter-check__input
+                      span.filter-check__checkbox
+                      span.filter-check__text Распродажа
 
-              
-              .filter__ctrl
-                button(type="reset").btn.btn-block.btn-reset
-                  span Сбросить фильтры
+                    label.filter-check
+                      input(type="checkbox", name="").filter-check__input
+                      span.filter-check__checkbox
+                      span.filter-check__text Уцененные
+
+                
+                .filter__ctrl
+                  button(type="reset").btn.btn-block.btn-reset
+                    span Сбросить фильтры
 
           // Filter :: End
 
-          a(href="#").btn.btn-up Наверх
+          button(js-up).btn.btn-up Наверх
                
 
         .catalog__content
@@ -309,7 +315,7 @@ block content
               
           .row
             //card
-            .col-sm-6.col-md-4.col-lg-3
+            .col-xs-12.col-6.col-sm-4.col-md-4.col-lg-3
               .c-card(data-card)
                   .c-card__wrapper
                     .c-card__ctrl
@@ -352,7 +358,7 @@ block content
                   .c-card__size <b>Размеры:</b> 42, 44, 46, 48, 50, 52, 54, 56, 58 60, 62
 
             //card
-            .col-sm-6.col-md-4.col-lg-3
+            .col-xs-12.col-6.col-sm-4.col-md-4.col-lg-3
               .c-card(data-card)
                   .c-card__wrapper
                     .c-card__ctrl
@@ -394,7 +400,7 @@ block content
                   .c-card__size <b>Размеры:</b> 42, 44, 46, 48, 50, 52, 54, 56, 58 60, 62
 
             //card
-            .col-sm-6.col-md-4.col-lg-3
+            .col-xs-12.col-6.col-sm-4.col-md-4.col-lg-3
               .c-card(data-card)
                   .c-card__wrapper
                     .c-card__ctrl
@@ -435,7 +441,7 @@ block content
                   .c-card__size <b>Размеры:</b> 42, 44, 46, 48, 50, 52, 54, 56, 58 60, 62
 
             //card
-            .col-sm-6.col-md-4.col-lg-3
+            .col-xs-12.col-6.col-sm-4.col-md-4.col-lg-3
               .c-card(data-card)
                   .c-card__wrapper
                     .c-card__ctrl
@@ -469,7 +475,7 @@ block content
                   .c-card__size <b>Размеры:</b> 42, 44, 46, 48, 50, 52, 54, 56, 58 60, 62
 
             //card
-            .col-sm-6.col-md-4.col-lg-3
+            .col-xs-12.col-6.col-sm-4.col-md-4.col-lg-3
               .c-card(data-card)
                   .c-card__wrapper
                     .c-card__ctrl
@@ -503,7 +509,7 @@ block content
                   .c-card__size <b>Размеры:</b> 42, 44, 46, 48, 50, 52, 54, 56, 58 60, 62
 
             //card
-            .col-sm-6.col-md-4.col-lg-3
+            .col-xs-12.col-6.col-sm-4.col-md-4.col-lg-3
               .c-card(data-card)
                   .c-card__wrapper
                     .c-card__ctrl
@@ -536,7 +542,7 @@ block content
                   .c-card__price 1 300 ₽
                   .c-card__size <b>Размеры:</b> 42, 44, 46, 48, 50, 52, 54, 56, 58 60, 62
             //card
-            .col-sm-6.col-md-4.col-lg-3
+            .col-xs-12.col-6.col-sm-4.col-md-4.col-lg-3
               .c-card(data-card)
                   .c-card__wrapper
                     .c-card__ctrl
@@ -579,7 +585,7 @@ block content
                   .c-card__size <b>Размеры:</b> 42, 44, 46, 48, 50, 52, 54, 56, 58 60, 62
 
             //card
-            .col-sm-6.col-md-4.col-lg-3
+            .col-xs-12.col-6.col-sm-4.col-md-4.col-lg-3
               .c-card(data-card)
                   .c-card__wrapper
                     .c-card__ctrl
@@ -621,7 +627,7 @@ block content
                   .c-card__size <b>Размеры:</b> 42, 44, 46, 48, 50, 52, 54, 56, 58 60, 62
 
             //card
-            .col-sm-6.col-md-4.col-lg-3
+            .col-xs-12.col-6.col-sm-4.col-md-4.col-lg-3
               .c-card(data-card)
                   .c-card__wrapper
                     .c-card__ctrl
@@ -662,7 +668,7 @@ block content
                   .c-card__size <b>Размеры:</b> 42, 44, 46, 48, 50, 52, 54, 56, 58 60, 62
 
             //card
-            .col-sm-6.col-md-4.col-lg-3
+            .col-xs-12.col-6.col-sm-4.col-md-4.col-lg-3
               .c-card(data-card)
                   .c-card__wrapper
                     .c-card__ctrl
@@ -696,7 +702,7 @@ block content
                   .c-card__size <b>Размеры:</b> 42, 44, 46, 48, 50, 52, 54, 56, 58 60, 62
 
             //card
-            .col-sm-6.col-md-4.col-lg-3
+            .col-xs-12.col-6.col-sm-4.col-md-4.col-lg-3
               .c-card(data-card)
                   .c-card__wrapper
                     .c-card__ctrl
@@ -730,7 +736,7 @@ block content
                   .c-card__size <b>Размеры:</b> 42, 44, 46, 48, 50, 52, 54, 56, 58 60, 62
 
             //card
-            .col-sm-6.col-md-4.col-lg-3
+            .col-xs-12.col-6.col-sm-4.col-md-4.col-lg-3
               .c-card(data-card)
                   .c-card__wrapper
                     .c-card__ctrl

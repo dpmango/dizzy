@@ -15,62 +15,28 @@ block content
   .lk
     .container
 
-      .lk__left-sidebar
-        
-        nav.lk__nav
-          a(href="#").lk__nav-link Вход
-          a(href="#").lk__nav-link.is-active Регистрация
-          a(href="#").lk__nav-link Восстановление пароля
-          a(href="#").lk__nav-link Моя корзина
-
-
-      .lk__right-sidebar
-
-        .adv
-          .adv__item
-            figure.adv__item-icon
-              +icon('ico-adv-1')
-            p.adv__item-text Качественное Российское производство
-          .adv__item
-            figure.adv__item-icon
-              +icon('ico-adv-2')
-            p.adv__item-text Лучшее сочетание цена-качество
-          .adv__item
-            figure.adv__item-icon
-              +icon('ico-adv-3')
-            p.adv__item-text Выгодные условия сотрудничества
-          .adv__item
-            figure.adv__item-icon
-              +icon('ico-adv-4')
-            p.adv__item-text Широкий размерный ряд
-          .adv__item
-            figure.adv__item-icon
-              +icon('ico-adv-5')
-            p.adv__item-text Бесплатная доставка по Москве
-
-
       .lk__content
-        form(action="#")
+        form(action="#" js-validate-form)
 
-          h1.lk__heading Моя корзина
+          h1.lk__heading Регистрация
 
           .lk__form
             .ui-group
-              label.ui-label Имя
-              input(type="text", placeholder="Введите имя").ui-input
+              label.ui-label Имя*
+              input(type="text", name="first_name", placeholder="Введите имя").ui-input
             .ui-group
-              label.ui-label Фамилия
-              input(type="text", placeholder="Введите фамилию").ui-input
+              label.ui-label Фамилия*
+              input(type="text", name="last_name", placeholder="Введите фамилию").ui-input
             .ui-group
-              label.ui-label Название организации
-              input(type="text").ui-input
-            .ui-group.is-error
+              label.ui-label Название организации*
+              input(type="text", name="org").ui-input
+            .ui-group
               label.ui-label Телефон*
-              input(type="tel", value="+7 (123) 456-78-90").ui-input
+              input(type="tel", name="phone", placeholder="+7 (123) 456-78-90").ui-input
             .ui-group
-              label.ui-label E-mail
+              label.ui-label E-mail*
               .ui-group-content
-                input(type="email", value="fnozdrin@yandex.ru").ui-input
+                input(type="email", name="email", placeholder="fnozdrin@yandex.ru").ui-input
                 label.ui-check
                   input(type="checkbox").ui-check__input
                   span.ui-check__checkbox
@@ -80,11 +46,11 @@ block content
               label.ui-label Адрес доставки
               textarea.ui-textarea.ui-textarea__50 Россия, Москва, Саянска ул. 11/2/291
             .ui-group
-              label.ui-label Пароль
-              input(type="password", placeholder="").ui-input
+              label.ui-label Пароль*
+              input(type="password", name="password", placeholder="").ui-input#password
             .ui-group
-              label.ui-label Подтверждение
-              input(type="password", placeholder="").ui-input
+              label.ui-label Подтверждение*
+              input(type="password", name="password_confirm", placeholder="").ui-input
             .ui-group
               label.ui-label Тип покупателя
               ul.ui-checklist
@@ -121,9 +87,47 @@ block content
             button.btn.btn-primary
               span Регистрация
 
-            button(disabled).btn.btn-primary
-              span Регистрация
-              
+            //- button(disabled).btn.btn-primary
+            //-   span Регистрация
+      
+      .lk__left-sidebar
+        
+        nav.lk__nav
+          ul.lk__nav-menu
+            li
+              a(href="#").lk__nav-link Вход
+            li
+              a(href="#").lk__nav-link.is-active Регистрация
+            li
+              a(href="#").lk__nav-link Восстановление пароля
+            li
+              a(href="#").lk__nav-link Моя корзина
+
+      .lk__right-sidebar
+
+        .adv
+          .adv__item
+            figure.adv__item-icon
+              +icon('ico-adv-1')
+            p.adv__item-text Качественное Российское производство
+          .adv__item
+            figure.adv__item-icon
+              +icon('ico-adv-2')
+            p.adv__item-text Лучшее сочетание <br>цена-качество
+          .adv__item
+            figure.adv__item-icon
+              +icon('ico-adv-3')
+            p.adv__item-text Выгодные условия сотрудничества
+          .adv__item
+            figure.adv__item-icon
+              +icon('ico-adv-4')
+            p.adv__item-text Широкий размерный ряд
+          .adv__item
+            figure.adv__item-icon
+              +icon('ico-adv-5')
+            p.adv__item-text Бесплатная доставка <br>по Москве
+
+            
   // LK :: End
   
 

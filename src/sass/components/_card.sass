@@ -4,7 +4,7 @@
 .zoomContainer
 	visibility: hidden
 	opacity: 0
-	transition: .4s
+	transition: opacity .4s
 	+rmin($desktop)
 		&.is-visible
 			visibility: visible
@@ -17,6 +17,40 @@
 	font-size: 13px
 	line-height: 15px
 	letter-spacing: 0.2px
+	position: relative
+	&__nav
+		font-size: 11px
+		line-height: 15px
+		font-weight: 300
+		display: flex
+		align-items: center
+		transition: .25s
+		margin: 0 0 20px
+		background: #fff
+		&-back
+			color: #000
+			opacity: 0.6
+			&:hover
+				opacity: 1
+				text-decoration: none
+				color: #FF8F5B
+		&-menu
+			margin: 0 0 0 18px
+			padding: 0
+			list-style: none
+			display: flex
+		&-link
+			display: block
+			padding: 0 2px
+			color: #000
+			transition: .25s
+			&:hover
+				color: #FF8F5B
+		+rmin($mobile)
+			position: absolute
+			top: -35px
+			right: 20px
+
 	&__heading
 		font-size: 20px
 		line-height: 22px
@@ -34,17 +68,21 @@
 			background: none
 			opacity: 0.6
 			margin: 0 10px 0 0
+			color: #000
 	&__price
-		margin: 0 0 24px
-		.row
-			align-items: flex-end
+		margin: 0 0 14px
+		display: flex
+		flex-wrap: wrap
+		align-items: flex-end
+
 		&-text
 			font-size: 32px
 			line-height: 40px
 			font-weight: 700
 			letter-spacing: 0.5px
-			margin: 0
+			margin: 0 10px 10px 0
 			color: #ff8f5b
+			white-space: nowrap
 			b
 				font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
 				font-weight: 700
@@ -60,9 +98,13 @@
 			color: #000
 			opacity: 0.6
 			white-space: nowrap
-			text-decoration: underline
+			text-decoration: none
 			line-height: 20px
-			float: right
+			margin: 0 0 10px
+			u
+				text-decoration: none
+				border-bottom: 1px solid transparent
+				transition: inherit
 			.ico
 				position: relative
 				top: 4px
@@ -70,7 +112,14 @@
 				margin: 0 10px 0 0
 			&:hover
 				opacity: 1
-				text-decoration: underline
+				text-decoration: none
+				u
+					border-color: #000
+
+			+rmin($mobile-s)
+				margin-left: auto
+			
+
 	&__colors
 		margin: 0 0 10px
 		&-text
@@ -79,13 +128,16 @@
 				background: none
 				opacity: 0.6
 				margin: 0 10px 0 0
+				color: #000
 		&-group
 			display: flex
 			flex-wrap: wrap
-			margin: 0 -10px
+			margin: 0 -5px
+			+rmin($desktop)
+				margin: 0 -10px
 		&-item
 			width: 20%
-			border: 10px solid #fff
+			border: 5px solid #fff
 			border-top: 0
 			border-bottom: 0
 			margin: 0 0 10px
@@ -95,6 +147,9 @@
 			display: flex
 			align-items: center
 			justify-content: center
+			height: 90px
+			+rmin($desktop)
+				border-width: 10px
 			&:after
 				content: ''
 				display: block
@@ -109,25 +164,35 @@
 			img
 				display: block
 				max-width: 100%
+				max-height: 100%
+				object-fit: contain
 			&.is-active:after
 				opacity: 1
 
 	&__size
+		display: flex
+		flex-wrap: wrap
+		align-items: flex-end
 		line-height: 20px
 		margin: 0 0 28px
-		.row
-			align-items: flex-end
+		.table-size
+			max-width: none
+			
 		&-text
-			margin: 0
+			margin: 0 10px 0 0
 		&-link
 			transition: .25s
 			display: inline-block
 			color: #000
 			opacity: 0.6
 			white-space: nowrap
-			text-decoration: underline
+			text-decoration: none
 			line-height: 20px
-			float: right
+			margin: 0
+			u
+				transition: inherit
+				text-decoration: none
+				border-bottom: 1px solid transparent
 			.ico
 				position: relative
 				top: 4px
@@ -135,12 +200,19 @@
 				margin: 0 10px 0 0
 			&:hover
 				opacity: 1
-				text-decoration: underline
+				text-decoration: none
+				u
+					border-color: #000
+			+rmin($mobile-s)
+				margin-left: auto
 		&-group
+			min-width: 100%
 			display: flex
 			flex-wrap: wrap
 			padding: 8px 0 0
 			margin: 0 -3px
+			clear: both
+
 		&-table
 			width: 100%
 			text-align: center
@@ -183,6 +255,9 @@
 					&:after
 						border-color: #ff8f5b
 						z-index: 2
+			&-text
+				+r($mobile-s)
+					display: none
 
 				// Colors
 
@@ -259,10 +334,16 @@
 	&__ctrl
 		display: flex
 		align-items: center
-		margin: 0 0 40px
+		padding: 0 0 20px
+		.btn-like
+			margin: 0 0 20px
 		.btn-primary
-			min-width: 210px
-			margin: 0 10px 0 0
+			margin: 0 10px 20px 0
+			white-space: nowrap
+			+rmin($wide)
+				min-width: 210px
+		+r($mobile-s)
+			flex-wrap: wrap
 	&__details
 		dt
 			display: block

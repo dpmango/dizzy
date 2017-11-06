@@ -77,15 +77,53 @@ $(document).ready(function(){
   // Filter
   // --------------------------------------------------------------------------
 
-  // $('.filter').on('click', '.filter__btn', function(event) {
-  //     event.preventDefault();
-  //     if ($(this).closest('.filter').find('.filter-group__content').is(':hidden') ) {
-  //         $(this).closest('.filter').removeClass('is-open').find('.filter-group__content').slideDown('fast');
-  //     }
-  //     else {
-  //         $(this).closest('.filter').addClass('is-open');
-  //     }
-  // });
+  $('.filter').on('click', '.filter__toggle', function(event) {
+      event.preventDefault();
+      if ($(this).is('.is-active') ) {
+          $(this).removeClass('is-active').text('Показать фильтр');
+          $('.filter__dropdown').slideUp('fast')
+      }
+      else {
+          $(this).addClass('is-active').text('Скрыть фильтр');
+          $('.filter__dropdown').slideDown('fast')
+      }
+  });
+
+
+  $('.filter-group').on('change', 'input', function(event) {
+
+        var group = $(this).closest('.filter-group'),
+            groupLength = group.find('input:checked').length;
+        if(groupLength >= 1)
+            group.addClass('is-change');
+        else {
+            group.removeClass('is-change');
+        }
+
+
+  });
+
+  $('.filter-group').on('change', 'input[type=range]', function(event) {
+
+        var group = $(this).closest('.filter-group');
+
+        group.addClass('is-change');
+
+  });
+
+  $('.filter-group').on('click', '.filter-group__reset', function(event) {
+        event.preventDefault();
+
+        var group = $(this).closest('.filter-group');
+
+        group.removeClass('is-change').find('input:checked').prop('checked', false);
+        group.find('input[type=range]').data("ionRangeSlider").update({
+            from: 3000,
+            to: 25000
+        });
+        group.removeClass('is-change');
+     
+  });
 
   $('.filter-group').on('click', '.filter-group__btn', function(event) {
       event.preventDefault();
@@ -97,6 +135,13 @@ $(document).ready(function(){
       }
   });
 
+  $('.filter').on('click', '.btn-reset', function(event) {
+    $('.filter-group').find('input[type=range]').data("ionRangeSlider").update({
+        from: 3000,
+        to: 25000
+    });
+    $('.filter-group').removeClass('is-change');
+  });
 
   //////////
   // Global variables
@@ -169,6 +214,15 @@ $(document).ready(function(){
           scrollTop: $(el).offset().top}, 1000);
       return false;
 	});
+
+    // Top
+
+    $('[js-up]').on('click', function (e) {
+        e.preventDefault();
+        $('html,body').animate({
+            scrollTop: 0
+        }, 1200);
+    });
 
   // FOOTER REVEAL
   function revealFooter() {
@@ -276,6 +330,8 @@ $(document).ready(function(){
 
     $('.navi__menu').on('mouseenter', 'a[data-for='+ dropTarget +']', function(){
       $(linkedDrop).addClass('is-active')
+    }).on('mouseleave', 'a[data-for='+ dropTarget +']', function(){
+      $(linkedDrop).removeClass('is-active')
     });
 
     $(document).on('mouseenter', linkedDrop, function(){
@@ -436,10 +492,15 @@ $('[data-card]').each(function(){
     cardSlides.slick({
       slidesToShow: 1,
       slidesToScroll: 1,
-      arrows: false,
+      arrows: true,
       fade: true,
       asNavFor: cardThumbs,
-      infinite: true
+      infinite: true,
+       responsive: [
+        {breakpoint: 767,
+          settings: {fade: false}
+        }
+      ]
     });
     cardThumbs.slick({
       infinite: true,
@@ -474,9 +535,26 @@ $('[data-gallery]').each(function(){
       slidesToShow: 1,
       slidesToScroll: 1,
       arrows: false,
-      fade: true,
+      fade: false,
       asNavFor: galleryThumbs,
-      infinite: true
+      infinite: true,
+      mobileFirst: true,
+      adaptiveHeight: true,
+      responsive: [
+        {
+          breakpoint: 568,
+          settings: {
+            fade: true
+          }
+        },
+        {
+          breakpoint: 992,
+          settings: {
+            fade: true,
+            adaptiveHeight: false
+          }
+        }
+      ]
     });
 
     galleryThumbs.slick({
@@ -492,7 +570,19 @@ $('[data-gallery]').each(function(){
       mobileFirst: true,
       responsive: [
         {
+          breakpoint: 568,
+          settings: {
+            vertical: true
+          }
+        },
+        {
           breakpoint: 768,
+          settings: {
+            vertical: false
+          }
+        },
+        {
+          breakpoint: 992,
           settings: {
             vertical: true
           }
@@ -566,8 +656,8 @@ $('[data-zoom-image]').elevateZoom({
     constrainType: false,  //width or height
     constrainSize: false,  //in pixels the dimensions you want to constrain on
     loadingIcon: false, //http://www.example.com/spinner.gif
-    cursor:"pointer", // user should set to what they want the cursor as, if they have set a click function
-    responsive:true
+    cursor:"pointer", 
+    responsive: true
 
 });
 
@@ -580,6 +670,13 @@ $('[data-gallery-slides]').on('mouseover', '[data-slick-index]', function(event)
 });
 
 
+$(document).on('click', '.zoomContainer', function(event) {
+    event.preventDefault();
+    var zoomIndex = $(this).index() -3;
+
+    $('[data-slick-index="' + zoomIndex + '"]').find('[data-mfp-galllery]').trigger('click');
+
+});
 
 
 $('[data-mfp-galllery]').magnificPopup({
@@ -647,6 +744,7 @@ $('[data-mfp-galllery]').magnificPopup({
 
   });
 
+  $('.card__details').find('dt:first-child').addClass('is-active').next('dd').show();
 
   $('.card__details').on('click', 'dt', function(event) {
     event.preventDefault();
@@ -654,6 +752,8 @@ $('[data-mfp-galllery]').magnificPopup({
         $(this).removeClass('is-active').next('dd').slideUp('fast');
     }
     else {
+        $('.card__details').find('dt').removeClass('is-active').next('dd').slideUp('fast');
+
         $(this).addClass('is-active').next('dd').slideDown('fast');
     }
   });

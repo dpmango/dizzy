@@ -20,8 +20,22 @@ block content
 
   .card
     .container
+
+      .card__nav
+        a(href="#").card__nav-back &lt; Назад в парки
+        ul.card__nav-menu
+          li
+            a(href="#").card__nav-link &lt;
+          li
+            a(href="#").card__nav-link 4
+          li /
+          li
+            a(href="#").card__nav-link 45
+          li
+            a(href="#").card__nav-link &gt;
+
       .row
-        .col-lg-8
+        .col-md-7.col-lg-8
 
           // Gallery :: START
           .gallery(data-gallery)
@@ -66,23 +80,22 @@ block content
 
           // Gallery :: END
 
-        .col-lg-4
+        .col-md-5.col-lg-4
+
 
           h1.card__heading Парка "Сандрин"
 
           ul.card__info
             li <mark>Артикул:</mark> 12345 6789
-            li <mark>Коллекция:</mark> <a href="#">Осень-Зима 2017</a>
+            li <mark>Коллекция:</mark> <a href="#" class="link-dark">Осень-Зима 2017</a>
           
           .card__price
-            .row
-              .col-6
-                p.card__price-text 11 999 <b>₽</b> <small>Розничная цена</small>
-              .col-6
-                a(href="#").card__price-link
-                  +icon('ico-commerce')
-                  | Показать оптовую цену
-
+            p.card__price-text 11 999 <b>₽</b> <small>Розничная цена</small>
+            a(href="#").card__price-link
+              +icon('ico-commerce')
+              u Показать оптовую цену
+            
+                
           .card__colors
             p.card__colors-text <mark>Цвет:</mark><span data-color-selected>Красно-бордовый</span>
             .card__colors-group
@@ -103,13 +116,10 @@ block content
                 img(src='img/zoom/small/image4.png')
           
           .card__size
-            .row
-              .col-6
-                p.card__size-text Размер:
-              .col-6
-                a(href="#").card__size-link
-                  +icon('ico-size')
-                  | Таблица размеров
+            p.card__size-text Размер:
+            a(href="#").card__size-link
+              +icon('ico-size')
+              u Таблица размеров
 
             .card__size-group
               label.card__check

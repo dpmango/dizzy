@@ -20,8 +20,22 @@ block content
 
   .card
     .container
+
+      .card__nav
+        a(href="#").card__nav-back &lt; Назад в парки
+        ul.card__nav-menu
+          li
+            a(href="#").card__nav-link &lt;
+          li
+            a(href="#").card__nav-link 4
+          li /
+          li
+            a(href="#").card__nav-link 45
+          li
+            a(href="#").card__nav-link &gt;
+
       .row
-        .col-lg-8
+        .col-md-7.col-lg-8
 
           // Gallery :: START
           .gallery(data-gallery)
@@ -66,22 +80,19 @@ block content
 
           // Gallery :: END
 
-        .col-lg-4
+        .col-md-5.col-lg-4
 
           h1.card__heading Парка "Сандрин"
 
           ul.card__info
             li <mark>Артикул:</mark> 12345 6789
-            li <mark>Коллекция:</mark> <a href="#">Осень-Зима 2017</a>
+            li <mark>Коллекция:</mark> <a href="#" class="link-dark">Осень-Зима 2017</a>
           
           .card__price
-            .row
-              .col-6
-                p.card__price-text 11 999 ₽ <small>Максимальная оптовая цена</small>
-              .col-6
-                a(href="#").card__price-link
-                  +icon('ico-commerce')
-                  | Показать оптовую цену
+              p.card__price-text 11 999 ₽ <small>Максимальная оптовая цена</small>
+              a(href="#").card__price-link
+                +icon('ico-commerce')
+                u Показать оптовую цену
 
           .card__colors
             p.card__colors-text <mark>Цвет:</mark> <span data-color-selected>Красно-бордовый</span>
@@ -103,80 +114,78 @@ block content
                 img(src='img/card-5.jpg' srcset='img/card-5@2x.jpg 2x')
           
           .card__size
-            .row
-              .col-6
-                p.card__size-text Цвет/Размер:
-              .col-6
-                a(href="#").card__size-link
-                  +icon('ico-size')
-                  | Таблица размеров
 
-            table.card__size-table
-              thead
-                tr
-                  th 
-                  th 42
-                  th 44
-                  th 46
-                  th 48
-                  th 50
-                  th 52
-                  th 54
-                  th 56
-                  th 58
-                  th 60
-                  th 62
-                  th 64
-              tfoot
-                tr
-                  td(colspan="100")
-                    span.card__size-table-type.is-has Есть
-                    span.card__size-table-type.is-few Мало
-                    span.card__size-table-type Нет
-              tbody
-                tr
-                  td.bg-red Серо-корич.
-                  td.is-has
-                  td.is-has
-                  td.is-has
-                  td.is-few
-                  td.is-has
-                  td -
-                  td.is-has
-                  td.is-has
-                  td -
-                  td.is-few
-                  td.is-has
-                  td.is-has 10
-                tr
-                  td.bg-green Светло-зел.
-                  td.is-has
-                  td.is-has
-                  td.is-has
-                  td.is-few
-                  td.is-has
-                  td -
-                  td.is-has 10
-                  td -
-                  td -
-                  td.is-few
-                  td.is-has
-                  td.is-has
-                tr
-                  td.bg-brown Коричневый
-                  td.is-has
-                  td.is-has
-                  td.is-has
-                  td.is-few
-                  td.is-has
-                  td -
-                  td.is-has
-                  td.is-has
-                  td -
-                  td.is-few
-                  td.is-has
-                  td.is-has
-
+            p.card__size-text Цвет/Размер:
+        
+            a(href="#").card__size-link
+              +icon('ico-size')
+              u Таблица размеров
+            
+            .table-size-scroll
+              table.table-size
+                thead
+                  tr
+                    th
+                      span.is-hide_mobile-s Размер/цвет:
+                    th 42
+                    th 44
+                    th 46
+                    th 48
+                    th 50
+                    th 52
+                    th 54
+                    th 56
+                    th 58
+                    th 60
+                    th 62
+                    th 64
+                tbody
+                  tr
+                    td.bg-red
+                      span.is-hide_mobile-s Серо-корич.
+                    td.is-has
+                    td.is-has
+                    td.is-has
+                    td.is-few
+                    td.is-has
+                    td -
+                    td.is-has
+                    td.is-has
+                    td -
+                    td.is-few
+                    td.is-has
+                    td.is-has 10
+                  tr
+                    td.bg-green
+                      span.is-hide_mobile-s Светло-зел.
+                    td.is-has
+                    td.is-has
+                    td.is-has
+                    td.is-few
+                    td.is-has
+                    td -
+                    td.is-has 10
+                    td -
+                    td -
+                    td.is-few
+                    td.is-has
+                    td.is-has
+                  tr
+                    td.bg-brown
+                      span.is-hide_mobile-s Коричневый
+                    td.is-has
+                    td.is-has
+                    td.is-has
+                    td.is-few
+                    td.is-has
+                    td -
+                    td.is-has
+                    td.is-has
+                    td -
+                    td.is-few
+                    td.is-has
+                    td.is-has
+                    
           .card__ctrl
             a(href="#").btn.btn-primary
               span Добавить в корзину

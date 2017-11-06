@@ -1,8 +1,12 @@
 .breadcrumbs
   margin: 20px 0
   font-size: 11px
+  line-height: 15px
   font-weight: 300
   letter-spacing: 0.33px
+  color: rgba($fontColor, .4)
+  .container
+    padding-right: 200px
   a
     display: inline-block
     position: relative
@@ -12,7 +16,8 @@
       content: '>'
       padding-right: 8px
       padding-left: 8px
-      color: $fontColor !important
+      color: inherit
+      // color: $fontColor !important
     &:last-child
       &::after
         display: none
@@ -29,6 +34,8 @@
 
 +r($tablet)
   .breadcrumbs
+    .container
+      padding-right: 20px
     &__title
       font-size: 28px
 

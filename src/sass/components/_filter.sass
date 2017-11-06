@@ -4,41 +4,40 @@
 	margin: 0 0 20px
 	font-size: 13px
 	line-height: 18px
-	padding: 20px
-	background: #fff
-	box-shadow: 0px 3px 8px rgba($fontColor, .2)
+	
 	// &.is-open
 	// 	.filter__dropdown
 	// 		opacity: 1
 	// 		visibility: visible
 	// 		transform: translate(0,0)
 	
-	// &__btn
-	// 	display: block
-	// 	font-size: 16px
-	// 	line-height: 20px
-	// 	font-weight: 500
-	// 	padding: 8px 20px
-	// 	border-radius: 20px
-	// 	width: 100%
-	// 	border: 2px solid #000
-	// 	background: none
-	// 	color: #000
+	&__toggle
+		display: block
+		font-size: 16px
+		line-height: 20px
+		font-weight: 500
+		padding: 8px 20px
+		border-radius: 20px
+		width: 100%
+		border: 2px solid #000
+		background: none
+		color: #000
+		margin: 0 0 20px
+		transition: .25s
+		&:hover
+			background: #000
+			color: #fff
+		+rmin($tablet)
+			display: none
 
-	// &__dropdown
-	// 	position: fixed
-	// 	top: 0
-	// 	left: 0
-	// 	height: 100%
-	// 	overflow-y: auto
-	// 	width: 200px
-	// 	z-index: 100
-	// 	padding: 20px
-	// 	background: #fff
-	// 	box-shadow: 0px 3px 8px rgba($fontColor, .2)
-	// 	transform: translate(-100%,0)
-	// 	transition: $transitionSpeed $ease
-		
+	&__dropdown
+		display: none
+		padding: 20px
+		background: #fff
+		box-shadow: 0px 3px 8px rgba($fontColor, .2)
+		+rmin($tablet)
+			display: block !important
+			
 
 	&__title
 		transition: $transitionSpeed $ease
@@ -81,12 +80,17 @@
 
 
 .filter-group
+	position: relative
 	padding: 0 0 10px
 	margin: 0 0 20px
 	border-bottom: 1px solid rgba(0,0,0,0.2)
 	&.is-open
 		.filter-group__btn:after
 			transform: rotate(0deg)
+	&.is-change
+		.filter-group__reset
+			opacity: 1
+			visibility: visible
 	&__btn
 		display: block
 		position: relative
@@ -114,20 +118,22 @@
 		&:hover
 			color: #FF8F5B
 				
-		&-reset
-			transition: .25s
-			display: block
-			padding: 0
-			background: none
-			color: #666666
-			position: absolute
-			top: 0
-			right: 0
-			line-height: 22px
-			.ico
-				font-size: 12px
-			&:hover
-				color: #000
+	&__reset
+		transition: .25s
+		display: block
+		padding: 0
+		background: none
+		color: #666666
+		position: absolute
+		top: 0
+		right: 0
+		line-height: 22px
+		opacity: 0
+		visibility: hidden
+		.ico
+			font-size: 12px
+		&:hover
+			color: #000
 
 	&__content
 		// display: none

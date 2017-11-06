@@ -15,56 +15,23 @@ block content
   .lk
     .container
 
-      .lk__left-sidebar
-        
-        nav.lk__nav
-          a(href="#").lk__nav-link Вход
-          a(href="#").lk__nav-link Регистрация
-          a(href="#").lk__nav-link Восстановление пароля
-          a(href="#").lk__nav-link.is-active Моя корзина
-
-
-      .lk__right-sidebar
-
-        .adv
-          .adv__item
-            figure.adv__item-icon
-              +icon('ico-adv-1')
-            p.adv__item-text Качественное Российское производство
-          .adv__item
-            figure.adv__item-icon
-              +icon('ico-adv-2')
-            p.adv__item-text Лучшее сочетание цена-качество
-          .adv__item
-            figure.adv__item-icon
-              +icon('ico-adv-3')
-            p.adv__item-text Выгодные условия сотрудничества
-          .adv__item
-            figure.adv__item-icon
-              +icon('ico-adv-4')
-            p.adv__item-text Широкий размерный ряд
-          .adv__item
-            figure.adv__item-icon
-              +icon('ico-adv-5')
-            p.adv__item-text Бесплатная доставка по Москве
-
 
       .lk__content
-        form(action="#")
+        form(action="#" js-validate-form)
 
           h1.lk__heading Моя корзина
 
           .lk__form
             .ui-group
-              label.ui-label Имя
-              input(type="text", value="Федор").ui-input
-            .ui-group.is-error
-              label.ui-label Телефон
-              input(type="tel", value="+7 (123) 456-78-90").ui-input
+              label.ui-label Имя*
+              input(type="text", name="first_name", value="Федор").ui-input
             .ui-group
-              label.ui-label E-mail
+              label.ui-label Телефон*
+              input(type="tel", name="phone", value="+7 (123) 456-78-90").ui-input
+            .ui-group
+              label.ui-label E-mail*
               .ui-group-content
-                input(type="email", value="fnozdrin@yandex.ru").ui-input
+                input(type="email", name="email", value="fnozdrin@yandex.ru").ui-input
                 label.ui-check
                   input(type="checkbox").ui-check__input
                   span.ui-check__checkbox
@@ -99,86 +66,129 @@ block content
             button.btn.btn-primary
               span Подтвердить заказ
         
-          .lk__scroll
-
-            table.lk__products
-              thead
-                tr
-                  th №
-                  th
-                  th Описание
-                  th Количество
-                  th Цена
-                  th Сумма
-              tbody
-                tr
-                  td 1
-                  td
+          table.lk__products
+            thead
+              tr
+                th №
+                th Описание
+                th Количество
+                th Цена
+                th Сумма
+                th(data-ctrl)
+            tbody
+              tr
+                td 1
+                td
+                  .lk__products-item
                     figure.lk__products-image
                       img(src="img/card-1.jpg", alt="")
-                  td
-                    h2.lk__products-title Пальто "Рут"
-                    ul.lk__products-info
-                      li <mark>Артикул:</mark> 12345 6789
-                      li <mark>Коллекция:</mark> <a href="#">Осень-Зима 2017</a>
-                      li <mark>Размер:</mark> 46
-                      li <mark>Цвет:</mark> Красно-бордовый
-            
-                  td
-                    input(type="number", value="2").ui-number
-                  td 12 456 ₽
-                  td
-                    | 24 912 ₽
-                    .lk__products-ctrl
-                      a(href="#").lk__products-delete
-                        +icon('ico-delete')
-                        | Удалить
+                    .lk__products-desc
+                      h2.lk__products-title Пальто "Рут"
+                      ul.lk__products-info
+                        li <mark>Артикул:</mark> 12345 6789
+                        li <mark>Коллекция:</mark> <a href="#" class="link-dark">Осень-Зима 2017</a>
+                        li <mark>Размер:</mark> 46
+                        li <mark>Цвет:</mark> Красно-бордовый
 
-                tr
-                  td 2
-                  td
+                td(data-text="Количество: ")
+                  input(type="number", value="2").ui-number
+                td(data-text="Цена: ") 12 456 ₽
+                td(data-text="Сумма: ")
+                  | 24 912 ₽
+                td(data-ctrl)
+                  .lk__products-ctrl
+                    a(href="#").lk__products-delete
+                      +icon('ico-delete')
+                      | Удалить
+
+              tr
+                td 2
+                td
+                  .lk__products-item
                     figure.lk__products-image
                       img(src="img/card-2.jpg", alt="")
-                  td
-                    h2.lk__products-title Пальто "Рут"
-                    ul.lk__products-info
-                      li <mark>Артикул:</mark> 12345 6789
-                      li <mark>Коллекция:</mark> <a href="#">Осень-Зима 2017</a>
-                      li <mark>Размер:</mark> 46
-                      li <mark>Цвет:</mark> Красно-бордовый
-                  td
-                    input(type="number", value="2").ui-number
-                  td 12 456 ₽
-                  td
-                    | 24 912 ₽
-                    .lk__products-ctrl
-                      a(href="#").lk__products-delete
-                        +icon('ico-delete')
-                        | Удалить
-                tr
-                  td 3
-                  td
+                    .lk__products-desc
+                      h2.lk__products-title Пальто "Рут"
+                      ul.lk__products-info
+                        li <mark>Артикул:</mark> 12345 6789
+                        li <mark>Коллекция:</mark> <a href="#" class="link-dark">Осень-Зима 2017</a>
+                        li <mark>Размер:</mark> 46
+                        li <mark>Цвет:</mark> Красно-бордовый
+
+                td(data-text="Количество: ")
+                  input(type="number", value="2").ui-number
+                td(data-text="Цена: ") 12 456 ₽
+                td(data-text="Сумма: ")
+                  | 24 912 ₽
+                td(data-ctrl)
+                  .lk__products-ctrl
+                    a(href="#").lk__products-delete
+                      +icon('ico-delete')
+                      | Удалить
+              
+              tr
+                td 3
+                td
+                  .lk__products-item
                     figure.lk__products-image
                       img(src="img/card-3.jpg", alt="")
-                  td
-                    h2.lk__products-title Пальто "Рут"
-                    ul.lk__products-info
-                      li <mark>Артикул:</mark> 12345 6789
-                      li <mark>Коллекция:</mark> <a href="#">Осень-Зима 2017</a>
-                      li <mark>Размер:</mark> 46
-                      li <mark>Цвет:</mark> Красно-бордовый
-  
-                  td
-                    input(type="number", value="2").ui-number
-                  td 12 456 ₽
-                  td
-                    | 24 912 ₽
-                    .lk__products-ctrl
-                      a(href="#").lk__products-delete
-                        +icon('ico-delete')
-                        | Удалить
+                    .lk__products-desc
+                      h2.lk__products-title Пальто "Рут"
+                      ul.lk__products-info
+                        li <mark>Артикул:</mark> 12345 6789
+                        li <mark>Коллекция:</mark> <a href="#" class="link-dark">Осень-Зима 2017</a>
+                        li <mark>Размер:</mark> 46
+                        li <mark>Цвет:</mark> Красно-бордовый
 
-          
+                td(data-text="Количество: ")
+                  input(type="number", value="2").ui-number
+                td(data-text="Цена: ") 12 456 ₽
+                td(data-text="Сумма: ")
+                  | 24 912 ₽
+                td(data-ctrl)
+                  .lk__products-ctrl
+                    a(href="#").lk__products-delete
+                      +icon('ico-delete')
+                      | Удалить
+
+
+      .lk__left-sidebar
+        
+        nav.lk__nav
+          ul.lk__nav-menu
+            li
+              a(href="#").lk__nav-link Вход
+            li
+              a(href="#").lk__nav-link Регистрация
+            li
+              a(href="#").lk__nav-link Восстановление пароля
+            li
+              a(href="#").lk__nav-link.is-active Моя корзина
+
+
+      .lk__right-sidebar
+
+        .adv
+          .adv__item
+            figure.adv__item-icon
+              +icon('ico-adv-1')
+            p.adv__item-text Качественное Российское производство
+          .adv__item
+            figure.adv__item-icon
+              +icon('ico-adv-2')
+            p.adv__item-text Лучшее сочетание <br>цена-качество
+          .adv__item
+            figure.adv__item-icon
+              +icon('ico-adv-3')
+            p.adv__item-text Выгодные условия сотрудничества
+          .adv__item
+            figure.adv__item-icon
+              +icon('ico-adv-4')
+            p.adv__item-text Широкий размерный ряд
+          .adv__item
+            figure.adv__item-icon
+              +icon('ico-adv-5')
+            p.adv__item-text Бесплатная доставка <br>по Москве      
               
   // LK :: End
   

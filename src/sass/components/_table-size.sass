@@ -1,0 +1,95 @@
+// Table Size
+
+.table-size-scroll
+	overflow-x: auto
+
+.table-size
+	text-align: center
+	color: rgba(0,0,0,0.6)
+	white-space: nowrap
+	border-spacing: 0 5px
+	margin: 0
+	width: 100%
+	min-width: 340px
+	max-width: 380px
+	line-height: 15px
+	tfoot td
+		padding: 10px 0 0
+		background: none
+		text-align: left
+		&:after
+			display: none
+	thead, tbody
+		tr:hover
+			box-shadow: none
+	th
+		font-weight: 400
+		padding: 0
+		&:first-child
+			text-align: left
+	td
+		padding: 0
+		width: 24px
+		height: 24px
+		background-color: rgba(0, 0, 0, 0.1)
+		vertical-align: middle
+		position: relative
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 0
+			right: -1px
+			border: solid 1px #6a6a6a
+			z-index: 1
+		&.is-has
+			background: #fff
+		&.is-few
+			background: #fff
+			&:after
+				border-color: #ff8f5b
+				z-index: 2
+		// Colors
+
+		&[class^="bg-"]
+			background: #ccc
+			color: #fff
+			padding: 0 12px
+			&:after
+				opacity: 0
+			&.bg-red
+				background: #9f0216
+			&.bg-green
+				background: #7ed321
+			&.bg-brown
+				background: #8b572a
+		
+	&-type
+		display: inline-block
+		vertical-align: top
+		padding: 0 12px
+		height: 24px
+		line-height: 24px
+		background-color: rgba(0, 0, 0, 0.1)
+		vertical-align: middle
+		position: relative
+		margin: 0 5px 0 0
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 0
+			right: -1px
+			border: solid 1px #6a6a6a
+			z-index: 1
+		&.is-has
+			background: #fff
+		&.is-few
+			background: #fff
+			&:after
+				border-color: #ff8f5b
+				z-index: 2

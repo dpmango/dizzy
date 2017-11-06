@@ -5,12 +5,15 @@
   left: 0
   right: 0
   z-index: 10
+  height: 80px
   &__wrapper
     display: flex
     align-items: center
-    padding: 5px 0
+    // padding: 5px 0
     color: white
   &__logo
+    position: relative
+    top: 5px
     line-height: 1
     font-size: 71px
 
@@ -180,6 +183,7 @@
     opacity: 1
     transform: translate3d(0,0,0)
     transition: transform .3s $ease, opacity .3s $ease
+    height: 60px
 
 +r($desktop)
   .header
@@ -259,10 +263,11 @@
   z-index: 9
   background: rgba(#FFEBD7, .2)
   color: white
+
   &--inner
     position: static
     background: #F3F5F7
-    color: $fontColor
+    color: rgba($fontColor, .8)
     box-shadow: 0px 3px 8px rgba($fontColor, .11)
 
     .navi
@@ -288,11 +293,17 @@
     list-style: none
     margin: 0 100px 0 0
     padding: 0
+    height: 100%
     li
+      height: 100%
       flex: 1 0 auto
       transition: all $transitionSpeed $ease
       &:hover
         color: $colorOrange
+    a
+      display: flex
+      align-items: center
+      height: 100%
 
   &__search
     flex: 0 0 80px
