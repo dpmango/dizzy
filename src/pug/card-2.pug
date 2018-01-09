@@ -22,7 +22,7 @@ block content
     .container
 
       .card__nav
-        a(href="#").card__nav-back &lt; Назад в парки
+        a(href="#").card__nav-back &lt; Назад в каталог
         ul.card__nav-menu
           li
             a(href="#").card__nav-link &lt;
@@ -90,9 +90,9 @@ block content
           
           .card__price
               p.card__price-text 11 999 ₽ <small>Максимальная оптовая цена</small>
-              a(href="#").card__price-link
-                +icon('ico-commerce')
-                u Показать оптовую цену
+              //- .card__price-link
+              //-   +icon('ico-commerce')
+              //-   u Показать оптовую цену
 
           .card__colors
             p.card__colors-text <mark>Цвет:</mark> <span data-color-selected>Красно-бордовый</span>
@@ -144,47 +144,76 @@ block content
                     td.bg-red
                       span.is-hide_mobile-s Серо-корич.
                     td.is-has
+                      input(type="text")
                     td.is-has
+                      input(type="text")
                     td.is-has
+                      input(type="text")
                     td.is-few
+                      input(type="text")
                     td.is-has
+                      input(type="text")
                     td -
                     td.is-has
+                      input(type="text")
                     td.is-has
+                      input(type="text")
                     td -
                     td.is-few
+                      input(type="text")
                     td.is-has
-                    td.is-has 10
+                      input(type="text")
+                    td.is-has
+                      input(type="text" value="10")
                   tr
                     td.bg-green
                       span.is-hide_mobile-s Светло-зел.
                     td.is-has
+                      input(type="text")
                     td.is-has
+                      input(type="text")
                     td.is-has
+                      input(type="text")
                     td.is-few
+                      input(type="text")
                     td.is-has
+                      input(type="text")
                     td -
-                    td.is-has 10
+                    td.is-has
+                      input(type="text" value="10")
                     td -
                     td -
                     td.is-few
+                      input(type="text")
                     td.is-has
+                      input(type="text")
                     td.is-has
+                      input(type="text")
                   tr
                     td.bg-brown
                       span.is-hide_mobile-s Коричневый
                     td.is-has
+                      input(type="text")
                     td.is-has
+                      input(type="text")
                     td.is-has
+                      input(type="text")
                     td.is-few
+                      input(type="text")
                     td.is-has
+                      input(type="text")
                     td -
                     td.is-has
+                      input(type="text")
                     td.is-has
+                      input(type="text")
                     td -
                     td.is-few
+                      input(type="text")
                     td.is-has
+                      input(type="text")
                     td.is-has
+                      input(type="text")
                     
           .card__ctrl
             a(href="#").btn.btn-primary

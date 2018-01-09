@@ -11,6 +11,7 @@
   height: 260px
   margin-bottom: 40px
   background: #F3F5F7
+  transition: all $transitionSpeed $ease
   &--smaller
     height: 200px
   &--bg-peach
@@ -45,8 +46,10 @@
     letter-spacing: .48px
 
   &:hover
+    transform: scale(1.1)
     .catalog-card__image
-      transform: scale(1.06)
+      // transform: scale(1.06)
+      transform: translateX(-5px) scale(1.02)
 
 
 +r($desktop)

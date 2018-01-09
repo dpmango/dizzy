@@ -123,26 +123,38 @@ $(document).ready(function(){
   // HEADER SCROLL
   // add .header-static for .page or body
   // to disable sticky header
-  if ( $('.header-static').length == 0 ){
-    _window.scrolled(10, function() { // scrolled is a constructor for scroll delay listener
-      var vScroll = _window.scrollTop();
-      var header = $('.header').not('.header--static');
-      var headerHeight = header.height();
-      var heroHeight = $('.hero').outerHeight() - headerHeight;
+  // if ( $('.header-static').length == 0 ){
+  //   _window.scrolled(10, function() { // scrolled is a constructor for scroll delay listener
+  //     var vScroll = _window.scrollTop();
+  //     var header = $('.header').not('.header--static');
+  //     var headerHeight = header.height();
+  //     var heroHeight = $('.hero').outerHeight() - headerHeight;
+  //
+  //     if ( vScroll > headerHeight ){
+  //       header.addClass('header--transformed');
+  //     } else {
+  //       header.removeClass('header--transformed');
+  //     }
+  //
+  //     if ( vScroll > heroHeight ){
+  //       header.addClass('header--fixed');
+  //     } else {
+  //       header.removeClass('header--fixed');
+  //     }
+  //   });
+  // }
 
-      if ( vScroll > headerHeight ){
-        header.addClass('header--transformed');
-      } else {
-        header.removeClass('header--transformed');
-      }
+  _window.scrolled(10, function() { // scrolled is a constructor for scroll delay listener
+    var vScroll = _window.scrollTop();
+    var header = $('.header');
+    // var headerHeight = header.height();
 
-      if ( vScroll > heroHeight ){
-        header.addClass('header--fixed');
-      } else {
-        header.removeClass('header--fixed');
-      }
-    });
-  }
+    if ( vScroll > 1 ){
+      header.addClass('header--fixed');
+    } else {
+      header.removeClass('header--fixed');
+    }
+  });
 
   // PRELOADER
   // simple fadein 0 to 1 just to prevent elements poping onload
@@ -221,10 +233,10 @@ $(document).ready(function(){
 
   // HEADER SEARCH
   $(document).on('click', '[js-header-search]', function(e){
-    console.log('clicked');
     if ( $(this).is('is-active') ){
 
     } else {
+      $('.navi__menu').fadeOut();
       $(this).addClass('is-active')
       e.preventDefault();
     }
@@ -237,6 +249,7 @@ $(document).ready(function(){
 
   $(document).click(function(event) {
     if ( !$(event.target).closest('[js-header-search]').length ) {
+      $('.navi__menu').fadeIn();
       $('[js-header-search]').removeClass('is-active');
     }
   });
@@ -264,7 +277,7 @@ $(document).ready(function(){
       autoplay: true,
       autoplaySpeed: 5000,
       pauseOnHover: false,
-      fade: true,
+      fade: false,
       dots: true,
       arrows: false,
       infinite: true,
@@ -881,6 +894,13 @@ $(document).ready(function(){
 
     })
   });
+
+
+  // allow only one checkbox
+  $('.card__check-input').on('change', function(){
+    var inputs = $(this).parent().siblings().find('input')
+    inputs.prop("checked", false);
+  })
 
   ////////////
   // UI

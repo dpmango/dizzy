@@ -1,21 +1,24 @@
 // HEADER
 .header
-  position: absolute
+  position: fixed
   top: 0
   left: 0
   right: 0
   z-index: 10
   height: 80px
+  transition: all $transitionSpeed $ease
   &__wrapper
     display: flex
     align-items: center
     // padding: 5px 0
     color: white
+    transition: all $transitionSpeed $ease
   &__logo
     position: relative
     top: 5px
     line-height: 1
     font-size: 71px
+    transition: all $transitionSpeed $ease
     svg
       transition: none
 
@@ -124,7 +127,7 @@
       &__phone
         display: none
 
-  &--showing-menu, &--transformed, &--inner
+  &--showing-menu, &--fixed, &--inner
     .header
       &__wrapper
         color: $fontColor
@@ -152,7 +155,7 @@
           &::before, &::after
             background-color: $fontColor60
 
-  &--transformed
+  &--fixed
     position: fixed
     background: white
     transform: translate3d(0,-100%,0)
@@ -229,7 +232,7 @@
     &__hamburger
       display: inline-block
 
-    &--transformed, &--showing-menu, &--inner
+    &--fixed, &--showing-menu, &--inner
       .header
         &__cart
           &::after
@@ -340,6 +343,7 @@
           color: white
 
       &.is-active
+        border-bottom: 1px solid $colorOrange
         input
           width: 220px
 
