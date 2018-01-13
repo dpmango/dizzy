@@ -121,29 +121,6 @@ $(document).ready(function(){
   _window.resized(100, revealFooter);
 
   // HEADER SCROLL
-  // add .header-static for .page or body
-  // to disable sticky header
-  // if ( $('.header-static').length == 0 ){
-  //   _window.scrolled(10, function() { // scrolled is a constructor for scroll delay listener
-  //     var vScroll = _window.scrollTop();
-  //     var header = $('.header').not('.header--static');
-  //     var headerHeight = header.height();
-  //     var heroHeight = $('.hero').outerHeight() - headerHeight;
-  //
-  //     if ( vScroll > headerHeight ){
-  //       header.addClass('header--transformed');
-  //     } else {
-  //       header.removeClass('header--transformed');
-  //     }
-  //
-  //     if ( vScroll > heroHeight ){
-  //       header.addClass('header--fixed');
-  //     } else {
-  //       header.removeClass('header--fixed');
-  //     }
-  //   });
-  // }
-
   _window.scrolled(10, function() { // scrolled is a constructor for scroll delay listener
     var vScroll = _window.scrollTop();
     var header = $('.header');
@@ -164,6 +141,23 @@ $(document).ready(function(){
   if ( $('.inner').length ){
     $('.header').addClass('header--inner');
     $('.navi').addClass('navi--inner');
+    setHeaderOffset();
+    $(window).on('resize', setHeaderOffset)
+
+  }
+
+  function setHeaderOffset(){
+    var calcedPx;
+
+    if (_window.width() > 768){
+      calcedPx = $('.header--inner').outerHeight() + $('.navi--inner').outerHeight()
+    } else {
+      calcedPx = $('.header--inner').outerHeight()
+    }
+
+    $('.page__content').css({
+      'padding-top': calcedPx + 'px'
+    })
   }
 
   // HAMBURGER TOGGLER
