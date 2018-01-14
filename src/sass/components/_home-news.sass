@@ -11,6 +11,7 @@
   position: relative
   height: 260px
   margin-bottom: 20px
+  overflow: hidden
   background: #F3F5F7
   transition: all $transitionSpeed $ease
   &--smaller
@@ -23,6 +24,7 @@
     position: absolute 0
     overflow: hidden
     z-index: 2
+    transition: .25s $ease
     img
       position: absolute
       top: 50%
@@ -63,12 +65,14 @@
     letter-spacing: .48px
   &:hover
     background: #FFEBD7
-    transform: scale(1.1)
+    // transform: scale(1.1)
 
     &.news-card--bg-peach
       background: #F3F5F7
     .news-card__image
+      transform: scale(1.1)
       &::before
+
         backdrop-filter: none
 
 +r($wide)

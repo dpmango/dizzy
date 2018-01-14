@@ -284,6 +284,16 @@
           color: $fontColor
           &::placeholder
             color: $fontColor60
+  &--transformed
+    position: fixed
+    top: 60px
+    transform: translate3d(0,-40px,0)
+    opacity: 0
+
+  &--fixed
+    transform: translate3d(0,0,0)
+    opacity: 1
+    transition: all $transitionSpeed $ease
   &__wrapper
     display: flex
     align-items: center
@@ -313,6 +323,7 @@
   &__search
     flex: 0 0 80px
     margin-left: auto
+    transition: all $transitionSpeed $ease
     &-form
       position: relative
       display: flex
@@ -342,10 +353,13 @@
         &::placeholder
           color: white
 
-      &.is-active
+    &.is-active
+      flex-basis: 100%
+      width: 100%
+      .navi__search-form
         border-bottom: 1px solid $colorOrange
-        input
-          width: 220px
+      input
+        width: 220px
 
 
 
